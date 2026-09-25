@@ -299,6 +299,118 @@
   .footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);font-size:12.5px;display:flex;gap:20px;flex-wrap:wrap;align-items:center}
   .footer b{color:var(--ink-2)}
 
+  /* search */
+  .spage{padding:14px 18px}
+  .spage .field{display:flex;align-items:center;gap:9px;background:var(--surface);border:2px solid var(--brand);border-radius:var(--r-pill);padding:11px 15px;font-size:13px;color:var(--ink);font-weight:700;box-shadow:var(--sh-1)}
+  .spage h5{font-size:13px;font-weight:900;margin:22px 0 11px;display:flex;justify-content:space-between;align-items:center}
+  .spage h5 span{font-size:11px;color:var(--muted);font-weight:600}
+  .taglist{display:flex;flex-wrap:wrap;gap:9px}
+  .taglist .t{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-pill);padding:8px 14px;font-size:12px;font-weight:700;color:var(--ink-2)}
+  .taglist .t.hot{color:var(--price);border-color:transparent;background:var(--price-soft)}
+  .suggest .s{display:flex;align-items:center;gap:11px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:13.5px;font-weight:700}
+  .suggest .s .mg{color:var(--muted)} .suggest .s .k{color:var(--brand-ink)} .suggest .s .tc2{margin-left:auto;font-size:9.5px;font-weight:800;color:#fff;padding:2px 8px;border-radius:var(--r-pill)}
+
+  /* checkout / address */
+  .cobox{margin:14px 18px 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:2px 15px;box-shadow:var(--sh-1)}
+  .addrcard{margin:14px 18px 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:15px;box-shadow:var(--sh-1);display:flex;gap:12px;align-items:flex-start}
+  .addrcard .pin{font-size:20px;color:var(--brand-ink)}
+  .addrcard .who{font-weight:900;font-size:14px} .addrcard .adr{font-size:12px;color:var(--ink-2);margin-top:4px;line-height:1.5}
+  .addrcard .arrow{margin-left:auto;color:var(--muted-2);align-self:center}
+  .corow{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .corow:last-child{border-bottom:0} .corow .k{color:var(--muted);font-weight:700} .corow .v{font-weight:800}
+  .corow .grp{display:flex;align-items:center;gap:8px} .corow .tcp{font-size:9.5px;font-weight:800;padding:2px 8px;border-radius:var(--r-pill);color:#fff}
+  .adrlist{padding:14px 18px;display:flex;flex-direction:column;gap:12px}
+  .adritem{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:14px 15px;box-shadow:var(--sh-1)}
+  .adritem.def{border-color:var(--brand)}
+  .adritem .who{font-weight:900;font-size:14px;display:flex;gap:8px;align-items:center}
+  .adritem .who .df{font-size:9px;font-weight:800;color:#fff;background:var(--brand-deep);padding:2px 7px;border-radius:5px}
+  .adritem .adr{font-size:12px;color:var(--ink-2);margin-top:5px}
+  .adritem .edit{float:right;color:var(--muted-2);font-size:15px}
+
+  /* payment result */
+  .payok{padding:40px 22px 10px;text-align:center}
+  .payok .tick{width:74px;height:74px;border-radius:50%;background:var(--success-soft);color:var(--success);display:grid;place-items:center;font-size:38px;margin:0 auto 16px}
+  .payok h3{font-size:20px} .payok .amt{font-size:32px;font-weight:900;margin:10px 0 4px} .payok .ordn{font-size:12px;color:var(--muted);font-weight:600}
+  .payok .eta{margin:20px 0 0;background:var(--surface-3);border-radius:var(--r-md);padding:13px;font-size:12px;color:var(--ink-2);text-align:left;line-height:1.7}
+  .payactions{display:flex;gap:10px;padding:18px}
+
+  /* account */
+  .acct-hd{background:linear-gradient(150deg,var(--brand-strong),var(--brand-deep));color:#fff;padding:24px 18px 20px;display:flex;align-items:center;gap:14px}
+  .acct-hd .av{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:26px;border:2px solid rgba(255,255,255,.35)}
+  .acct-hd .nm{font-weight:900;font-size:17px}
+  .acct-hd .mchip{margin-top:6px;display:inline-flex;gap:6px;align-items:center;background:var(--accent);color:#fff;font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:var(--r-pill)}
+  .acct-hd .pts{margin-left:auto;text-align:center}
+  .acct-hd .pts b{font-size:20px;font-weight:900;display:block} .acct-hd .pts span{font-size:10px;opacity:.85}
+  .ostat{display:grid;grid-template-columns:repeat(5,1fr);margin:14px 18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:15px 0;box-shadow:var(--sh-1)}
+  .ostat .o{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:10.5px;color:var(--ink-2);font-weight:700}
+  .ostat .o .ic{font-size:20px;position:relative}
+  .agrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:2px 14px}
+  .agrid .a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 4px;font-size:11px;color:var(--ink-2);font-weight:700}
+  .agrid .a .ic{font-size:23px}
+
+  /* membership */
+  .memcard{margin:16px 18px 0;border-radius:var(--r-lg);padding:20px;color:#fff;position:relative;overflow:hidden;
+    background:radial-gradient(120% 120% at 85% 12%,color-mix(in srgb,var(--accent) 62%,transparent),transparent 55%),linear-gradient(140deg,var(--brand-strong),var(--brand-deep))}
+  .memcard .lv{font-size:11px;letter-spacing:.16em;font-weight:800;opacity:.85}
+  .memcard h3{font-size:23px;margin:6px 0 2px} .memcard .pts{font-size:12.5px;opacity:.9}
+  .memcard .bar{margin-top:15px;height:7px;border-radius:var(--r-pill);background:rgba(255,255,255,.25);overflow:hidden}
+  .memcard .bar>div{height:100%;background:#fff;border-radius:var(--r-pill)}
+  .memcard .nx{font-size:10.5px;opacity:.85;margin-top:8px}
+  .benefits{padding:16px 18px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .benefit{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:15px;box-shadow:var(--sh-1);font-size:12px;font-weight:700;color:var(--ink-2)}
+  .benefit b{display:block;font-size:24px;margin-bottom:7px}
+
+  /* coupons */
+  .coupons{padding:14px 18px;display:flex;flex-direction:column;gap:13px}
+  .coupon{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-1)}
+  .coupon .amt{flex:none;width:106px;background:linear-gradient(150deg,var(--brand),var(--brand-deep));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+  .coupon .amt .n{font-size:27px;font-weight:900} .coupon .amt .n small{font-size:13px} .coupon .amt .c{font-size:10px;opacity:.9}
+  .coupon .info{flex:1;padding:13px 15px} .coupon .info .t{font-weight:900;font-size:13.5px} .coupon .info .d{font-size:11px;color:var(--muted);margin-top:5px}
+  .coupon .use{align-self:center;margin:0 14px;background:var(--accent-soft);color:var(--accent-ink);font-weight:800;font-size:12px;padding:9px 15px;border-radius:var(--r-pill)}
+  .coupon.used{opacity:.5} .coupon.used .amt{background:var(--muted-2)} .coupon.used .use{background:var(--surface-3);color:var(--muted)}
+
+  /* after-sales */
+  .as-item{margin:14px 18px 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:13px;box-shadow:var(--sh-1);display:flex;gap:12px}
+  .as-item .im{width:52px;height:52px;border-radius:11px;flex:none}
+  .as-sec{margin:18px 18px 0} .as-sec .lbl{font-size:12.5px;font-weight:900;margin-bottom:11px}
+  .as-opts{display:flex;gap:9px;flex-wrap:wrap}
+  .as-opt{border:1px solid var(--line);background:var(--surface);border-radius:var(--r-md);padding:11px 15px;font-size:12.5px;font-weight:700;color:var(--ink-2)}
+  .as-opt.on{border-color:var(--brand);color:var(--brand-ink);background:var(--brand-soft)}
+  .as-reason{margin:12px 18px 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:14px;font-size:12.5px;color:var(--muted);min-height:60px}
+  .as-photos{display:flex;gap:10px;padding:14px 18px 0}
+  .as-photo{width:64px;height:64px;border-radius:12px;border:1.5px dashed var(--line-strong);display:grid;place-items:center;color:var(--muted-2);font-size:24px}
+  .as-trace{margin:14px 18px 0;background:var(--frozen-soft);color:var(--frozen);border-radius:var(--r-md);padding:11px 13px;font-size:11px;font-weight:700}
+
+  /* admin: category tree + attribute set */
+  .tree{font-size:13px;display:flex;flex-direction:column;gap:2px}
+  .tree .n{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:9px;font-weight:700}
+  .tree .n.l2{margin-left:22px;color:var(--ink-2);font-weight:600} .tree .n.l3{margin-left:44px;color:var(--muted);font-weight:600;font-size:12px}
+  .tree .n.sel{background:var(--brand-deep);color:#fff} .tree .n .cnt{margin-left:auto;font-size:10.5px;opacity:.7;font-weight:700}
+  .attrset{display:flex;flex-direction:column;gap:9px}
+  .attrrow{display:flex;align-items:center;gap:11px;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:var(--surface-2);font-size:12.5px}
+  .attrrow .nm{font-weight:800} .attrrow .ty{font-size:10.5px;color:var(--muted);font-weight:700;background:var(--surface-3);padding:2px 8px;border-radius:var(--r-pill)}
+  .attrrow .flt{margin-left:auto;font-size:10px;font-weight:800;padding:3px 9px;border-radius:var(--r-pill)}
+  .attrrow .flt.on{background:var(--success-soft);color:var(--success)} .attrrow .flt.off{background:var(--surface-3);color:var(--muted-2)}
+
+  /* admin: rbac matrix */
+  .matrix{width:100%;border-collapse:collapse;font-size:11px}
+  .matrix th{padding:9px 6px;border-bottom:1px solid var(--line);color:var(--muted);font-weight:800;text-align:center;white-space:nowrap}
+  .matrix th.rowh,.matrix td.rowh{text-align:left;font-weight:700;color:var(--ink-2);white-space:nowrap}
+  .matrix td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:center}
+  .matrix tr:nth-child(even) td{background:var(--surface-2)}
+  .matrix .y{color:var(--success);font-weight:900} .matrix .ap{color:var(--warning);font-weight:900} .matrix .sc{color:var(--frozen);font-weight:900} .matrix .ro{color:var(--muted-2)}
+  .legend2{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:12px;font-weight:700}
+  .legend2 b{font-weight:900}
+
+  /* admin: generic list rows */
+  .lrow{display:flex;align-items:center;gap:12px;padding:14px 2px;border-bottom:1px solid var(--line);font-size:12.5px}
+  .lrow .m2{min-width:0} .lrow .m2 .t{font-weight:800} .lrow .m2 .d{font-size:11px;color:var(--muted);margin-top:2px;font-weight:600}
+  .lrow .r2{margin-left:auto;text-align:right;font-weight:800;white-space:nowrap}
+  .steps{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;color:var(--muted);flex-wrap:wrap}
+  .steps .st{padding:3px 9px;border-radius:var(--r-pill);background:var(--surface-3)}
+  .steps .st.on{background:var(--brand-soft);color:var(--brand-ink)} .steps .st.done{background:var(--success-soft);color:var(--success)}
+  .steps .ar{color:var(--muted-2)}
+
   @media (max-width:900px){
     .intro{grid-template-columns:1fr}
     .winbody{flex-direction:column}
@@ -539,6 +651,180 @@
         <div class="cap"><b>5 · 订单与追踪</b> — 一笔订单，两个包裹，独立追踪</div>
       </div>
 
+      <!-- SEARCH -->
+      <div class="device">
+        <div class="phone"><div class="screen"><div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
+          <div class="spage"><div class="field"><span style="color:var(--brand-ink)">🔎</span> 挪威三文鱼 <span style="margin-left:auto;color:var(--muted-2)">✕</span></div></div>
+          <div class="appscroll"><div class="inner" style="padding:0 18px">
+            <h5>搜索历史 <span>清除 🗑</span></h5>
+            <div class="taglist"><span class="t">三文鱼</span><span class="t">澳洲牛排</span><span class="t">金枪鱼罐头</span><span class="t">阿根廷红虾</span><span class="t">和牛</span></div>
+            <h5>热门搜索 <span>🔥 实时</span></h5>
+            <div class="taglist"><span class="t hot">1 挪威三文鱼</span><span class="t hot">2 帝王蟹</span><span class="t">3 银鳕鱼</span><span class="t">4 谷饲眼肉</span><span class="t">5 波士顿龙虾</span></div>
+            <h5>猜你想搜</h5>
+            <div class="suggest">
+              <div class="s"><span class="mg">🔎</span> 挪威三文鱼<span class="k">中段</span>·刺身级<span class="tc2" style="background:var(--frozen)">冷冻</span></div>
+              <div class="s"><span class="mg">🔎</span> 挪威三文鱼<span class="k">整条</span><span class="tc2" style="background:var(--frozen)">冷冻</span></div>
+              <div class="s"><span class="mg">🔎</span> 三文鱼<span class="k">籽</span>·冰鲜<span class="tc2" style="background:var(--chilled)">冷藏</span></div>
+              <div class="s"><span class="mg">🔎</span> 品牌 <span class="k">FjordSelect</span> 全系列</div>
+            </div>
+          </div></div>
+        </div></div>
+        <div class="cap"><b>6 · 搜索</b> — 历史、热搜、联想（含温层）；关键词 / 品牌 / 产地 / SKU</div>
+      </div>
+
+      <!-- CHECKOUT -->
+      <div class="device">
+        <div class="phone"><div class="screen"><div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
+          <div class="lsthead"><span class="back">‹</span><span class="title">确认订单</span></div>
+          <div class="appscroll"><div class="inner">
+            <div class="addrcard"><span class="pin">📍</span><div><div class="who">陈女士 · 138****6021</div><div class="adr">上海市 静安区 南京西路 1266 号 · 虹桥公寓 3-1802</div></div><span class="arrow">›</span></div>
+            <div class="cobox">
+              <div class="corow"><span class="grp"><span class="tcp" style="background:var(--frozen)">❄️ 冷冻组</span> 冷链·次日达</span><span class="v">¥15</span></div>
+              <div class="corow"><span class="grp"><span class="tcp" style="background:var(--ambient)">🌡️ 常温组</span> 标准快递</span><span class="v" style="color:var(--success)">免运费</span></div>
+              <div class="corow"><span class="k">配送时段</span><span class="v">明日 09:00–12:00 ›</span></div>
+            </div>
+            <div class="cobox">
+              <div class="corow"><span class="k">🎟 优惠券</span><span class="v" style="color:var(--price)">−¥20 ›</span></div>
+              <div class="corow"><span class="k">⭐ 积分抵扣</span><span class="v">1,240 分抵 ¥12 ›</span></div>
+              <div class="corow"><span class="k">🧾 发票</span><span class="v">电子普通发票 ›</span></div>
+            </div>
+            <div class="summary">
+              <div class="r"><span>商品小计</span><span>¥352</span></div>
+              <div class="r save"><span>会员 + 券 + 积分</span><span>−¥56</span></div>
+              <div class="r"><span>运费</span><span>¥15</span></div>
+              <div class="r tot"><span>应付</span><span>¥311</span></div>
+            </div>
+          </div></div>
+          <div class="stickybar"><div style="flex:1"><div style="font-size:10px;color:var(--muted);font-weight:700">应付</div><div style="font-size:19px;font-weight:900;color:var(--price)">¥311</div></div><div class="btn buy" style="flex:0 0 52%">提交订单</div></div>
+        </div></div>
+        <div class="cap"><b>7 · 结算</b> — 地址、按温层分组的配送方式与时段、券 / 积分 / 发票</div>
+      </div>
+
+      <!-- ADDRESS -->
+      <div class="device">
+        <div class="phone"><div class="screen"><div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
+          <div class="lsthead"><span class="back">‹</span><span class="title">收货地址</span><span class="r" style="color:var(--brand-ink)">管理</span></div>
+          <div class="appscroll"><div class="inner">
+            <div class="adrlist">
+              <div class="adritem def"><span class="edit">✎</span><div class="who">陈女士 · 138****6021 <span class="df">默认</span></div><div class="adr">上海市 静安区 南京西路 1266 号 虹桥公寓 3-1802</div></div>
+              <div class="adritem"><span class="edit">✎</span><div class="who">陈先生 · 139****8830</div><div class="adr">上海市 浦东新区 世纪大道 100 号 环球金融中心 45F</div></div>
+              <div class="adritem"><span class="edit">✎</span><div class="who">公司前台 · 021-6888****</div><div class="adr">上海市 徐汇区 漕溪北路 88 号 圣爱大厦 12 楼</div></div>
+            </div>
+          </div></div>
+          <div class="stickybar"><div class="btn buy" style="flex:1">＋ 新增收货地址</div></div>
+        </div></div>
+        <div class="cap"><b>8 · 收货地址</b> — 地址簿：默认 / 新增 / 编辑</div>
+      </div>
+
+      <!-- PAYMENT -->
+      <div class="device">
+        <div class="phone"><div class="screen"><div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
+          <div class="appscroll"><div class="inner">
+            <div class="payok">
+              <div class="tick">✓</div><h3>支付成功</h3><div class="amt">¥311</div>
+              <div class="ordn">微信支付 · 订单 2026091500482</div>
+              <div class="eta"><div>❄️ 冷冻组 · 冷链 · 预计 <b>明日 09:00–12:00</b> 送达</div><div>🌡️ 常温组 · 标准快递 · 预计 <b>2–3 天</b> 送达</div></div>
+            </div>
+          </div></div>
+          <div class="payactions"><div class="btn cart" style="flex:1;border:1px solid var(--line)">查看订单</div><div class="btn buy" style="flex:1">继续购物</div></div>
+        </div></div>
+        <div class="cap"><b>9 · 支付</b> — 微信支付结果；按温层分别显示预计送达</div>
+      </div>
+
+      <!-- ACCOUNT -->
+      <div class="device">
+        <div class="phone"><div class="screen"><div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
+          <div class="appscroll"><div class="inner">
+            <div class="acct-hd"><div class="av">🐬</div><div><div class="nm">陈女士</div><span class="mchip">💎 黑金会员 · Lv.3</span></div><div class="pts"><b>1,240</b><span>积分</span></div></div>
+            <div class="ostat">
+              <div class="o"><span class="ic">💳</span>待付款</div><div class="o"><span class="ic">📦</span>待收货</div>
+              <div class="o"><span class="ic">⭐</span>待评价</div><div class="o"><span class="ic">↩️</span>售后</div><div class="o"><span class="ic">🎧</span>客服</div>
+            </div>
+            <div class="sectitle" style="padding:16px 18px 8px"><h4 style="font-size:15px">我的服务</h4></div>
+            <div class="agrid">
+              <div class="a"><span class="ic">💎</span>会员中心</div><div class="a"><span class="ic">🎟</span>优惠券</div>
+              <div class="a"><span class="ic">📍</span>收货地址</div><div class="a"><span class="ic">❤️</span>我的收藏</div>
+              <div class="a"><span class="ic">🕘</span>浏览历史</div><div class="a"><span class="ic">✍️</span>我的评价</div>
+              <div class="a"><span class="ic">📖</span>食谱内容</div><div class="a"><span class="ic">⚙️</span>设置</div>
+            </div>
+          </div></div>
+          <div class="tabbar">
+            <div class="tb"><span class="ic">🏠</span>首页</div><div class="tb"><span class="ic">🧭</span>分类</div>
+            <div class="tb"><span class="ic">🛒</span>购物车</div><div class="tb"><span class="ic">📦</span>订单</div><div class="tb on"><span class="ic">👤</span>我的</div>
+          </div>
+        </div></div>
+        <div class="cap"><b>10 · 我的</b> — 会员、积分、订单状态、服务入口、内容中心</div>
+      </div>
+
+      <!-- MEMBERSHIP -->
+      <div class="device">
+        <div class="phone"><div class="screen"><div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
+          <div class="oh" style="font-size:18px">会员中心</div>
+          <div class="appscroll"><div class="inner">
+            <div class="memcard">
+              <div class="lv">DOLLY CLUB · 黑金会员</div><h3>Lv.3 · 深海之友</h3>
+              <div class="pts">1,240 积分 · 本年累计消费 ¥8,600</div>
+              <div class="bar"><div style="width:72%"></div></div>
+              <div class="nx">再消费 ¥1,400 升级 Lv.4，享 9 折专属价</div>
+            </div>
+            <div class="benefits">
+              <div class="benefit"><b>🏷️</b>会员专享价<br><span style="color:var(--muted);font-weight:600">全场精选</span></div>
+              <div class="benefit"><b>🚚</b>冷链运费券<br><span style="color:var(--muted);font-weight:600">每月 2 张</span></div>
+              <div class="benefit"><b>⭐</b>积分加速<br><span style="color:var(--muted);font-weight:600">1.5 倍积分</span></div>
+              <div class="benefit"><b>🎁</b>生日礼遇<br><span style="color:var(--muted);font-weight:600">专属好礼</span></div>
+            </div>
+            <div class="sectitle"><h4>会员价精选</h4><span class="more">查看全部 ›</span></div>
+            <div class="pgrid">
+              <div class="pc"><div class="img i1"><span class="tc frozen">冷冻</span></div><div class="b"><div class="nm">挪威三文鱼中段</div><div class="meta">300g</div><div class="foot"><span class="price"><span class="cur">¥</span>120</span><span class="mem">会员</span><span class="add">+</span></div></div></div>
+              <div class="pc"><div class="img i6"><span class="tc chilled">冷藏</span></div><div class="b"><div class="nm">北海道生食扇贝</div><div class="meta">200g</div><div class="foot"><span class="price"><span class="cur">¥</span>158</span><span class="mem">会员</span><span class="add">+</span></div></div></div>
+            </div>
+          </div></div>
+        </div></div>
+        <div class="cap"><b>11 · 会员</b> — 等级、积分、权益、会员价（门槛已建模）</div>
+      </div>
+
+      <!-- COUPONS -->
+      <div class="device">
+        <div class="phone"><div class="screen"><div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
+          <div class="lsthead"><span class="back">‹</span><span class="title">我的优惠券</span></div>
+          <div class="otabs"><span class="on">可使用 (3)</span><span>已使用</span><span>已过期</span></div>
+          <div class="appscroll"><div class="inner">
+            <div class="coupons">
+              <div class="coupon"><div class="amt"><div class="n"><small>¥</small>20</div><div class="c">满 199 可用</div></div><div class="info"><div class="t">全场通用券</div><div class="d">有效期至 2026-10-31 · 全品类</div></div><span class="use">去使用</span></div>
+              <div class="coupon"><div class="amt"><div class="n"><small>¥</small>15</div><div class="c">冷链运费</div></div><div class="info"><div class="t">冷链运费券</div><div class="d">有效期至 2026-10-15 · 冷冻 / 冷藏订单</div></div><span class="use">去使用</span></div>
+              <div class="coupon"><div class="amt"><div class="n">8<small>折</small></div><div class="c">会员专享</div></div><div class="info"><div class="t">海鲜品类券</div><div class="d">有效期至 2026-11-30 · 仅海鲜</div></div><span class="use">去使用</span></div>
+              <div class="coupon used"><div class="amt"><div class="n"><small>¥</small>30</div><div class="c">满 299</div></div><div class="info"><div class="t">新人礼券</div><div class="d">已于 09-08 使用</div></div><span class="use">已使用</span></div>
+            </div>
+          </div></div>
+        </div></div>
+        <div class="cap"><b>12 · 优惠券</b> — 可用 / 已用 / 过期；门槛、品类、运费券规则</div>
+      </div>
+
+      <!-- AFTER-SALES -->
+      <div class="device">
+        <div class="phone"><div class="screen"><div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
+          <div class="lsthead"><span class="back">‹</span><span class="title">申请售后</span></div>
+          <div class="appscroll"><div class="inner">
+            <div class="as-item"><span class="im i4"></span><div><div style="font-size:13px;font-weight:800">阿根廷野生红虾 L1</div><div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:600">1kg · 订单 2026091500482</div></div></div>
+            <div class="as-trace">🔎 批次 AR-2026-0788 已自动关联 —— 质量问题将触发批次溯源与质检复核</div>
+            <div class="as-sec"><div class="lbl">售后类型</div><div class="as-opts"><span class="as-opt">仅退款</span><span class="as-opt on">退货退款</span><span class="as-opt">质量问题</span></div></div>
+            <div class="as-sec"><div class="lbl">问题描述</div></div>
+            <div class="as-reason">收到时冷链保温已失效，虾体部分解冻，请协助处理…</div>
+            <div class="as-photos"><div class="as-photo" style="background:linear-gradient(150deg,#ffc7c1,#c4506a);border:0"></div><div class="as-photo">＋</div><div class="as-photo">＋</div></div>
+          </div></div>
+          <div class="stickybar"><div style="flex:1;font-size:11px;color:var(--muted);font-weight:700">预计 2 小时内响应</div><div class="btn buy" style="flex:0 0 50%">提交申请</div></div>
+        </div></div>
+        <div class="cap"><b>13 · 售后</b> — 类型选择、批次自动关联、拍照上传（连通溯源）</div>
+      </div>
+
     </div>
   </section>
 
@@ -706,6 +992,189 @@
                 <td class="mono">NZ-2026-0205</td><td>🇳🇿 新西兰</td><td><span class="pill chilled">🧊 冷藏</span></td><td>2026-10-20</td><td>73</td><td><span class="pill warn">临期 25 天</span></td></tr>
             </tbody>
           </table></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories & attribute sets -->
+    <div class="win">
+      <div class="winbar"><div class="dots"><i></i><i></i><i></i></div><div class="url">admin.dollydolphin.com / categories</div><div class="rolechip">◇ 商品运营</div></div>
+      <div class="winbody">
+        <nav class="nav">
+          <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
+          <div class="np">商品目录</div>
+          <div class="ni"><span class="ic">📦</span> 商品</div>
+          <div class="ni on"><span class="ic">🗂️</span> 分类与属性</div>
+          <div class="ni"><span class="ic">🏷️</span> 属性库</div>
+          <div class="ni"><span class="ic">🔍</span> 筛选配置</div>
+        </nav>
+        <div class="main">
+          <div class="crumbs">商品目录 / 分类与属性</div>
+          <div class="h-row"><h3>分类与属性集</h3><div style="margin-left:auto;display:flex;gap:9px"><span class="btn-s">新增分类</span><span class="btn-s pri">保存</span></div></div>
+          <div class="editor" style="grid-template-columns:280px 1fr">
+            <div class="fieldset" style="margin:0">
+              <div class="ft">分类树</div>
+              <div class="tree">
+                <div class="n">📁 进口食品 <span class="cnt">全部</span></div>
+                <div class="n l2">🐟 海鲜 <span class="cnt">1,240</span></div>
+                <div class="n l3">三文鱼 · 金枪鱼 · 虾 · 蟹…</div>
+                <div class="n l2 sel">🥩 肉类 <span class="cnt">860</span></div>
+                <div class="n l3">牛肉 · 猪肉 · 鸡肉 · 羊肉</div>
+                <div class="n l2">🥫 罐头食品 <span class="cnt">320</span></div>
+                <div class="n l2">🍱 加工食品 <span class="cnt">180</span></div>
+                <div class="n l2" style="color:var(--muted-2)">＋ 乳制品 / 冻蔬 / 酱料…（可随时新增）</div>
+              </div>
+            </div>
+            <div>
+              <div class="fieldset" style="margin:0">
+                <div class="ft">「肉类」属性集 <span class="badge2">子类可继承并扩展</span></div>
+                <div class="attrset">
+                  <div class="attrrow"><span class="nm">部位 Cut</span><span class="ty">枚举</span><span class="flt on">✓ 可筛选</span></div>
+                  <div class="attrrow"><span class="nm">等级 Grade</span><span class="ty">枚举</span><span class="flt on">✓ 可筛选</span></div>
+                  <div class="attrrow"><span class="nm">大理石纹 Marbling</span><span class="ty">数值 0–9</span><span class="flt on">✓ 可筛选</span></div>
+                  <div class="attrrow"><span class="nm">动物种类 Species</span><span class="ty">枚举</span><span class="flt off">— 不筛选</span></div>
+                  <div class="attrrow"><span class="nm">加工方式 Processing</span><span class="ty">枚举</span><span class="flt off">— 不筛选</span></div>
+                  <div class="attrrow"><span class="nm">农场 / 产地 Farm</span><span class="ty">文本</span><span class="flt off">— 不筛选</span></div>
+                </div>
+                <div class="adaptnote" style="margin-top:12px">同一套「属性集」机制驱动全平台：海鲜用 品种 / 捕捞海域 / 野生·养殖，罐头用 净含量 / 沥干重 / 包装介质。新增品类 ＝ 新增分类 + 绑定属性集，<b>无需改代码</b>。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Procurement & import -->
+    <div class="win">
+      <div class="winbar"><div class="dots"><i></i><i></i><i></i></div><div class="url">admin.dollydolphin.com / procurement</div><div class="rolechip">◇ 采购经理</div></div>
+      <div class="winbody">
+        <nav class="nav">
+          <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
+          <div class="np">供应链</div>
+          <div class="ni"><span class="ic">🏭</span> 供应商</div>
+          <div class="ni on"><span class="ic">🚢</span> 采购与进口</div>
+          <div class="ni"><span class="ic">💵</span> 到岸成本</div>
+          <div class="ni"><span class="ic">📥</span> 到货</div>
+        </nav>
+        <div class="main">
+          <div class="crumbs">供应链 / 采购与进口</div>
+          <div class="h-row"><h3>采购订单与进口批次</h3><div style="margin-left:auto;display:flex;gap:9px"><span class="btn-s">供应商</span><span class="btn-s pri">新建采购单</span></div></div>
+          <div class="cards2">
+            <div class="card">
+              <h4>采购单 PO</h4><div class="csub">在途 9 · 待审批 2</div>
+              <div class="lrow"><div class="m2"><div class="t">PO-2026-0442 · 挪威三文鱼中段</div><div class="d">FjordSelect A/S · 5,000 件</div></div><div class="r2"><span class="pill warn">待审批</span><div style="margin-top:5px">¥120 万</div></div></div>
+              <div class="lrow"><div class="m2"><div class="t">PO-2026-0431 · 澳洲谷饲眼肉</div><div class="d">Meatland Pty · 3,200 件</div></div><div class="r2"><span class="pill ok">在途</span><div style="margin-top:5px">¥86 万</div></div></div>
+              <div class="lrow" style="border:0"><div class="m2"><div class="t">PO-2026-0420 · 西班牙金枪鱼罐头</div><div class="d">Conservas Iberia · 8,000 件</div></div><div class="r2"><span class="pill chilled">已到货</span><div style="margin-top:5px">¥42 万</div></div></div>
+            </div>
+            <div class="card">
+              <h4>进口批次 · 到岸成本</h4><div class="csub">IMP-2026-0417 · 挪威三文鱼</div>
+              <div class="corow" style="padding:9px 0"><span class="k">商品成本</span><span class="v">¥98.00 / 件</span></div>
+              <div class="corow" style="padding:9px 0"><span class="k">国际运费</span><span class="v">+ ¥12.40</span></div>
+              <div class="corow" style="padding:9px 0"><span class="k">关税 / 税费</span><span class="v">+ ¥9.60</span></div>
+              <div class="corow" style="padding:9px 0"><span class="k">进口 / 操作费</span><span class="v">+ ¥4.00</span></div>
+              <div class="corow" style="padding:11px 0;border-top:2px solid var(--line);border-bottom:0"><span class="k" style="font-weight:900;color:var(--ink)">到岸成本</span><span class="v" style="color:var(--brand-ink);font-size:16px">¥124.00 / 件</span></div>
+              <div class="al info" style="margin-top:12px"><span class="sev"></span><div class="txt"><b>汇率波动 ▲ 4%</b><div class="m">较上批到岸成本上升 · 毛利率影响 −1.1pt</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders (fulfillment / split) -->
+    <div class="win">
+      <div class="winbar"><div class="dots"><i></i><i></i><i></i></div><div class="url">admin.dollydolphin.com / orders / detail</div><div class="rolechip">◇ 运营 / 客服</div></div>
+      <div class="winbody">
+        <nav class="nav">
+          <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
+          <div class="np">供应链</div>
+          <div class="ni on"><span class="ic">🧾</span> 订单</div>
+          <div class="ni"><span class="ic">📦</span> 履约</div>
+          <div class="ni"><span class="ic">💳</span> 支付</div>
+          <div class="ni"><span class="ic">↩️</span> 退款 / 售后</div>
+        </nav>
+        <div class="main">
+          <div class="crumbs">订单 / 详情</div>
+          <div class="h-row"><h3>订单 2026091500482</h3><span class="pill ok" style="margin-left:4px">已支付</span><div style="margin-left:auto;display:flex;gap:9px"><span class="btn-s">打印拣货单</span><span class="btn-s pri">安排发货</span></div></div>
+          <div class="steps" style="margin-bottom:18px"><span class="st done">已下单</span><span class="ar">›</span><span class="st done">已支付</span><span class="ar">›</span><span class="st on">分配批次 / 拆单</span><span class="ar">›</span><span class="st">拣货打包</span><span class="ar">›</span><span class="st">发货</span></div>
+          <div class="cards2">
+            <div class="card">
+              <h4>履约拆单 · 按温层</h4><div class="csub">混温订单 → 2 个包裹</div>
+              <div class="lrow"><span class="pill frozen">❄️ 冷冻组</span><div class="m2"><div class="t">三文鱼中段 ×1 · 眼肉 ×1</div><div class="d">批次 NO-0417 / AU-0417 · 华东冷冻仓 · 保温箱 + 冰袋</div></div><div class="r2">冷链</div></div>
+              <div class="lrow" style="border:0"><span class="pill ambient">🌡️ 常温组</span><div class="m2"><div class="t">金枪鱼罐头 ×1</div><div class="d">批次 ES-1120 · 常温仓 W2 · 标准包装</div></div><div class="r2">标准</div></div>
+            </div>
+            <div class="card">
+              <h4>金额与支付</h4>
+              <div class="corow" style="padding:8px 0"><span class="k">商品</span><span class="v">¥352</span></div>
+              <div class="corow" style="padding:8px 0"><span class="k">优惠（会员 + 券 + 积分）</span><span class="v" style="color:var(--success)">−¥56</span></div>
+              <div class="corow" style="padding:8px 0"><span class="k">运费</span><span class="v">¥15</span></div>
+              <div class="corow" style="padding:10px 0"><span class="k" style="font-weight:900;color:var(--ink)">实付</span><span class="v">¥311</span></div>
+              <div class="corow" style="padding:8px 0;border:0"><span class="k">支付方式</span><span class="v">微信支付 ✓</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logistics -->
+    <div class="win">
+      <div class="winbar"><div class="dots"><i></i><i></i><i></i></div><div class="url">admin.dollydolphin.com / logistics</div><div class="rolechip">◇ 物流经理</div></div>
+      <div class="winbody">
+        <nav class="nav">
+          <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
+          <div class="np">供应链</div>
+          <div class="ni on"><span class="ic">🚚</span> 运单</div>
+          <div class="ni"><span class="ic">🗺️</span> 区域与运费</div>
+          <div class="ni"><span class="ic">⚠️</span> 配送异常 <span class="cnt">3</span></div>
+        </nav>
+        <div class="main">
+          <div class="crumbs">物流 / 运单</div>
+          <div class="h-row"><h3>运单</h3><div style="margin-left:auto;display:flex;gap:9px"><span class="btn-s">冷链</span><span class="btn-s">标准</span><span class="btn-s pri">导出</span></div></div>
+          <div class="tblwrap"><table class="tbl">
+            <thead><tr><th>运单 / 订单</th><th>温层</th><th>承运</th><th>区域</th><th>时段</th><th>状态</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">SF-COLD-88213<div style="color:var(--muted);font-size:10px">2026091500482</div></td><td><span class="pill frozen">❄️ 冷链</span></td><td>顺丰冷运</td><td>上海 · 静安</td><td>明日 09–12</td><td><span class="pill ok">在途</span></td></tr>
+              <tr><td class="mono">YTO-556140<div style="color:var(--muted);font-size:10px">2026091500482</div></td><td><span class="pill ambient">🌡️ 标准</span></td><td>圆通</td><td>上海 · 静安</td><td>2–3 天</td><td><span class="pill ok">已揽收</span></td></tr>
+              <tr><td class="mono">SF-COLD-88190<div style="color:var(--muted);font-size:10px">2026091500461</div></td><td><span class="pill frozen">❄️ 冷链</span></td><td>顺丰冷运</td><td>上海 · 东区</td><td>今日 14–18</td><td><span class="pill crit">超时预警</span></td></tr>
+              <tr><td class="mono">SF-COLD-88176<div style="color:var(--muted);font-size:10px">2026091400377</div></td><td><span class="pill chilled">🧊 冷链</span></td><td>顺丰冷运</td><td>杭州 · 余杭</td><td>已送达</td><td><span class="pill ok">已签收</span></td></tr>
+            </tbody>
+          </table></div>
+          <div class="al warn" style="margin-top:14px"><span class="sev"></span><div class="txt"><b>冷链时效预警 · 上海东区</b><div class="m">3 单延误 > 30 分钟 —— 建议改派就近冷链网点</div></div><span class="go">改派 ›</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roles & permissions (RBAC matrix) -->
+    <div class="win">
+      <div class="winbar"><div class="dots"><i></i><i></i><i></i></div><div class="url">admin.dollydolphin.com / system / roles</div><div class="rolechip">◇ 超级管理员</div></div>
+      <div class="winbody">
+        <nav class="nav">
+          <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
+          <div class="np">系统</div>
+          <div class="ni"><span class="ic">👤</span> 员工</div>
+          <div class="ni on"><span class="ic">🔐</span> 角色与权限</div>
+          <div class="ni"><span class="ic">📜</span> 审计日志</div>
+          <div class="ni"><span class="ic">⚙️</span> 配置</div>
+        </nav>
+        <div class="main">
+          <div class="crumbs">系统 / 角色与权限</div>
+          <div class="h-row"><h3>权限矩阵 · RBAC</h3><div style="margin-left:auto;display:flex;gap:9px"><span class="btn-s">新增角色</span><span class="btn-s pri">保存</span></div></div>
+          <div class="tblwrap"><table class="matrix">
+            <thead><tr><th class="rowh">资源 \ 角色</th><th>超管</th><th>总经理</th><th>运营</th><th>商品</th><th>采购</th><th>仓储</th><th>物流</th><th>营销</th><th>客服</th><th>财务</th></tr></thead>
+            <tbody>
+              <tr><td class="rowh">分类 / 属性</td><td class="y">✓</td><td class="ro">R</td><td class="ro">R</td><td class="y">✓</td><td class="ro">R</td><td class="ro">R</td><td class="ro">—</td><td class="ro">R</td><td class="ro">—</td><td class="ro">—</td></tr>
+              <tr><td class="rowh">商品 / SKU</td><td class="y">✓</td><td class="ro">R</td><td class="ro">R</td><td class="y">✓</td><td class="ro">R</td><td class="ro">R</td><td class="ro">—</td><td class="ro">R</td><td class="ro">R</td><td class="ro">—</td></tr>
+              <tr><td class="rowh">定价</td><td class="y">✓</td><td class="ap">审批</td><td class="ro">R</td><td class="y">✓</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ro">R</td><td class="ro">—</td><td class="ro">R</td></tr>
+              <tr><td class="rowh">采购单</td><td class="y">✓</td><td class="ap">审批</td><td class="ro">—</td><td class="ro">—</td><td class="y">✓</td><td class="ro">R</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ap">审批</td></tr>
+              <tr><td class="rowh">批次 / 库存</td><td class="y">✓</td><td class="ro">R</td><td class="ro">R</td><td class="ro">R</td><td class="ro">R</td><td class="sc">按仓</td><td class="ro">—</td><td class="ro">—</td><td class="ro">R</td><td class="ro">R</td></tr>
+              <tr><td class="rowh">订单</td><td class="y">✓</td><td class="ro">R</td><td class="y">✓</td><td class="ro">—</td><td class="ro">—</td><td class="sc">履约</td><td class="ro">R</td><td class="ro">—</td><td class="y">✓</td><td class="ro">R</td></tr>
+              <tr><td class="rowh">退款 / 售后</td><td class="y">✓</td><td class="ap">审批</td><td class="sc">限额</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="sc">限额</td><td class="ap">审批</td></tr>
+              <tr><td class="rowh">运单 / 物流</td><td class="y">✓</td><td class="ro">R</td><td class="y">✓</td><td class="ro">—</td><td class="ro">—</td><td class="ro">R</td><td class="sc">按区</td><td class="ro">—</td><td class="ro">R</td><td class="ro">—</td></tr>
+              <tr><td class="rowh">营销 / 券</td><td class="y">✓</td><td class="ap">审批</td><td class="ro">—</td><td class="ro">R</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="y">✓</td><td class="ro">R</td><td class="ro">R</td></tr>
+              <tr><td class="rowh">财务 / 毛利</td><td class="y">✓</td><td class="ro">R</td><td class="ro">R</td><td class="ro">—</td><td class="sc">按供</td><td class="ro">—</td><td class="ro">—</td><td class="ro">R</td><td class="ro">—</td><td class="y">✓</td></tr>
+              <tr><td class="rowh">角色 / 权限 / 审计</td><td class="y">✓</td><td class="ro">R</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td><td class="ro">—</td></tr>
+            </tbody>
+          </table></div>
+          <div class="legend2"><span><b style="color:var(--success)">✓</b> 完全</span><span><b style="color:var(--warning)">审批</b> 审批级</span><span><b style="color:var(--frozen)">按仓 / 区 / 限额</b> 受限范围</span><span><b style="color:var(--muted-2)">R</b> 只读</span><span><b style="color:var(--line-strong)">—</b> 无</span></div>
         </div>
       </div>
     </div>
