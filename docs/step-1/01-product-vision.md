@@ -45,7 +45,7 @@ Four pillars, expressed everywhere from the homepage to the PDP to packaging:
 
 ## 6. Positioning
 
-|  | Domestic grocery apps (e.g., Pupu) | Daigou / marketplace sellers | **OBOR Select** |
+|  | Domestic grocery apps (e.g., Pupu) | Daigou / marketplace sellers | **Dolly Dolphin** |
 |--|-----------------------------------|------------------------------|-----------------|
 | Selection | Broad, mostly domestic | Narrow, seller‑dependent | **Curated imported, growing** |
 | Trust / provenance | Low emphasis | Highly variable | **First‑class, structured** |

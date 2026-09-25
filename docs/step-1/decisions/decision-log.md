@@ -8,16 +8,14 @@ For each decision: **the decision · options · advantages/disadvantages · reco
 
 ## Decisions requiring input
 
-### D‑01 — Branding Kit & brand identity
+### D‑01 — Branding Kit & brand identity — ✅ RESOLVED (kit supplied & applied)
 **Decision:** What is the platform's brand identity (name, logo, colour, type, tone)?
-**Context:** The brief names an uploaded Branding Kit as the source of truth; it is not present in the repository.
-**Options:**
-1. **Supply the real Branding Kit** and we apply it to the tokenized design system.
-2. **Approve the proposed direction** in [16 — Design System](../16-design-system.md) (premium, warm, "global/imported," saffron‑gold + deep‑pine, deliberately not ocean‑blue seafood).
-3. **Commission a new identity** as a parallel workstream.
-**Advantages / disadvantages:** (1) most accurate, blocks nothing because the system is tokenized; (2) unblocks previews immediately, risk of rework if the real kit diverges; (3) highest quality, adds calendar time.
-**Recommendation:** Proceed on **(2)** now — the design system is fully tokenized, so swapping in (1) later is a one‑file change. Confirm the **name** early (working name *OBOR Select*), since it appears in copy and the Mini Program listing.
-**Scalability impact:** None. Brand tokens are decoupled from structure; functional colours (cold‑chain blue, ambient sand) are separate from brand colours by design.
+**Resolution:** The **Dolly Dolphin** Branding Kit (*Dolly_dolphin.pdf*, 2024.04) was supplied and **applied** across the design system and interface preview:
+- **Colours:** 海洋蓝 Ocean Blue `#4AA6E0` · 珊瑚粉 Coral Pink `#FF8FAE` · 纯净白 White `#FFFFFF` (+ derived deep‑ocean navy for depth/dark theme).
+- **Logo:** leaping dolphin forming a **"D"** (coral upper / ocean lower, white dolphin) + rounded wordmark. The real vector logo is used top‑left; the preview embeds the supplied artwork.
+- **Type:** English = **Bold Rounded Sans** (web: Baloo 2 + Nunito); Chinese = **思源黑体 / 苹方** (Source Han Sans / PingFang → web: Noto Sans SC).
+- **Tone / values:** Premium Ocean Seafood · Ecological Circulation · Sustainable Wild‑Catch · Professional Cold Chain · Global Fisheries.
+**Scalability impact:** None. Brand tokens are decoupled from structure; **functional temperature colours (frozen/chilled/ambient) are kept separate from brand colours** by design, so the ocean‑blue brand does not collide with the "frozen" tag. Full read‑out in [15 — Branding Analysis](../15-branding-analysis.md) and [16 — Design System](../16-design-system.md). One open follow‑on: **D‑08** (brand architecture).
 
 ### D‑02 — Delivery model at launch
 **Decision:** Which fulfillment model does launch support?
@@ -57,13 +55,24 @@ For each decision: **the decision · options · advantages/disadvantages · reco
 **Recommendation:** **Keep a compliance‑gating flag on category/product now, unused at launch** if the launch catalog is food‑only. Cheap to include, expensive to retrofit.
 **Scalability impact:** High for future categories — pre‑solving avoids a redesign when regulated goods appear.
 
+### D‑08 — Brand architecture (master brand vs. house‑brand) — OPEN
+**Decision:** Is **Dolly Dolphin** the platform's **master brand**, or the flagship **seafood house‑brand** within a broader imported‑food platform?
+**Context:** The supplied identity is explicitly **seafood/ocean‑forward** — "Premium Ocean Seafood", a leaping dolphin, "frozen sardines" as the hero product — and the kit itself references a **"DOCANNED family."** The platform, by the brief's core principle, is a **general imported‑food marketplace**. A seafood‑signifying master brand risks re‑introducing the "seafood app" perception *at the brand layer* even though the architecture is category‑general.
+**Options:**
+1. **Dolly Dolphin = master brand.** Embrace the ocean identity platform‑wide; keep consumer messaging broad ("全球甄选/进口精选", not "seafood only"); let categories live under it.
+2. **DOCANNED (or a new parent) = master brand; Dolly Dolphin = seafood house‑brand.** The platform carries a category‑neutral parent identity; Dolly Dolphin becomes the flagship seafood line within it.
+3. **Endorsed brand.** Parent + "by Dolly Dolphin" endorsement during transition.
+**Advantages / disadvantages:** (1) fastest, uses the asset we have, strong recall — but a dolphin/"ocean seafood" master brand fights the "not a seafood platform" goal as the catalog broadens; (2) cleanest long‑term fit for a broad pantry — but needs a parent identity we don't yet have; (3) balances both, more complexity.
+**Recommendation:** **Use the Dolly Dolphin visual system for Step 1 (it is the supplied kit) while treating this as an explicit brand‑architecture decision for the owner.** Lean toward **(2)/(3)** as the catalog broadens (the "DOCANNED family" hint suggests a parent already exists). **This affects naming and consumer messaging only — not the architecture**, which stays category‑general regardless.
+**Scalability impact:** Brand‑layer only. The product/category/attribute architecture is unaffected by the outcome.
+
 ---
 
 ## Assumptions taken (overridable)
 
 | ID | Assumption | Rationale | Reverse cost |
 |----|-----------|-----------|--------------|
-| A‑01 | Working brand name is **OBOR Select** | Ties to *oborgroup*; evokes trade routes / global sourcing; category‑neutral (not seafood). | Low — find/replace + listing |
+| A‑01 | Brand is **Dolly Dolphin** (supplied Branding Kit) | Provided kit — "Premium Ocean Seafood", part of the DOCANNED family. Master‑brand vs. seafood house‑brand is the open decision **D‑08**. | Low — visual is tokenized |
 | A‑02 | Primary market is **Mainland China**, language **Simplified Chinese**, currency **CNY (¥)** | Chinese consumers via WeChat. | Low; i18n kept in the model for future markets |
 | A‑03 | Consumer channel is a **WeChat Mini Program**; Admin & Manager are **responsive web** | Stated in brief. | High — foundational |
 | A‑04 | Payment is **WeChat Pay** at launch | Native to the channel. | Medium |
@@ -75,6 +84,7 @@ For each decision: **the decision · options · advantages/disadvantages · reco
 | A‑10 | One shared **RBAC** system spans Admin and Manager | Simplicity, one audit trail. | Medium |
 | A‑11 | Measurement/nutrition uses **metric + per‑100g** (China GB nutrition label convention) | Regulatory fit. | Low |
 | A‑12 | Design system ships **light theme first**; dark theme tokens defined for Admin/Manager comfort | Consumer food UX is light; ops tools benefit from dark. | Low |
+| A‑13 | **Design language = Western / US premium e‑commerce; all UI content = Simplified Chinese** (owner direction) | Owner prefers a clean, spacious Western aesthetic over dense domestic‑app styling, with Chinese copy for the CN market. **朴朴/Pupu remains a UX‑pattern reference only, not a visual one.** | Low — styling & copy, not architecture |
 
 ---
 

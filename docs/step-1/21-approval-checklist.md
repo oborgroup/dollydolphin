@@ -27,7 +27,7 @@ Sign‑off sheet for the Step 1 package. Mark each item **Approved / Amended / D
 | 19 | Manager Interface Preview | [19](19-manager-interface-preview.md) | ☐ |
 | 20 | Future Scalability | [20](20-future-scalability.md) | ☐ |
 | 21 | Approval Checklist | this document | ☐ |
-| — | Interface Preview (clickable) | [`preview/index.html`](../../preview/index.html) | ☐ |
+| — | Interface Preview (clickable) | [`preview/index.html`](../../preview/index.html) · live: https://claude.ai/artifact/QbHb1ywdeErZmbuhKJCTAv | ☐ |
 
 ## 2. Architecture principle check (the decisive test)
 
@@ -46,17 +46,19 @@ Confirm the platform is an **imported‑food platform**, not a seafood app:
 
 | ID | Decision | Recommendation | Resolution |
 |----|----------|----------------|:----------:|
-| D‑01 | Branding Kit / identity | Provide kit **or** approve proposed direction (tokenized) | ☐ Approved ☐ Amended ☐ Deferred |
+| D‑01 | Branding Kit / identity | ✅ Resolved — **Dolly Dolphin** kit supplied & applied | ☐ Acknowledged |
 | D‑02 | Launch delivery model | Next‑day cold‑chain (1–3 cities) + nationwide parcel for ambient | ☐ |
 | D‑03 | Warehouse footprint | Single facility, multi‑zone; multi‑warehouse in model | ☐ |
 | D‑04 | Membership model | Free tiered loyalty + member price; paid tier reserved | ☐ |
 | D‑05 | Consumer traceability depth | Level 2 ("this batch") at launch | ☐ |
 | D‑06 | Login | WeChat primary + phone binding | ☐ |
 | D‑07 | Compliance gating | Reserve flag now, unused at launch | ☐ |
+| D‑08 | Brand architecture (Dolly Dolphin master brand vs. seafood house‑brand) | Use Dolly Dolphin for launch; decide parent as the catalog broadens | ☐ Approved ☐ Amended ☐ Deferred |
+| A‑13 | Design language = Western/US aesthetic + Chinese content (owner direction) | Adopted in the preview; Pupu is a UX‑pattern reference only | ☐ Confirmed |
 
 ## 4. Assumptions to confirm
 
-All [A‑01…A‑12](decisions/decision-log.md) — brand name *OBOR Select*, CN/¥, WeChat Pay, storage classes, taxonomy depth, nutrition convention, etc. ☐ Confirmed as a set / ☐ Amendments noted below.
+All [A‑01…A‑13](decisions/decision-log.md) — brand **Dolly Dolphin**, CN market / ¥, WeChat Pay, storage classes, taxonomy depth, nutrition convention, **Western design language + Chinese content**, etc. ☐ Confirmed as a set / ☐ Amendments noted below.
 
 ## 5. Scope acknowledgement
 

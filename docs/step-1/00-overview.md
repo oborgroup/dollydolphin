@@ -47,18 +47,20 @@ All three are **views onto one shared core** — Products, Categories, Supply Ch
 
 ## 4. Reference product
 
-**朴朴超市 / Pupu Supermarket** is the UX reference for consumer patterns (homepage rhythm, category navigation, product cards, cart, checkout, delivery, coupons, membership). We take **interaction inspiration**, never branding, logo, visual identity, exact layout, or copy. Our identity comes from the Branding Kit (see [15 — Branding Analysis](15-branding-analysis.md)).
+**朴朴超市 / Pupu Supermarket** is the **UX‑pattern** reference for consumer flows (homepage rhythm, category navigation, product cards, cart, checkout, delivery, coupons, membership) — interaction inspiration only, never its branding, layout, or copy.
+
+Per the owner's direction ([A‑13](decisions/decision-log.md)), the **visual design language is Western / US premium e‑commerce** — clean, spacious, editorial — rather than dense domestic‑app styling; **all UI content is Simplified Chinese** for the China market. So Pupu informs *what* patterns exist, not *how* they look. The brand identity comes from the Dolly Dolphin Branding Kit (see [15 — Branding Analysis](15-branding-analysis.md)).
 
 Two things intentionally differ from a domestic grocery app like Pupu, because our business is *imported* food:
 
 1. **Provenance and trust are first‑class** — country of origin, certification, cold‑chain assurance, and batch traceability appear in discovery and on the product page, not buried in fine print.
 2. **The product model is import‑ and compliance‑aware** — import batch, customs, shelf life, and storage requirements are structured data, not free text.
 
-## 5. Reference vs. reality — the Branding Kit
+## 5. The Branding Kit — applied
 
-The brief names an **uploaded Branding Kit** as the source of truth for the design system. **No Branding Kit is present in this repository.** Rather than stop (per the brief's instruction not to stall the project), Step 1 proceeds with a **proposed, fully‑tokenized brand direction** — premium, warm, "global/imported," deliberately *not* ocean‑blue "seafood." Every visual value is a CSS token, so applying the real kit later is an edit to one file, not a redesign.
+The brief names an **uploaded Branding Kit** as the source of truth. It has been supplied (*Dolly_dolphin.pdf*) and **applied** across the design system and preview: **ocean‑blue `#4AA6E0` + coral‑pink `#FF8FAE` + white**, the **leaping‑dolphin‑forms‑a‑“D”** mark, rounded **Bold Rounded Sans** type (**思源黑体 / 苹方** — Source Han Sans / PingFang — for Chinese), and the tagline **"Premium Ocean Seafood."** Every visual value is a CSS token, so re‑skinning or theming the whole platform is a one‑file edit. Full read‑out in [15 — Branding Analysis](15-branding-analysis.md) and [16 — Design System](16-design-system.md).
 
-> **[DECISION REQUIRED · D‑01]** Supply the Branding Kit (or approve the proposed direction). Details in [15 — Branding Analysis](15-branding-analysis.md) and the [Decision Log](decisions/decision-log.md).
+> **[DECISION REQUIRED · D‑08]** The supplied identity is **seafood/ocean‑forward** ("Premium Ocean Seafood", a leaping dolphin, "frozen sardines" as the hero product), while the platform is a **general imported‑food marketplace**. Decide the **brand architecture**: is *Dolly Dolphin* the platform **master brand**, or the flagship **seafood house‑brand** inside a broader platform (the kit itself references a **"DOCANNED family"**)? This affects **naming and consumer messaging only — not the architecture.** Options and a recommendation are in [15 — Branding Analysis](15-branding-analysis.md) and the [Decision Log](decisions/decision-log.md).
 
 ## 6. How to read this package
 
@@ -72,14 +74,15 @@ The brief names an **uploaded Branding Kit** as the source of truth for the desi
 - **21 architecture & design documents** (`docs/step-1/`).
 - **A consolidated decision log** (`docs/step-1/decisions/decision-log.md`).
 - **A clickable interface preview** covering all three surfaces (`preview/index.html`).
-- **A tokenized design system** ready to receive the real Branding Kit (`preview/assets/tokens.css`).
+- **A tokenized design system** carrying the **Dolly Dolphin** Branding Kit (`preview/assets/tokens.css`).
 
 ## 8. What this package deliberately does *not* do
 
 - No database schema, API contracts, or technology selection — that is **Step 2**.
 - No real product data, pricing, or supplier contracts.
 - No payment, WeChat, or logistics‑carrier integration.
-- No final brand identity (pending the Branding Kit).
+- No production font licensing or exact vector‑logo integration (the preview faithfully *reconstructs* the mark from the kit; production embeds the supplied vector and licensed fonts).
+- No resolution of the brand‑architecture question (D‑08) — surfaced, not decided.
 
 ## 9. Open decisions at a glance
 
@@ -87,7 +90,7 @@ The full list lives in the [Decision Log](decisions/decision-log.md). The ones t
 
 | ID | Decision | Why it matters now |
 |----|----------|--------------------|
-| D‑01 | Branding Kit / brand identity | Drives the entire design system |
+| D‑08 | Brand architecture (Dolly Dolphin master brand vs. seafood house‑brand) | Naming & consumer messaging (kit already applied); architecture unaffected |
 | D‑02 | Delivery model at launch (instant local vs. next‑day cold‑chain vs. nationwide parcel) | Shapes order, fulfillment, and shipping‑fee architecture |
 | D‑03 | Single‑warehouse launch vs. multi‑warehouse from day one | Shapes inventory & order‑splitting logic |
 | D‑04 | Membership model (paid tier vs. points‑only) | Shapes pricing, checkout, account |

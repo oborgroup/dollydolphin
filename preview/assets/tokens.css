@@ -1,0 +1,181 @@
+/* ============================================================================
+   DOLLY DOLPHIN — Design Tokens  (single source of truth for the interface)
+   ----------------------------------------------------------------------------
+   Derived directly from the supplied Branding Kit (Dolly_dolphin.pdf, 2024.04):
+     Brand colours   海洋蓝 Ocean Blue #4AA6E0 · 珊瑚粉 Coral Pink #FF8FAE · 纯净白 White #FFFFFF
+     Typography      English = Bold Rounded Sans · Chinese = 思源黑体 / 苹方 (Source Han Sans / PingFang)
+     Identity        leaping dolphin forming a “D”; tagline “Premium Ocean Seafood”
+     Values          Ecological Circulation · Sustainable Wild-Catch · Professional Cold Chain · Global Fisheries
+
+   Every colour/type value the preview uses is a token here — the only file to
+   edit to re-skin the platform. Web display faces approximate the kit’s
+   “Bold Rounded Sans” with Baloo 2 (display) + Nunito (UI); production should
+   embed the exact licensed brand fonts and the supplied vector logo.
+
+   FUNCTIONAL temperature colours (frozen/chilled/ambient) are kept DISTINCT from
+   the brand ocean-blue on purpose — they encode storage class, not brand.
+   ============================================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* — Brand (from kit) — */
+  --brand:        #4AA6E0;   /* 海洋蓝 Ocean Blue — identity: wordmark, links, marks, charts */
+  --brand-deep:   #1C74B8;   /* accessible ocean — primary buttons & bold CTAs (white text) */
+  --brand-strong: #0E2E4E;   /* deep ocean navy — hero, dark surfaces, device frame */
+  --brand-ink:    #1B6FB0;   /* brand-coloured text/labels on light */
+  --brand-soft:   #E4F1FB;   /* ocean tint surface */
+  --on-brand:     #FFFFFF;   /* text on brand-deep / brand-strong */
+
+  --accent:       #FF8FAE;   /* 珊瑚粉 Coral Pink — accent, badges, logo top */
+  --accent-ink:   #C43E63;   /* coral text on light (contrast-safe) */
+  --accent-soft:  #FFE7EE;
+  --price:        #E5486B;   /* price & promotions — in the coral family */
+  --price-soft:   #FDE6EC;
+
+  /* — Functional temperature (NOT brand; encodes storage class) — */
+  --frozen:   #1E63A8;  --frozen-soft:  #E1ECF7;   /* deep cold blue (≠ bright brand blue) */
+  --chilled:  #12938F;  --chilled-soft: #DDF0EF;   /* teal */
+  --ambient:  #BE7C33;  --ambient-soft: #F6EBD9;   /* warm amber (shelf-stable) */
+
+  /* — Status (reserved) — */
+  --success:#2E9E6B; --success-soft:#E3F3EB;
+  --warning:#C98A00; --warning-soft:#F8EED2;
+  --danger:#D24B3E;  --danger-soft:#FBE7E4;
+  --info:#1E63A8;    --info-soft:#E1ECF7;
+
+  /* — Neutrals (clean / cool — 纯净白, 简洁·现代·易读) — */
+  --bg:          #F1F6FB;
+  --surface:     #FFFFFF;
+  --surface-2:   #F7FAFD;
+  --surface-3:   #EBF2F8;
+  --line:        #DFE8F0;
+  --line-strong: #C6D5E1;
+  --ink:         #13232F;   /* deep ocean-navy ink */
+  --ink-2:       #3C4A55;
+  --muted:       #647079;
+  --muted-2:     #8A96A0;
+
+  /* — Chart — */
+  --chart-surface:#FFFFFF;
+  --grid:         #E6EEF5;
+  --series:       var(--brand);
+  --series-2:     #7FB4D8;
+  --series-fill:  rgba(74,166,224,0.16);
+  --series-end:   var(--brand-deep);
+
+  /* — Type — */
+  --font-display: "Baloo 2", "Nunito", "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  --font-ui: "Nunito", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
+             "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* — Radius & elevation (rounded, friendly per the brand) — */
+  --r-xs:7px; --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-pill:999px;
+  --sh-1: 0 1px 2px rgba(14,46,78,.07), 0 1px 1px rgba(14,46,78,.04);
+  --sh-2: 0 6px 18px rgba(14,46,78,.10), 0 1px 3px rgba(14,46,78,.06);
+  --sh-3: 0 16px 44px rgba(10,32,60,.20), 0 3px 10px rgba(10,32,60,.10);
+
+  /* — Spacing — */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:20px; --s6:24px; --s7:32px; --s8:44px;
+}
+
+/* Dark theme — deep-ocean, stepped for dark (not auto-inverted) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --brand:        #5AB4EC;
+    --brand-deep:   #1E77BE;
+    --brand-strong: #0A2033;
+    --brand-ink:    #77C4F2;
+    --brand-soft:   #11324C;
+    --on-brand:     #FFFFFF;
+
+    --accent:       #FF9DB8;
+    --accent-ink:   #FF9DB8;
+    --accent-soft:  #3A1922;
+    --price:        #FF7E9C;
+    --price-soft:   #331319;
+
+    --frozen:  #4C93D8; --frozen-soft:  #10273C;
+    --chilled: #3FB8B2; --chilled-soft: #0E2422;
+    --ambient: #D69A54; --ambient-soft: #291B10;
+
+    --success:#4FBE88; --success-soft:#122318;
+    --warning:#E6BE55; --warning-soft:#271F0E;
+    --danger:#EC6B5E;  --danger-soft:#2A1512;
+    --info:#4C93D8;    --info-soft:#10273C;
+
+    --bg:          #08151F;
+    --surface:     #10222F;
+    --surface-2:   #17303F;
+    --surface-3:   #0C1C28;
+    --line:        #22384A;
+    --line-strong: #315164;
+    --ink:         #EAF3FA;
+    --ink-2:       #BFD0DC;
+    --muted:       #92A5B2;
+    --muted-2:     #6F8290;
+
+    --chart-surface:#10222F;
+    --grid:         #21384A;
+    --series:       var(--brand);
+    --series-2:     #4E88AE;
+    --series-fill:  rgba(90,180,236,0.18);
+    --series-end:   var(--brand);
+
+    --sh-1: 0 1px 2px rgba(0,0,0,.45);
+    --sh-2: 0 6px 20px rgba(0,0,0,.5);
+    --sh-3: 0 18px 48px rgba(0,0,0,.6);
+  }
+}
+
+/* Explicit dark toggle wins in both directions */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --brand:        #5AB4EC;
+  --brand-deep:   #1E77BE;
+  --brand-strong: #0A2033;
+  --brand-ink:    #77C4F2;
+  --brand-soft:   #11324C;
+  --on-brand:     #FFFFFF;
+
+  --accent:       #FF9DB8;
+  --accent-ink:   #FF9DB8;
+  --accent-soft:  #3A1922;
+  --price:        #FF7E9C;
+  --price-soft:   #331319;
+
+  --frozen:  #4C93D8; --frozen-soft:  #10273C;
+  --chilled: #3FB8B2; --chilled-soft: #0E2422;
+  --ambient: #D69A54; --ambient-soft: #291B10;
+
+  --success:#4FBE88; --success-soft:#122318;
+  --warning:#E6BE55; --warning-soft:#271F0E;
+  --danger:#EC6B5E;  --danger-soft:#2A1512;
+  --info:#4C93D8;    --info-soft:#10273C;
+
+  --bg:          #08151F;
+  --surface:     #10222F;
+  --surface-2:   #17303F;
+  --surface-3:   #0C1C28;
+  --line:        #22384A;
+  --line-strong: #315164;
+  --ink:         #EAF3FA;
+  --ink-2:       #BFD0DC;
+  --muted:       #92A5B2;
+  --muted-2:     #6F8290;
+
+  --chart-surface:#10222F;
+  --grid:         #21384A;
+  --series:       var(--brand);
+  --series-2:     #4E88AE;
+  --series-fill:  rgba(90,180,236,0.18);
+  --series-end:   var(--brand);
+
+  --sh-1: 0 1px 2px rgba(0,0,0,.45);
+  --sh-2: 0 6px 20px rgba(0,0,0,.5);
+  --sh-3: 0 18px 48px rgba(0,0,0,.6);
+}

@@ -1,6 +1,7 @@
-# OBOR Select — Imported Food Commerce Platform
+# Dolly Dolphin — Imported Food Commerce Platform
 
-> **Working brand name:** *OBOR Select* (placeholder — see [DECISION D‑01](docs/step-1/decisions/decision-log.md)).
+> **Brand:** *Dolly Dolphin* — “Premium Ocean Seafood”, a member of the **DOCANNED family**. The visual identity (ocean‑blue + coral‑pink, the dolphin‑forms‑a‑D mark, rounded type) is applied from the supplied Branding Kit. See [15 — Branding Analysis](docs/step-1/15-branding-analysis.md) — including the one open brand‑architecture question ([D‑08](docs/step-1/decisions/decision-log.md)): whether the ocean/dolphin brand is the platform master brand or the flagship seafood house‑brand within a broader imported‑food platform.
+> **Live interface preview:** https://claude.ai/artifact/QbHb1ywdeErZmbuhKJCTAv (private — clickable Consumer / Admin / Manager preview).
 > **This repository currently contains STEP 1 only:** an approval‑ready product architecture, UX architecture, design system, and interface preview. **No production code has been written yet** — see the [Development Gate](#development-gate).
 
 A premium **imported‑food** e‑commerce platform for Chinese consumers, delivered primarily through a **WeChat Mini Program**, with an **Admin** operations platform and a **Manager** analytics platform.
@@ -32,7 +33,7 @@ Read the documents in order. Each is self‑contained; together they form the st
 | 12 | [Roles & Permissions](docs/step-1/12-roles-permissions.md) | RBAC model + full permission matrix |
 | 13 | [Core Data Model](docs/step-1/13-core-data-model.md) | Conceptual entities and relationships (ERD) |
 | 14 | [UX Architecture](docs/step-1/14-ux-architecture.md) | Navigation, patterns, adaptive PDP |
-| 15 | [Branding Analysis](docs/step-1/15-branding-analysis.md) | Branding Kit analysis + proposed direction |
+| 15 | [Branding Analysis](docs/step-1/15-branding-analysis.md) | Dolly Dolphin Branding Kit analysis + brand‑architecture (D‑08) |
 | 16 | [Design System](docs/step-1/16-design-system.md) | Tokens, components, badges, charts |
 | 17 | [Consumer Interface Preview](docs/step-1/17-consumer-interface-preview.md) | Consumer screens (spec + preview) |
 | 18 | [Admin Interface Preview](docs/step-1/18-admin-interface-preview.md) | Admin screens (spec + preview) |
@@ -44,7 +45,7 @@ Read the documents in order. Each is self‑contained; together they form the st
 
 ## Interface preview
 
-A clickable, high‑fidelity interface preview of the Consumer, Admin, and Manager surfaces lives in [`preview/index.html`](preview/index.html). It is a **visual prototype for approval** — not production code — and every colour, font, and spacing value is a CSS token so the real Branding Kit can be applied by editing one file ([`preview/assets/tokens.css`](preview/assets/tokens.css)).
+A clickable, high‑fidelity interface preview of the Consumer, Admin, and Manager surfaces lives in [`preview/index.html`](preview/index.html) and is published (private) at **https://claude.ai/artifact/QbHb1ywdeErZmbuhKJCTAv**. It is a **visual prototype for approval** — not production code — and every colour, font, and spacing value is a CSS token carrying the **Dolly Dolphin** Branding Kit, so the whole platform can be re‑skinned or themed by editing one file ([`preview/assets/tokens.css`](preview/assets/tokens.css)).
 
 ## Development Gate
 
