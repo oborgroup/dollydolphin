@@ -37,10 +37,10 @@ Analysis of the supplied Branding Kit — **`Dolly_dolphin.pdf`** (Adobe Illustr
 
 | Script | Kit spec | Web implementation (this preview) |
 |--------|----------|-----------------------------------|
-| English / Latin | **"Bold Rounded Sans"** (rounded, friendly, heavy) | **Baloo 2** (display / brand), **Nunito** (UI/body) — both rounded, license‑friendly Google Fonts |
-| Chinese | **思源黑体 / 苹方** (Source Han Sans / PingFang) — "简洁·现代·易读" | **Noto Sans SC** (= Source Han Sans) with PingFang SC fallback |
+| English / Latin | **"Bold Rounded Sans"** (rounded, friendly, heavy) | **Fraunces** (editorial serif, display) + **Hanken Grotesk** (grotesque, UI) |
+| Chinese | **思源黑体 / 苹方** (Source Han Sans / PingFang) — "简洁·现代·易读" | **Noto Serif SC** (display) + **Noto Sans SC** (UI) |
 
-*Production* should confirm the exact licensed brand face (the kit shows a specific rounded sans for the wordmark); Baloo 2/Nunito are close, safe web substitutes.
+> **Type direction — owner override ([A‑13](decisions/decision-log.md)):** the running UI type is an **editorial serif + grotesque** pairing (premium, deliberately *not* rounded/"cartoonish"), which **overrides the kit's "Bold Rounded Sans"** for on‑screen text at the owner's request. The kit's rounded wordmark is preserved **in the supplied logo artwork**, and all brand **colours, logo, and tone are unchanged**. Production confirms/licenses the final faces.
 
 ## 5. Brand values (kit p.5) → platform expression
 

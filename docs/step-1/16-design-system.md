@@ -41,9 +41,11 @@ Tokens are defined on bare `:root` (full light palette), redefined under `@media
 
 | Role | Stack | Notes |
 |------|-------|-------|
-| Display / brand | `--font-display` = **Baloo 2** → Noto Sans SC → serif fallback | Rounded, per the kit's "Bold Rounded Sans"; Latin uses Baloo 2, CJK falls through to Noto Sans SC per glyph |
-| UI / body | `--font-ui` = **Nunito** → **Noto Sans SC** → PingFang SC → system | Readable rounded sans + Source Han Sans for Chinese |
+| Display / editorial | `--font-serif` = **Fraunces** → **Noto Serif SC** → serif | High‑end editorial serif for hero, section titles, product names, dashboard titles; Latin uses Fraunces, CJK falls through to Noto Serif SC per glyph |
+| UI / body | `--font-ui` = **Hanken Grotesk** → **Noto Sans SC** → PingFang SC → system | Refined grotesque for all UI, labels, tables, KPIs + Source Han Sans for Chinese |
 | Mono / data | `--font-mono` | Batch codes, SKU codes |
+
+> **Design‑language note ([A‑13](decisions/decision-log.md)):** per the owner's direction, the on‑screen **type is an editorial serif + grotesque pairing** (premium, not "rounded/cartoonish"), which intentionally **overrides the kit's "Bold Rounded Sans"** for the running UI. The kit's brand **colours, logo, and tone are unchanged**; the rounded wordmark still lives in the supplied logo artwork. Icons are an **inline SVG line set** (no emoji).
 
 **Scale (Western‑premium, generous):** display 28–44px; H2 26px; H3 19–22px; body 15px/1.6; small 12–13px; micro 10–11px. `text-wrap: balance` on headings; `tabular-nums` wherever figures align.
 

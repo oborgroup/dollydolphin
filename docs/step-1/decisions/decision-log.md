@@ -84,7 +84,7 @@ For each decision: **the decision · options · advantages/disadvantages · reco
 | A‑10 | One shared **RBAC** system spans Admin and Manager | Simplicity, one audit trail. | Medium |
 | A‑11 | Measurement/nutrition uses **metric + per‑100g** (China GB nutrition label convention) | Regulatory fit. | Low |
 | A‑12 | Design system ships **light theme first**; dark theme tokens defined for Admin/Manager comfort | Consumer food UX is light; ops tools benefit from dark. | Low |
-| A‑13 | **Design language = Western / US premium e‑commerce; all UI content = Simplified Chinese** (owner direction) | Owner prefers a clean, spacious Western aesthetic over dense domestic‑app styling, with Chinese copy for the CN market. **朴朴/Pupu remains a UX‑pattern reference only, not a visual one.** | Low — styling & copy, not architecture |
+| A‑13 | **Design language = Western / US premium e‑commerce; all UI content = Simplified Chinese** (owner direction) | Owner prefers a clean, spacious Western aesthetic over dense domestic‑app styling, with Chinese copy for the CN market. **朴朴/Pupu is a UX‑pattern reference only, not a visual one.** Refinements per owner feedback: **type = editorial serif + grotesque** (Fraunces/Noto Serif SC + Hanken Grotesk/Noto Sans SC), overriding the kit's rounded sans for on‑screen text; **icons = inline SVG line set** (no emoji); **product imagery = the real signature product photo + original line‑motif placeholders** (no third‑party/stock). Brand colours, logo and tone unchanged. | Low — styling & copy, not architecture |
 
 ---
 
