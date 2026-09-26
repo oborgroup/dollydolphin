@@ -55,6 +55,6 @@ All 16 required consumer screens are now rendered interactively (Category and Li
 - **Multiple shipments per order**, each tracked; batch codes shown (NO‑2026‑0417, etc.).
 
 ## 4. Notes
-- Product imagery is represented by tasteful gradient placeholders (no licensed photography in Step 1).
+- Product imagery uses **openly‑licensed placeholder visuals** (Microsoft Fluent Emoji 3D, MIT — salmon, crab, shrimp, lobster, scallop, tuna, beef, lamb) on theme‑adaptive tiles. These are **swappable stand‑ins** — production replaces them with the brand's own licensed food photography (see [`preview/assets/img/SOURCES.md`](../../preview/assets/img/SOURCES.md)).
 - Prices are illustrative, ¥, VAT‑inclusive style; member price shown alongside.
 - The **◐ 主题** control demonstrates the light/dark theming from one token file.
