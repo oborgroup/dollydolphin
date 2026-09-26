@@ -1,6 +1,6 @@
 <title>Dolly Dolphin Preview</title>
 <link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;700&display=swap">
 <style>
   *{box-sizing:border-box}
   html,body{margin:0}
@@ -100,16 +100,14 @@
   .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:4px 18px}
   .pc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-1)}
   .pc .img{aspect-ratio:1/1;position:relative}
-  /* Product imagery — Fluent Emoji 3D (MIT) on a theme-adaptive tile; swap for real photography in production (see assets/img/SOURCES.md) */
-  .i1,.i2,.i3,.i4,.i5,.i6,.i7,.i8{background-color:var(--surface-3);background-repeat:no-repeat;background-position:center;background-size:62%}
-  .i1{background-image:url(assets/img/salmon.png)}
-  .i2{background-image:url(assets/img/beef.png)}
-  .i3{background-image:url(assets/img/tuna.png)}
-  .i4{background-image:url(assets/img/shrimp.png)}
-  .i5{background-image:url(assets/img/lamb.png)}
-  .i6{background-image:url(assets/img/scallop.png)}
-  .i7{background-image:url(assets/img/crab.png)}
-  .i8{background-image:url(assets/img/lobster.png)}
+  /* Product tiles — refined gradient panels awaiting real photography; the signature product uses a real photo (.i-sard) */
+  .i1,.i2,.i3,.i4,.i5,.i6,.i7,.i8{background:linear-gradient(163deg,var(--surface-2),var(--surface-3))}
+  .i-sard{background:#fff url(assets/img/sardines_pack.png) center/auto 94% no-repeat}
+  .citem .im.i-sard,.tbl .th.i-sard{background-size:cover}
+  .pc .img.i1,.pc .img.i3,.pc .img.i4{--mo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b6fb0' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.5 12c-2.5 3-6.5 4.5-11 4.5-2.8 0-4.8-1.2-4.8-4.5s2-4.5 4.8-4.5c4.5 0 8.5 1.5 11 4.5zM6 12 3 9.5v5z'/%3E%3C/svg%3E")}
+  .pc .img.i2,.pc .img.i5{--mo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b6fb0' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.5 12a6.5 5.2 0 1 0 13 0 6.5 5.2 0 0 0-13 0zM9.6 12a2.7 2.1 0 1 0 5.4 0 2.7 2.1 0 0 0-5.4 0z'/%3E%3C/svg%3E")}
+  .pc .img.i6,.pc .img.i7,.pc .img.i8{--mo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b6fb0' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5.5c-4.4 0-7.5 3.4-7.5 7l7.5 5.5 7.5-5.5c0-3.6-3.1-7-7.5-7zM12 5.5v12M8.4 7 9.6 17M15.6 7 14.4 17'/%3E%3C/svg%3E")}
+  .pc .img::after{content:"";position:absolute;inset:0;background:var(--mo,none) center/46% no-repeat;opacity:.4;pointer-events:none}
   .pc .flag{position:absolute;top:9px;left:9px;background:rgba(255,255,255,.92);border-radius:var(--r-pill);font-size:10px;font-weight:800;padding:3px 9px;color:var(--ink)}
   .pc .tc{position:absolute;top:9px;right:9px;font-size:10px;font-weight:800;padding:3px 9px;border-radius:var(--r-pill);color:#fff}
   .tc.frozen{background:var(--frozen)} .tc.chilled{background:var(--chilled)} .tc.ambient{background:var(--ambient)}
@@ -140,7 +138,7 @@
   .sortbar .on{color:var(--brand-ink)}
 
   /* pdp */
-  .pdpimg{aspect-ratio:16/11;position:relative;background-color:var(--surface-3);background-image:url(assets/img/salmon.png);background-repeat:no-repeat;background-position:center;background-size:auto 76%}
+  .pdpimg{aspect-ratio:16/11;position:relative;background:#fff url(assets/img/sardines_pack.png) center/contain no-repeat}
   .pdpimg .flag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);border-radius:var(--r-pill);font-size:11px;font-weight:800;padding:5px 12px}
   .pdpimg .tc{position:absolute;top:14px;right:14px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:var(--r-pill);color:#fff}
   .pdpbody{padding:18px 18px 0}
@@ -430,7 +428,70 @@
   @media (max-width:520px){ .kpis,.roles{grid-template-columns:1fr 1fr} .skurow{grid-template-columns:1fr 1fr;gap:8px} }
   @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
   :focus-visible{outline:2px solid var(--brand-ink);outline-offset:2px}
+
+  /* ===== Redesign layer: editorial type · line icons · refined tiles ===== */
+  .intro h1,.panel-head h2,.sectitle h4,.hero h3,.pdpbody .nm,.oh,.memcard h3,.payok h3{font-family:var(--font-serif);font-weight:600;letter-spacing:.003em}
+  .brand,.eyebrow,.seg button,.h-row h3,.card h4,.role .rt,.nav .ni{font-family:var(--font-ui)}
+  .kpi .kv,.pdpprice .p,.pc .price,.summary .r.tot span,.acct-hd .pts b{font-family:var(--font-ui);font-weight:800;letter-spacing:-.015em}
+  .pc .price{color:var(--ink)}
+  .ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
+  .hidden-sprite{position:absolute;width:0;height:0;overflow:hidden}
+  .tb .ic{width:23px;height:23px} .q .ic{width:26px;height:26px}
+  .trust .t .ic{width:22px;height:22px;margin:0 auto 5px;color:var(--brand-ink);display:block}
+  .apphead .bell .ic{width:21px} .searchbar .mag .ic,.spage .field .ic{width:18px}
+  .lsthead .r .ic{width:15px;vertical-align:-.15em} .sortbar .ic,.railhead .ic{width:14px}
+  .nav .ni .ic{width:18px;height:18px} .role .rt .ic{width:15px;height:15px}
+  .ostat .o .ic,.agrid .a .ic{width:23px;height:23px} .benefit .ic{width:22px;height:22px;color:var(--brand-ink);display:block;margin-bottom:7px}
+  .tcp .ic,.tag .ic{width:12px;height:12px;vertical-align:-.1em}
+  .ph .g,.pc .img .g{position:absolute;inset:0;margin:auto;width:44%;height:44%;color:var(--brand-ink);opacity:.32}
 </style>
+
+<svg class="hidden-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5M6 10v9h4v-5h4v5h4v-9"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5zM9 8a3 3 0 0 1 6 0"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M4 8 12 4l8 4-8 4zM4 8v8l8 4 8-4V8M12 12v8"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M12 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM5.5 20a6.5 6.5 0 0 1 13 0"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4.2-4.2"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6.5 9.5a5.5 5.5 0 0 1 11 0c0 4.5 2 5.5 2 5.5h-15s2-1 2-5.5zM10 19a2 2 0 0 0 4 0"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21c4-4.2 6-7.2 6-10a6 6 0 1 0-12 0c0 2.8 2 5.8 6 10zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+<symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16l-6.2 7.5V19l-3.6 2v-8.5z"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9.5 6 15 12l-5.5 6"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20C6.5 16 4 12.7 4 9.5A3.6 3.6 0 0 1 12 7 3.6 3.6 0 0 1 20 9.5c0 3.2-2.5 6.5-8 10.5z"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 4.5 14.3 10l5.7.4-4.4 3.7 1.4 5.6L12 17l-5 2.7 1.4-5.6L4 10.4 9.7 10z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5 19.8 16.5M19.8 7.5 4.2 16.5"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 4c3.4 4.5 5 7 5 9.2A5 5 0 0 1 7 13.2C7 11 8.6 8.5 12 4z"/></symbol>
+<symbol id="i-pkg" viewBox="0 0 24 24"><path d="M4 7.5 12 4l8 3.5-8 3.5zM4 7.5v9l8 3.5 8-3.5v-9M12 11v9"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3.5 12h17M12 3c2.8 2.6 2.8 15.4 0 18M12 3c-2.8 2.6-2.8 15.4 0 18"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 19 6v5.2c0 4.6-3 7.4-7 9.3-4-1.9-7-4.7-7-9.3V6zM8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+<symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8.5v-3A1.5 1.5 0 0 1 5.5 4H8.5M15.5 4h3A1.5 1.5 0 0 1 20 5.5v3M20 15.5v3a1.5 1.5 0 0 1-1.5 1.5h-3M8.5 20h-3A1.5 1.5 0 0 1 4 18.5v-3M7 12h10"/></symbol>
+<symbol id="i-fish" viewBox="0 0 24 24"><path d="M20.5 12c-2.5 3-6.5 4.5-11 4.5-2.8 0-4.8-1.2-4.8-4.5s2-4.5 4.8-4.5c4.5 0 8.5 1.5 11 4.5zM6 12 3 9.5v5zM15.8 10.8h.01"/></symbol>
+<symbol id="i-steak" viewBox="0 0 24 24"><path d="M5.5 12a6.5 5.2 0 1 0 13 0 6.5 5.2 0 0 0-13 0zM9.6 12a2.7 2.1 0 1 0 5.4 0 2.7 2.1 0 0 0-5.4 0z"/></symbol>
+<symbol id="i-can" viewBox="0 0 24 24"><path d="M7.5 7.5a4.5 1.8 0 0 1 9 0v9a4.5 1.8 0 0 1-9 0zM7.5 7.5a4.5 1.8 0 0 0 9 0M8.5 11.5h7"/></symbol>
+<symbol id="i-shell" viewBox="0 0 24 24"><path d="M12 5.5c-4.4 0-7.5 3.4-7.5 7l7.5 5.5 7.5-5.5c0-3.6-3.1-7-7.5-7zM12 5.5v12M8.4 7 9.6 17M15.6 7 14.4 17"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h3.5l2.5 2.5V15h-6zM7 18a1.6 1.6 0 1 0 0-.1M16.5 18a1.6 1.6 0 1 0 0-.1"/></symbol>
+<symbol id="i-ship" viewBox="0 0 24 24"><path d="M4 14.5 5.6 19h12.8l1.6-4.5zM6.5 14.5V8.5h5l4 3.5M9 8.5V5.5h2.5v3"/></symbol>
+<symbol id="i-mega" viewBox="0 0 24 24"><path d="M4 10v4h3l6.5 4V6L7 10zM17.5 9.2a4 4 0 0 1 0 5.6"/></symbol>
+<symbol id="i-headset" viewBox="0 0 24 24"><path d="M5 13v-1a7 7 0 0 1 14 0v1M4.5 13.5a2 2 0 0 1 2-2v4a2 2 0 0 1-2-2zM19.5 13.5a2 2 0 0 0-2-2v4a2 2 0 0 0 2-2zM12 20h3.5a2 2 0 0 0 2-2v-1"/></symbol>
+<symbol id="i-coins" viewBox="0 0 24 24"><path d="M5 8.5a4 2.2 0 1 0 8 0 4 2.2 0 0 0-8 0zM5 8.5v4.5a4 2.2 0 0 0 8 0V8.5M13 9.4a4 2.2 0 1 0 4-1.7M13 13.5c1.5 1 4 1 5.5 0"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 11.3a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4z"/></symbol>
+<symbol id="i-tag" viewBox="0 0 24 24"><path d="M4.5 4.5H11l8.5 8.5-6.5 6.5L4.5 11zM8 8h.01"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3.5 20.5 8 12 12.5 3.5 8zM3.5 12.5 12 17l8.5-4.5"/></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6.5 3.5h11v17l-1.8-1-1.8 1-1.8-1-1.8 1-1.8-1-1.2 1zM9 8h6M9 11.5h6M9 15h4"/></symbol>
+<symbol id="i-factory" viewBox="0 0 24 24"><path d="M4 20V10.5l5 3v-3l5 3v-3l5 3V20zM8 16h.01M13 16h.01"/></symbol>
+<symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 8.5h11l-3-3M17 15.5H6l3 3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM12 7.5v5l3.2 2"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><path d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4zM12 3.6v2.1M12 18.3v2.1M5.6 5.6 7.1 7.1M16.9 16.9l1.5 1.5M3.6 12h2.1M18.3 12h2.1M5.6 18.4 7.1 16.9M16.9 7.1l1.5-1.5"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><path d="M4.5 5.5h15v13h-15zM8 10.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM4.5 16 9 12l3 2.5 3-2 4.5 4"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3.5h7l3.5 3.5V20.5h-11zM14 3.5V7h3.5M9.5 12h5M9.5 15h5"/></symbol>
+<symbol id="i-card" viewBox="0 0 24 24"><path d="M3.5 6.5h17v11h-17zM3.5 10h17M6.5 14h4"/></symbol>
+<symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 7.5A1.5 1.5 0 0 0 5.5 9a1.5 1.5 0 0 1 0 6A1.5 1.5 0 0 0 4 16.5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1A1.5 1.5 0 0 0 18.5 15a1.5 1.5 0 0 1 0-6A1.5 1.5 0 0 0 20 7.5v-1a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1z"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><path d="M4.5 10h15v9.5h-15zM4 7.5h16V10H4zM12 7.5v12M12 7.5C10 4 6.5 5 8 7.5M12 7.5C14 4 17.5 5 16 7.5"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M5 5.5A1.5 1.5 0 0 1 6.5 4H19v14H6.5A1.5 1.5 0 0 0 5 19.5zM5 19.5A1.5 1.5 0 0 0 6.5 21H19"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M6.5 7l1 12.5h9L17.5 7"/></symbol>
+<symbol id="i-return" viewBox="0 0 24 24"><path d="M9 7 5 11l4 4M5 11h9a5 5 0 0 1 0 10h-2"/></symbol>
+</defs></svg>
 
 <header class="topbar">
   <div class="topbar-in">
@@ -455,14 +516,14 @@
     </div>
     <div class="note">
       <span class="pill">品牌规范已应用 ✓</span>
-      <div><b>Dolly Dolphin 视觉已上线。</b>海洋蓝 + 珊瑚粉、圆润字体与「海豚成 D」标志均以设计令牌集中管理（<span class="mono">assets/tokens.css</span> 单文件）。整站换肤或切换深浅色仅需改这一处。设计语言采用高级、留白充足的西式电商风格，文案为中文。试试 <b>◐ 主题</b>。</div>
+      <div><b>Dolly Dolphin 视觉已上线。</b>海洋蓝 + 珊瑚粉、编排式衬线 + 无衬线字体与「海豚成 D」标志均以设计令牌集中管理（<span class="mono">assets/tokens.css</span> 单文件）。设计语言采用高级、留白充足的西式电商风格，文案为中文。商品图以招牌「冷冻沙丁鱼」<b>实拍</b>为示例，其余为待替换的占位图。试试 <b>◐ 主题</b>。</div>
     </div>
   </section>
 
   <div class="legend" aria-label="温层标签（与品牌色分离，仅表示储存温层）">
-    <span class="tag frozen"><span class="dot"></span>❄️ 冷冻 · ≤ −18°C</span>
-    <span class="tag chilled"><span class="dot"></span>🧊 冷藏 · 0–4°C</span>
-    <span class="tag ambient"><span class="dot"></span>🌡️ 常温 · 可常温储存</span>
+    <span class="tag frozen"><span class="dot"></span>冷冻 · ≤ −18°C</span>
+    <span class="tag chilled"><span class="dot"></span>冷藏 · 0–4°C</span>
+    <span class="tag ambient"><span class="dot"></span>常温 · 可常温储存</span>
   </div>
 
   <!-- ================= CONSUMER ================= -->
@@ -483,9 +544,9 @@
               <div class="row1">
                 <span class="badge"><img src="assets/logo-icon.png" alt=""></span>
                 <span class="loc">上海 · 静安区 <small>送至 · 虹桥公寓</small></span>
-                <span class="bell">🔔</span>
+                <span class="bell"><svg class="ic"><use href="#i-bell"/></svg></span>
               </div>
-              <div class="searchbar"><span class="mag">🔎</span> 搜索 挪威三文鱼 · 澳洲牛排 · 金枪鱼罐头</div>
+              <div class="searchbar"><span class="mag"><svg class="ic"><use href="#i-search"/></svg></span> 搜索 挪威三文鱼 · 澳洲牛排 · 金枪鱼罐头</div>
             </div>
             <div class="hero">
               <div class="kick">GLOBAL SOURCING</div>
@@ -494,28 +555,31 @@
               <span class="cta">探索进口精选 →</span>
             </div>
             <div class="qgrid">
-              <div class="q"><span class="ic">🐟</span>海鲜</div>
-              <div class="q"><span class="ic">🥩</span>肉类</div>
-              <div class="q"><span class="ic">🥫</span>罐头</div>
-              <div class="q"><span class="ic">❄️</span>冷冻</div>
+              <div class="q"><svg class="ic"><use href="#i-fish"/></svg>海鲜</div>
+              <div class="q"><svg class="ic"><use href="#i-steak"/></svg>肉类</div>
+              <div class="q"><svg class="ic"><use href="#i-can"/></svg>罐头</div>
+              <div class="q"><svg class="ic"><use href="#i-snow"/></svg>冷冻</div>
             </div>
             <div class="sectitle" style="padding-top:16px"><h4>本周精选 · 进口海鲜</h4><span class="more">查看全部 ›</span></div>
             <div class="pgrid">
               <div class="pc"><div class="img i1"><span class="flag">🇳🇴 挪威</span><span class="tc frozen">冷冻</span></div>
                 <div class="b"><div class="nm">挪威三文鱼中段 刺身级</div><div class="meta">300g · ASC 认证</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>128</span><span class="mem">会员 120</span><span class="add">+</span></div></div></div>
-              <div class="pc"><div class="img i7"><span class="flag">🇺🇸 阿拉斯加</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">阿拉斯加帝王蟹 大规格</div><div class="meta">1.2kg · 野生捕捞</div>
-                <div class="foot"><span class="price"><span class="cur">¥</span>398</span><span class="mem">会员 359</span><span class="add">+</span></div></div></div>
+              <div class="pc"><div class="img i-sard"><span class="flag">招牌 Signature</span><span class="tc frozen">冷冻</span></div>
+                <div class="b"><div class="nm">Dolly Dolphin 冷冻沙丁鱼</div><div class="meta">1kg · 野生捕捞</div>
+                <div class="foot"><span class="price"><span class="cur">¥</span>59</span><span class="mem">会员 52</span><span class="add">+</span></div></div></div>
             </div>
             <div class="trust">
-              <div class="t"><b>🌍</b>全球直采</div>
-              <div class="t"><b>✅</b>正品进口</div>
-              <div class="t"><b>❄️</b>全程冷链</div>
-              <div class="t"><b>🔎</b>批次溯源</div>
+              <div class="t"><svg class="ic"><use href="#i-globe"/></svg>全球直采</div>
+              <div class="t"><svg class="ic"><use href="#i-shield"/></svg>正品进口</div>
+              <div class="t"><svg class="ic"><use href="#i-snow"/></svg>全程冷链</div>
+              <div class="t"><svg class="ic"><use href="#i-scan"/></svg>批次溯源</div>
             </div>
             <div class="sectitle"><h4>蟹 · 虾 · 贝 · 龙虾</h4><span class="more">查看全部 ›</span></div>
             <div class="pgrid">
+              <div class="pc"><div class="img i7"><span class="flag">🇺🇸 阿拉斯加</span><span class="tc frozen">冷冻</span></div>
+                <div class="b"><div class="nm">阿拉斯加帝王蟹 大规格</div><div class="meta">1.2kg · 野生捕捞</div>
+                <div class="foot"><span class="price"><span class="cur">¥</span>398</span><span class="mem">会员 359</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img i8"><span class="flag">🇨🇦 加拿大</span><span class="tc frozen">冷冻</span></div>
                 <div class="b"><div class="nm">波士顿龙虾 鲜活急冻</div><div class="meta">500g · 整只</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>268</span><span class="mem">会员 239</span><span class="add">+</span></div></div></div>
@@ -531,11 +595,11 @@
             </div>
           </div></div>
           <div class="tabbar">
-            <div class="tb on"><span class="ic">🏠</span>首页</div>
-            <div class="tb"><span class="ic">🧭</span>分类</div>
-            <div class="tb"><span class="ic">🛒</span>购物车</div>
-            <div class="tb"><span class="ic">📦</span>订单</div>
-            <div class="tb"><span class="ic">👤</span>我的</div>
+            <div class="tb on"><svg class="ic"><use href="#i-home"/></svg>首页</div>
+            <div class="tb"><svg class="ic"><use href="#i-grid"/></svg>分类</div>
+            <div class="tb"><svg class="ic"><use href="#i-bag"/></svg>购物车</div>
+            <div class="tb"><svg class="ic"><use href="#i-box"/></svg>订单</div>
+            <div class="tb"><svg class="ic"><use href="#i-user"/></svg>我的</div>
           </div>
         </div></div>
         <div class="cap"><b>1 · 首页</b> — 编辑式头图、精选品类、信任条与商品卡</div>
@@ -545,9 +609,9 @@
       <div class="device">
         <div class="phone"><div class="screen"><div class="notch"></div>
           <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
-          <div class="lsthead"><span class="back">‹</span><span class="title">肉类 · 牛肉</span><span class="r">⚲ 筛选</span></div>
+          <div class="lsthead"><span class="back">‹</span><span class="title">肉类 · 牛肉</span><span class="r"><svg class="ic"><use href="#i-filter"/></svg> 筛选</span></div>
           <div class="filterbar">
-            <span class="chip on">全部</span><span class="chip tmp">❄️ 冷冻</span>
+            <span class="chip on">全部</span><span class="chip tmp">冷冻</span>
             <span class="chip">🇦🇺 澳洲</span><span class="chip">部位 ⌄</span><span class="chip">等级 ⌄</span>
           </div>
           <div class="sortbar"><span class="on">推荐</span><span>销量</span><span>价格 ↑</span><span>上新</span></div>
@@ -568,8 +632,8 @@
             </div>
           </div></div>
           <div class="tabbar">
-            <div class="tb"><span class="ic">🏠</span>首页</div><div class="tb on"><span class="ic">🧭</span>分类</div>
-            <div class="tb"><span class="ic">🛒</span>购物车</div><div class="tb"><span class="ic">📦</span>订单</div><div class="tb"><span class="ic">👤</span>我的</div>
+            <div class="tb"><svg class="ic"><use href="#i-home"/></svg>首页</div><div class="tb on"><svg class="ic"><use href="#i-grid"/></svg>分类</div>
+            <div class="tb"><svg class="ic"><use href="#i-bag"/></svg>购物车</div><div class="tb"><svg class="ic"><use href="#i-box"/></svg>订单</div><div class="tb"><svg class="ic"><use href="#i-user"/></svg>我的</div>
           </div>
         </div></div>
         <div class="cap"><b>2 · 分类 / 列表</b> — 动态筛选（含温层与产地），大图卡片</div>
@@ -580,28 +644,28 @@
         <div class="phone"><div class="screen"><div class="notch"></div>
           <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
           <div class="appscroll"><div class="inner">
-            <div class="pdpimg"><span class="flag">🇳🇴 挪威 · 原产地直采</span><span class="tc frozen">❄️ 冷冻</span></div>
+            <div class="pdpimg"><span class="flag">招牌 · 全球渔场直采</span><span class="tc frozen">冷冻</span></div>
             <div class="pdpbody">
-              <div class="nm">挪威三文鱼中段 · 刺身级</div>
-              <div class="sub">Norwegian Salmon Loin · 品牌 FjordSelect</div>
-              <div class="pdpprice"><span class="p"><span style="font-size:15px">¥</span>128</span><span class="o">¥158</span><span class="mem">会员 ¥120</span></div>
-              <div class="badges"><span class="bdg">🌍 原产地直采</span><span class="bdg">✅ ASC 认证</span><span class="bdg">❄️ 全程冷链</span><span class="bdg">🔎 批次可溯</span></div>
+              <div class="nm">Dolly Dolphin 冷冻沙丁鱼</div>
+              <div class="sub">Premium Frozen Sardines · 可持续野生捕捞 · 1kg</div>
+              <div class="pdpprice"><span class="p"><span style="font-size:15px">¥</span>59</span><span class="o">¥69</span><span class="mem">会员 ¥52</span></div>
+              <div class="badges"><span class="bdg">原产地直采</span><span class="bdg">ASC 认证</span><span class="bdg">全程冷链</span><span class="bdg">批次可溯</span></div>
               <div class="kv">
                 <div><span class="k">原产国</span><span class="v">挪威</span></div>
-                <div><span class="k">净含量</span><span class="v">300 g</span></div>
+                <div><span class="k">净含量</span><span class="v">1 kg</span></div>
                 <div><span class="k">储存</span><span class="v">冷冻 ≤ −18°C</span></div>
-                <div><span class="k">保质期</span><span class="v">12 个月</span></div>
+                <div><span class="k">保质期</span><span class="v">18 个月</span></div>
                 <div><span class="k">配送</span><span class="v">冷链 · 次日达</span></div>
                 <div><span class="k">库存</span><span class="v">现货 126</span></div>
               </div>
               <div class="sec-t">溯源信息 · Provenance</div>
-              <div class="attrline"><span class="k">品种</span><span class="v">大西洋鲑</span></div>
-              <div class="attrline"><span class="k">捕捞 / 养殖</span><span class="v">养殖 · ASC</span></div>
-              <div class="attrline"><span class="k">海域</span><span class="v">FAO 27 挪威海</span></div>
-              <div class="attrline"><span class="k">进口批次</span><span class="v">NO-2026-0417</span></div>
+              <div class="attrline"><span class="k">品种</span><span class="v">沙丁鱼 Sardine</span></div>
+              <div class="attrline"><span class="k">捕捞方式</span><span class="v">可持续野生捕捞</span></div>
+              <div class="attrline"><span class="k">海域</span><span class="v">FAO 27 东北大西洋</span></div>
+              <div class="attrline"><span class="k">进口批次</span><span class="v">DD-2026-0417</span></div>
               <div class="adaptnote">↳ 此区块由「海鲜」品类的属性集生成。牛肉会显示「部位 / 等级 / 大理石纹」，罐头显示「净含量 / 沥干重 / 包装介质」——同一页面，配置驱动，无需改代码。</div>
               <div class="sec-t">配料 · 营养 · 食用</div>
-              <div class="attrline"><span class="k">配料</span><span class="v">大西洋鲑鱼</span></div>
+              <div class="attrline"><span class="k">配料</span><span class="v">沙丁鱼、海盐</span></div>
               <div class="attrline"><span class="k">能量 / 100g</span><span class="v">208 kcal</span></div>
               <div class="attrline"><span class="k">过敏原</span><span class="v">鱼类</span></div>
             </div>
@@ -618,12 +682,12 @@
           <div class="oh">购物车 <span style="font-size:13px;color:var(--muted);font-weight:700">· 3 件</span></div>
           <div class="appscroll"><div class="inner">
             <div class="cgroup">
-              <div class="gh"><span class="tcp" style="background:var(--frozen)">❄️ 冷冻组</span> 冷链配送<span class="note">保温箱 + 冰袋 · 次日达</span></div>
+              <div class="gh"><span class="tcp" style="background:var(--frozen)">冷冻组</span> 冷链配送<span class="note">保温箱 + 冰袋 · 次日达</span></div>
               <div class="citem"><span class="im i1"></span><div><div class="nm">挪威三文鱼中段 刺身级</div><div class="mt">300g · NO-2026-0417</div><div class="pr">¥120 <span style="font-size:10px;color:var(--muted);font-weight:700">会员价</span></div></div><span class="qty">1</span></div>
               <div class="citem"><span class="im i2"></span><div><div class="nm">澳洲谷饲眼肉牛排 M3</div><div class="mt">300g × 2 · AU-2026-0417</div><div class="pr">¥152</div></div><span class="qty">1</span></div>
             </div>
             <div class="cgroup">
-              <div class="gh"><span class="tcp" style="background:var(--ambient)">🌡️ 常温组</span> 标准快递<span class="note">普通包装 · 全国配送</span></div>
+              <div class="gh"><span class="tcp" style="background:var(--ambient)">常温组</span> 标准快递<span class="note">普通包装 · 全国配送</span></div>
               <div class="citem"><span class="im i3"></span><div><div class="nm">西班牙橄榄油浸金枪鱼罐头</div><div class="mt">185g × 6 · ES-2026-1120</div><div class="pr">¥80</div></div><span class="qty">1</span></div>
             </div>
             <div class="summary">
@@ -648,8 +712,8 @@
           <div class="appscroll"><div class="inner">
             <div class="ocard">
               <div class="top"><span>订单 2026091500482 · 09-15</span><span class="st">运输中</span></div>
-              <div class="ship"><span class="tcp" style="background:var(--frozen)">❄️ 冷冻</span> 冷链 · 预计明日 09:00–12:00 <span class="go">追踪 ›</span></div>
-              <div class="ship"><span class="tcp" style="background:var(--ambient)">🌡️ 常温</span> 标准快递 · 已揽收 <span class="go">追踪 ›</span></div>
+              <div class="ship"><span class="tcp" style="background:var(--frozen)">冷冻</span> 冷链 · 预计明日 09:00–12:00 <span class="go">追踪 ›</span></div>
+              <div class="ship"><span class="tcp" style="background:var(--ambient)">常温</span> 标准快递 · 已揽收 <span class="go">追踪 ›</span></div>
               <div class="timeline">
                 <div class="tl done"><span class="d"></span><div><div class="tt">已下单 · 支付成功</div><div class="tm">09-15 21:04</div></div></div>
                 <div class="tl done"><span class="d"></span><div><div class="tt">已分拣 · 批次分配（冷冻 / 常温分箱）</div><div class="tm">09-16 07:20</div></div></div>
@@ -659,12 +723,12 @@
             </div>
             <div class="ocard">
               <div class="top"><span>订单 2026090800311 · 09-08</span><span class="st" style="color:var(--success)">已完成</span></div>
-              <div class="ship"><span class="tcp" style="background:var(--ambient)">🌡️ 常温</span> 西班牙金枪鱼罐头 × 2 · 已签收 <span class="go">再次购买 ›</span></div>
+              <div class="ship"><span class="tcp" style="background:var(--ambient)">常温</span> 西班牙金枪鱼罐头 × 2 · 已签收 <span class="go">再次购买 ›</span></div>
             </div>
           </div></div>
           <div class="tabbar">
-            <div class="tb"><span class="ic">🏠</span>首页</div><div class="tb"><span class="ic">🧭</span>分类</div>
-            <div class="tb"><span class="ic">🛒</span>购物车</div><div class="tb on"><span class="ic">📦</span>订单</div><div class="tb"><span class="ic">👤</span>我的</div>
+            <div class="tb"><svg class="ic"><use href="#i-home"/></svg>首页</div><div class="tb"><svg class="ic"><use href="#i-grid"/></svg>分类</div>
+            <div class="tb"><svg class="ic"><use href="#i-bag"/></svg>购物车</div><div class="tb on"><svg class="ic"><use href="#i-box"/></svg>订单</div><div class="tb"><svg class="ic"><use href="#i-user"/></svg>我的</div>
           </div>
         </div></div>
         <div class="cap"><b>5 · 订单与追踪</b> — 一笔订单，两个包裹，独立追踪</div>
@@ -674,11 +738,11 @@
       <div class="device">
         <div class="phone"><div class="screen"><div class="notch"></div>
           <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
-          <div class="spage"><div class="field"><span style="color:var(--brand-ink)">🔎</span> 挪威三文鱼 <span style="margin-left:auto;color:var(--muted-2)">✕</span></div></div>
+          <div class="spage"><div class="field"><span class="mag" style="color:var(--brand-ink)"><svg class="ic"><use href="#i-search"/></svg></span> 挪威三文鱼 <span style="margin-left:auto;color:var(--muted-2)">✕</span></div></div>
           <div class="appscroll"><div class="inner" style="padding:0 18px">
-            <h5>搜索历史 <span>清除 🗑</span></h5>
+            <h5>搜索历史 <span>清除</span></h5>
             <div class="taglist"><span class="t">三文鱼</span><span class="t">澳洲牛排</span><span class="t">金枪鱼罐头</span><span class="t">阿根廷红虾</span><span class="t">和牛</span></div>
-            <h5>热门搜索 <span>🔥 实时</span></h5>
+            <h5>热门搜索 <span>实时</span></h5>
             <div class="taglist"><span class="t hot">1 挪威三文鱼</span><span class="t hot">2 帝王蟹</span><span class="t">3 银鳕鱼</span><span class="t">4 谷饲眼肉</span><span class="t">5 波士顿龙虾</span></div>
             <h5>猜你想搜</h5>
             <div class="suggest">
@@ -698,16 +762,16 @@
           <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
           <div class="lsthead"><span class="back">‹</span><span class="title">确认订单</span></div>
           <div class="appscroll"><div class="inner">
-            <div class="addrcard"><span class="pin">📍</span><div><div class="who">陈女士 · 138****6021</div><div class="adr">上海市 静安区 南京西路 1266 号 · 虹桥公寓 3-1802</div></div><span class="arrow">›</span></div>
+            <div class="addrcard"><span class="pin"><svg class="ic"><use href="#i-pin"/></svg></span><div><div class="who">陈女士 · 138****6021</div><div class="adr">上海市 静安区 南京西路 1266 号 · 虹桥公寓 3-1802</div></div><span class="arrow">›</span></div>
             <div class="cobox">
-              <div class="corow"><span class="grp"><span class="tcp" style="background:var(--frozen)">❄️ 冷冻组</span> 冷链·次日达</span><span class="v">¥15</span></div>
-              <div class="corow"><span class="grp"><span class="tcp" style="background:var(--ambient)">🌡️ 常温组</span> 标准快递</span><span class="v" style="color:var(--success)">免运费</span></div>
+              <div class="corow"><span class="grp"><span class="tcp" style="background:var(--frozen)">冷冻组</span> 冷链·次日达</span><span class="v">¥15</span></div>
+              <div class="corow"><span class="grp"><span class="tcp" style="background:var(--ambient)">常温组</span> 标准快递</span><span class="v" style="color:var(--success)">免运费</span></div>
               <div class="corow"><span class="k">配送时段</span><span class="v">明日 09:00–12:00 ›</span></div>
             </div>
             <div class="cobox">
-              <div class="corow"><span class="k">🎟 优惠券</span><span class="v" style="color:var(--price)">−¥20 ›</span></div>
-              <div class="corow"><span class="k">⭐ 积分抵扣</span><span class="v">1,240 分抵 ¥12 ›</span></div>
-              <div class="corow"><span class="k">🧾 发票</span><span class="v">电子普通发票 ›</span></div>
+              <div class="corow"><span class="k">优惠券</span><span class="v" style="color:var(--price)">−¥20 ›</span></div>
+              <div class="corow"><span class="k">积分抵扣</span><span class="v">1,240 分抵 ¥12 ›</span></div>
+              <div class="corow"><span class="k">发票</span><span class="v">电子普通发票 ›</span></div>
             </div>
             <div class="summary">
               <div class="r"><span>商品小计</span><span>¥352</span></div>
@@ -746,7 +810,7 @@
             <div class="payok">
               <div class="tick">✓</div><h3>支付成功</h3><div class="amt">¥311</div>
               <div class="ordn">微信支付 · 订单 2026091500482</div>
-              <div class="eta"><div>❄️ 冷冻组 · 冷链 · 预计 <b>明日 09:00–12:00</b> 送达</div><div>🌡️ 常温组 · 标准快递 · 预计 <b>2–3 天</b> 送达</div></div>
+              <div class="eta"><div>冷冻组 · 冷链 · 预计 <b>明日 09:00–12:00</b> 送达</div><div>常温组 · 标准快递 · 预计 <b>2–3 天</b> 送达</div></div>
             </div>
           </div></div>
           <div class="payactions"><div class="btn cart" style="flex:1;border:1px solid var(--line)">查看订单</div><div class="btn buy" style="flex:1">继续购物</div></div>
@@ -759,22 +823,22 @@
         <div class="phone"><div class="screen"><div class="notch"></div>
           <div class="statusbar"><span>9:41</span><span class="r">📶 🔋</span></div>
           <div class="appscroll"><div class="inner">
-            <div class="acct-hd"><div class="av">🐬</div><div><div class="nm">陈女士</div><span class="mchip">💎 黑金会员 · Lv.3</span></div><div class="pts"><b>1,240</b><span>积分</span></div></div>
+            <div class="acct-hd"><div class="av"><img src="assets/logo-icon.png" alt="" style="width:36px;height:36px;object-fit:contain;border-radius:8px;background:#fff"></div><div><div class="nm">陈女士</div><span class="mchip">💎 黑金会员 · Lv.3</span></div><div class="pts"><b>1,240</b><span>积分</span></div></div>
             <div class="ostat">
-              <div class="o"><span class="ic">💳</span>待付款</div><div class="o"><span class="ic">📦</span>待收货</div>
-              <div class="o"><span class="ic">⭐</span>待评价</div><div class="o"><span class="ic">↩️</span>售后</div><div class="o"><span class="ic">🎧</span>客服</div>
+              <div class="o"><svg class="ic"><use href="#i-card"/></svg>待付款</div><div class="o"><svg class="ic"><use href="#i-box"/></svg>待收货</div>
+              <div class="o"><svg class="ic"><use href="#i-star"/></svg>待评价</div><div class="o"><svg class="ic"><use href="#i-return"/></svg>售后</div><div class="o"><svg class="ic"><use href="#i-headset"/></svg>客服</div>
             </div>
             <div class="sectitle" style="padding:16px 18px 8px"><h4 style="font-size:15px">我的服务</h4></div>
             <div class="agrid">
-              <div class="a"><span class="ic">💎</span>会员中心</div><div class="a"><span class="ic">🎟</span>优惠券</div>
-              <div class="a"><span class="ic">📍</span>收货地址</div><div class="a"><span class="ic">❤️</span>我的收藏</div>
-              <div class="a"><span class="ic">🕘</span>浏览历史</div><div class="a"><span class="ic">✍️</span>我的评价</div>
-              <div class="a"><span class="ic">📖</span>食谱内容</div><div class="a"><span class="ic">⚙️</span>设置</div>
+              <div class="a"><svg class="ic"><use href="#i-star"/></svg>会员中心</div><div class="a"><svg class="ic"><use href="#i-ticket"/></svg>优惠券</div>
+              <div class="a"><svg class="ic"><use href="#i-pin"/></svg>收货地址</div><div class="a"><svg class="ic"><use href="#i-heart"/></svg>我的收藏</div>
+              <div class="a"><svg class="ic"><use href="#i-clock"/></svg>浏览历史</div><div class="a"><svg class="ic"><use href="#i-doc"/></svg>我的评价</div>
+              <div class="a"><svg class="ic"><use href="#i-book"/></svg>食谱内容</div><div class="a"><svg class="ic"><use href="#i-gear"/></svg>设置</div>
             </div>
           </div></div>
           <div class="tabbar">
-            <div class="tb"><span class="ic">🏠</span>首页</div><div class="tb"><span class="ic">🧭</span>分类</div>
-            <div class="tb"><span class="ic">🛒</span>购物车</div><div class="tb"><span class="ic">📦</span>订单</div><div class="tb on"><span class="ic">👤</span>我的</div>
+            <div class="tb"><svg class="ic"><use href="#i-home"/></svg>首页</div><div class="tb"><svg class="ic"><use href="#i-grid"/></svg>分类</div>
+            <div class="tb"><svg class="ic"><use href="#i-bag"/></svg>购物车</div><div class="tb"><svg class="ic"><use href="#i-box"/></svg>订单</div><div class="tb on"><svg class="ic"><use href="#i-user"/></svg>我的</div>
           </div>
         </div></div>
         <div class="cap"><b>10 · 我的</b> — 会员、积分、订单状态、服务入口、内容中心</div>
@@ -793,10 +857,10 @@
               <div class="nx">再消费 ¥1,400 升级 Lv.4，享 9 折专属价</div>
             </div>
             <div class="benefits">
-              <div class="benefit"><b>🏷️</b>会员专享价<br><span style="color:var(--muted);font-weight:600">全场精选</span></div>
-              <div class="benefit"><b>🚚</b>冷链运费券<br><span style="color:var(--muted);font-weight:600">每月 2 张</span></div>
-              <div class="benefit"><b>⭐</b>积分加速<br><span style="color:var(--muted);font-weight:600">1.5 倍积分</span></div>
-              <div class="benefit"><b>🎁</b>生日礼遇<br><span style="color:var(--muted);font-weight:600">专属好礼</span></div>
+              <div class="benefit"><svg class="ic"><use href="#i-tag"/></svg>会员专享价<br><span style="color:var(--muted);font-weight:600">全场精选</span></div>
+              <div class="benefit"><svg class="ic"><use href="#i-truck"/></svg>冷链运费券<br><span style="color:var(--muted);font-weight:600">每月 2 张</span></div>
+              <div class="benefit"><svg class="ic"><use href="#i-star"/></svg>积分加速<br><span style="color:var(--muted);font-weight:600">1.5 倍积分</span></div>
+              <div class="benefit"><svg class="ic"><use href="#i-gift"/></svg>生日礼遇<br><span style="color:var(--muted);font-weight:600">专属好礼</span></div>
             </div>
             <div class="sectitle"><h4>会员价精选</h4><span class="more">查看全部 ›</span></div>
             <div class="pgrid">
@@ -833,7 +897,7 @@
           <div class="lsthead"><span class="back">‹</span><span class="title">申请售后</span></div>
           <div class="appscroll"><div class="inner">
             <div class="as-item"><span class="im i4"></span><div><div style="font-size:13px;font-weight:800">阿根廷野生红虾 L1</div><div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:600">1kg · 订单 2026091500482</div></div></div>
-            <div class="as-trace">🔎 批次 AR-2026-0788 已自动关联 —— 质量问题将触发批次溯源与质检复核</div>
+            <div class="as-trace">批次 AR-2026-0788 已自动关联 —— 质量问题将触发批次溯源与质检复核</div>
             <div class="as-sec"><div class="lbl">售后类型</div><div class="as-opts"><span class="as-opt">仅退款</span><span class="as-opt on">退货退款</span><span class="as-opt">质量问题</span></div></div>
             <div class="as-sec"><div class="lbl">问题描述</div></div>
             <div class="as-reason">收到时冷链保温已失效，虾体部分解冻，请协助处理…</div>
@@ -862,20 +926,20 @@
         <nav class="nav">
           <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
           <div class="np">总览</div>
-          <div class="ni on"><span class="ic">▦</span> 仪表盘</div>
+          <div class="ni on"><svg class="ic"><use href="#i-grid"/></svg> 仪表盘</div>
           <div class="np">商品目录</div>
-          <div class="ni"><span class="ic">📦</span> 商品</div>
-          <div class="ni"><span class="ic">🗂️</span> 分类</div>
-          <div class="ni"><span class="ic">🏷️</span> 属性</div>
+          <div class="ni"><svg class="ic"><use href="#i-box"/></svg> 商品</div>
+          <div class="ni"><svg class="ic"><use href="#i-layers"/></svg> 分类</div>
+          <div class="ni"><svg class="ic"><use href="#i-tag"/></svg> 属性</div>
           <div class="np">供应链</div>
-          <div class="ni"><span class="ic">🧊</span> 库存 <span class="cnt">7</span></div>
-          <div class="ni"><span class="ic">🚢</span> 采购</div>
-          <div class="ni"><span class="ic">🧾</span> 订单 <span class="cnt">12</span></div>
-          <div class="ni"><span class="ic">🚚</span> 物流</div>
+          <div class="ni"><svg class="ic"><use href="#i-box"/></svg> 库存 <span class="cnt">7</span></div>
+          <div class="ni"><svg class="ic"><use href="#i-ship"/></svg> 采购</div>
+          <div class="ni"><svg class="ic"><use href="#i-receipt"/></svg> 订单 <span class="cnt">12</span></div>
+          <div class="ni"><svg class="ic"><use href="#i-truck"/></svg> 物流</div>
           <div class="np">增长</div>
-          <div class="ni"><span class="ic">👥</span> 客户</div>
-          <div class="ni"><span class="ic">📣</span> 营销</div>
-          <div class="ni"><span class="ic">💰</span> 财务</div>
+          <div class="ni"><svg class="ic"><use href="#i-user"/></svg> 客户</div>
+          <div class="ni"><svg class="ic"><use href="#i-mega"/></svg> 营销</div>
+          <div class="ni"><svg class="ic"><use href="#i-coins"/></svg> 财务</div>
         </nav>
         <div class="main canvas">
           <div class="crumbs">总览 / 仪表盘</div>
@@ -923,12 +987,12 @@
         <nav class="nav">
           <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
           <div class="np">商品目录</div>
-          <div class="ni"><span class="ic">📦</span> 商品</div>
-          <div class="ni on"><span class="ic">✎</span> 商品编辑</div>
-          <div class="ni"><span class="ic">🗂️</span> 分类</div>
-          <div class="ni"><span class="ic">🏷️</span> 属性</div>
-          <div class="ni"><span class="ic">🖼️</span> 素材</div>
-          <div class="ni"><span class="ic">💲</span> 定价</div>
+          <div class="ni"><svg class="ic"><use href="#i-box"/></svg> 商品</div>
+          <div class="ni on"><svg class="ic"><use href="#i-doc"/></svg> 商品编辑</div>
+          <div class="ni"><svg class="ic"><use href="#i-layers"/></svg> 分类</div>
+          <div class="ni"><svg class="ic"><use href="#i-tag"/></svg> 属性</div>
+          <div class="ni"><svg class="ic"><use href="#i-image"/></svg> 素材</div>
+          <div class="ni"><svg class="ic"><use href="#i-coins"/></svg> 定价</div>
         </nav>
         <div class="main">
           <div class="crumbs">商品 / 澳洲谷饲眼肉牛排</div>
@@ -956,8 +1020,8 @@
               <div class="fieldset">
                 <div class="ft">SKU 与定价</div>
                 <div class="skurow"><span class="hd">规格</span><span class="hd">储存</span><span class="hd">价格</span><span class="hd">会员价</span><span class="hd">库存</span></div>
-                <div class="skurow"><span>300g × 2</span><span><span class="pill frozen">❄️ 冷冻</span></span><span>¥168</span><span>¥152</span><span>126</span></div>
-                <div class="skurow"><span>500g × 1</span><span><span class="pill frozen">❄️ 冷冻</span></span><span>¥135</span><span>¥122</span><span>58</span></div>
+                <div class="skurow"><span>300g × 2</span><span><span class="pill frozen">冷冻</span></span><span>¥168</span><span>¥152</span><span>126</span></div>
+                <div class="skurow"><span>500g × 1</span><span><span class="pill frozen">冷冻</span></span><span>¥135</span><span>¥122</span><span>58</span></div>
               </div>
             </div>
             <div class="aside">
@@ -987,11 +1051,11 @@
         <nav class="nav">
           <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
           <div class="np">供应链</div>
-          <div class="ni"><span class="ic">🏬</span> 仓库</div>
-          <div class="ni"><span class="ic">🧊</span> 库区</div>
-          <div class="ni on"><span class="ic">🔖</span> 批次</div>
-          <div class="ni"><span class="ic">↔️</span> 库存流水</div>
-          <div class="ni"><span class="ic">⏳</span> 临期 <span class="cnt">18</span></div>
+          <div class="ni"><svg class="ic"><use href="#i-factory"/></svg> 仓库</div>
+          <div class="ni"><svg class="ic"><use href="#i-box"/></svg> 库区</div>
+          <div class="ni on"><svg class="ic"><use href="#i-tag"/></svg> 批次</div>
+          <div class="ni"><svg class="ic"><use href="#i-swap"/></svg> 库存流水</div>
+          <div class="ni"><svg class="ic"><use href="#i-clock"/></svg> 临期 <span class="cnt">18</span></div>
         </nav>
         <div class="main">
           <div class="crumbs">库存 / 批次</div>
@@ -1000,15 +1064,15 @@
             <thead><tr><th>商品 / SKU</th><th>批次</th><th>产地</th><th>库区</th><th>到期日</th><th>可用</th><th>状态</th></tr></thead>
             <tbody>
               <tr><td><div class="prod"><span class="th i1"></span><div><div style="font-weight:800">挪威三文鱼中段</div><div style="color:var(--muted);font-size:11px">300g · 海鲜</div></div></div></td>
-                <td class="mono">NO-2026-0417</td><td>🇳🇴 挪威</td><td><span class="pill frozen">❄️ 冷冻 A</span></td><td>2026-12-14</td><td>126</td><td><span class="pill ok">可售</span></td></tr>
+                <td class="mono">NO-2026-0417</td><td>🇳🇴 挪威</td><td><span class="pill frozen">冷冻 A</span></td><td>2026-12-14</td><td>126</td><td><span class="pill ok">可售</span></td></tr>
               <tr><td><div class="prod"><span class="th i2"></span><div><div style="font-weight:800">澳洲谷饲眼肉</div><div style="color:var(--muted);font-size:11px">300g×2 · 牛肉</div></div></div></td>
-                <td class="mono">AU-2026-0311</td><td>🇦🇺 澳洲</td><td><span class="pill frozen">❄️ 冷冻 A</span></td><td style="color:var(--danger);font-weight:800">2026-10-01</td><td>42</td><td><span class="pill crit">临期 6 天</span></td></tr>
+                <td class="mono">AU-2026-0311</td><td>🇦🇺 澳洲</td><td><span class="pill frozen">冷冻 A</span></td><td style="color:var(--danger);font-weight:800">2026-10-01</td><td>42</td><td><span class="pill crit">临期 6 天</span></td></tr>
               <tr><td><div class="prod"><span class="th i3"></span><div><div style="font-weight:800">橄榄油浸金枪鱼</div><div style="color:var(--muted);font-size:11px">185g×6 · 罐头</div></div></div></td>
-                <td class="mono">ES-2026-1120</td><td>🇪🇸 西班牙</td><td><span class="pill ambient">🌡️ 常温 W2</span></td><td>2029-01-10</td><td>840</td><td><span class="pill ok">可售</span></td></tr>
+                <td class="mono">ES-2026-1120</td><td>🇪🇸 西班牙</td><td><span class="pill ambient">常温 W2</span></td><td>2029-01-10</td><td>840</td><td><span class="pill ok">可售</span></td></tr>
               <tr><td><div class="prod"><span class="th i4"></span><div><div style="font-weight:800">阿根廷野生红虾 L1</div><div style="color:var(--muted);font-size:11px">1kg · 海鲜</div></div></div></td>
-                <td class="mono">AR-2026-0788</td><td>🇦🇷 阿根廷</td><td><span class="pill frozen">❄️ 冷冻 B</span></td><td>2027-04-02</td><td>0</td><td><span class="pill warn">待检</span></td></tr>
+                <td class="mono">AR-2026-0788</td><td>🇦🇷 阿根廷</td><td><span class="pill frozen">冷冻 B</span></td><td>2027-04-02</td><td>0</td><td><span class="pill warn">待检</span></td></tr>
               <tr><td><div class="prod"><span class="th i5"></span><div><div style="font-weight:800">新西兰羊排</div><div style="color:var(--muted);font-size:11px">500g · 羊肉</div></div></div></td>
-                <td class="mono">NZ-2026-0205</td><td>🇳🇿 新西兰</td><td><span class="pill chilled">🧊 冷藏</span></td><td>2026-10-20</td><td>73</td><td><span class="pill warn">临期 25 天</span></td></tr>
+                <td class="mono">NZ-2026-0205</td><td>🇳🇿 新西兰</td><td><span class="pill chilled">冷藏</span></td><td>2026-10-20</td><td>73</td><td><span class="pill warn">临期 25 天</span></td></tr>
             </tbody>
           </table></div>
         </div>
@@ -1022,10 +1086,10 @@
         <nav class="nav">
           <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
           <div class="np">商品目录</div>
-          <div class="ni"><span class="ic">📦</span> 商品</div>
-          <div class="ni on"><span class="ic">🗂️</span> 分类与属性</div>
-          <div class="ni"><span class="ic">🏷️</span> 属性库</div>
-          <div class="ni"><span class="ic">🔍</span> 筛选配置</div>
+          <div class="ni"><svg class="ic"><use href="#i-box"/></svg> 商品</div>
+          <div class="ni on"><svg class="ic"><use href="#i-layers"/></svg> 分类与属性</div>
+          <div class="ni"><svg class="ic"><use href="#i-tag"/></svg> 属性库</div>
+          <div class="ni"><svg class="ic"><use href="#i-search"/></svg> 筛选配置</div>
         </nav>
         <div class="main">
           <div class="crumbs">商品目录 / 分类与属性</div>
@@ -1070,10 +1134,10 @@
         <nav class="nav">
           <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
           <div class="np">供应链</div>
-          <div class="ni"><span class="ic">🏭</span> 供应商</div>
-          <div class="ni on"><span class="ic">🚢</span> 采购与进口</div>
-          <div class="ni"><span class="ic">💵</span> 到岸成本</div>
-          <div class="ni"><span class="ic">📥</span> 到货</div>
+          <div class="ni"><svg class="ic"><use href="#i-factory"/></svg> 供应商</div>
+          <div class="ni on"><svg class="ic"><use href="#i-ship"/></svg> 采购与进口</div>
+          <div class="ni"><svg class="ic"><use href="#i-coins"/></svg> 到岸成本</div>
+          <div class="ni"><svg class="ic"><use href="#i-box"/></svg> 到货</div>
         </nav>
         <div class="main">
           <div class="crumbs">供应链 / 采购与进口</div>
@@ -1106,10 +1170,10 @@
         <nav class="nav">
           <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
           <div class="np">供应链</div>
-          <div class="ni on"><span class="ic">🧾</span> 订单</div>
-          <div class="ni"><span class="ic">📦</span> 履约</div>
-          <div class="ni"><span class="ic">💳</span> 支付</div>
-          <div class="ni"><span class="ic">↩️</span> 退款 / 售后</div>
+          <div class="ni on"><svg class="ic"><use href="#i-receipt"/></svg> 订单</div>
+          <div class="ni"><svg class="ic"><use href="#i-box"/></svg> 履约</div>
+          <div class="ni"><svg class="ic"><use href="#i-card"/></svg> 支付</div>
+          <div class="ni"><svg class="ic"><use href="#i-return"/></svg> 退款 / 售后</div>
         </nav>
         <div class="main">
           <div class="crumbs">订单 / 详情</div>
@@ -1118,8 +1182,8 @@
           <div class="cards2">
             <div class="card">
               <h4>履约拆单 · 按温层</h4><div class="csub">混温订单 → 2 个包裹</div>
-              <div class="lrow"><span class="pill frozen">❄️ 冷冻组</span><div class="m2"><div class="t">三文鱼中段 ×1 · 眼肉 ×1</div><div class="d">批次 NO-0417 / AU-0417 · 华东冷冻仓 · 保温箱 + 冰袋</div></div><div class="r2">冷链</div></div>
-              <div class="lrow" style="border:0"><span class="pill ambient">🌡️ 常温组</span><div class="m2"><div class="t">金枪鱼罐头 ×1</div><div class="d">批次 ES-1120 · 常温仓 W2 · 标准包装</div></div><div class="r2">标准</div></div>
+              <div class="lrow"><span class="pill frozen">冷冻组</span><div class="m2"><div class="t">三文鱼中段 ×1 · 眼肉 ×1</div><div class="d">批次 NO-0417 / AU-0417 · 华东冷冻仓 · 保温箱 + 冰袋</div></div><div class="r2">冷链</div></div>
+              <div class="lrow" style="border:0"><span class="pill ambient">常温组</span><div class="m2"><div class="t">金枪鱼罐头 ×1</div><div class="d">批次 ES-1120 · 常温仓 W2 · 标准包装</div></div><div class="r2">标准</div></div>
             </div>
             <div class="card">
               <h4>金额与支付</h4>
@@ -1141,7 +1205,7 @@
         <nav class="nav">
           <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
           <div class="np">供应链</div>
-          <div class="ni on"><span class="ic">🚚</span> 运单</div>
+          <div class="ni on"><svg class="ic"><use href="#i-truck"/></svg> 运单</div>
           <div class="ni"><span class="ic">🗺️</span> 区域与运费</div>
           <div class="ni"><span class="ic">⚠️</span> 配送异常 <span class="cnt">3</span></div>
         </nav>
@@ -1151,10 +1215,10 @@
           <div class="tblwrap"><table class="tbl">
             <thead><tr><th>运单 / 订单</th><th>温层</th><th>承运</th><th>区域</th><th>时段</th><th>状态</th></tr></thead>
             <tbody>
-              <tr><td class="mono">SF-COLD-88213<div style="color:var(--muted);font-size:10px">2026091500482</div></td><td><span class="pill frozen">❄️ 冷链</span></td><td>顺丰冷运</td><td>上海 · 静安</td><td>明日 09–12</td><td><span class="pill ok">在途</span></td></tr>
-              <tr><td class="mono">YTO-556140<div style="color:var(--muted);font-size:10px">2026091500482</div></td><td><span class="pill ambient">🌡️ 标准</span></td><td>圆通</td><td>上海 · 静安</td><td>2–3 天</td><td><span class="pill ok">已揽收</span></td></tr>
-              <tr><td class="mono">SF-COLD-88190<div style="color:var(--muted);font-size:10px">2026091500461</div></td><td><span class="pill frozen">❄️ 冷链</span></td><td>顺丰冷运</td><td>上海 · 东区</td><td>今日 14–18</td><td><span class="pill crit">超时预警</span></td></tr>
-              <tr><td class="mono">SF-COLD-88176<div style="color:var(--muted);font-size:10px">2026091400377</div></td><td><span class="pill chilled">🧊 冷链</span></td><td>顺丰冷运</td><td>杭州 · 余杭</td><td>已送达</td><td><span class="pill ok">已签收</span></td></tr>
+              <tr><td class="mono">SF-COLD-88213<div style="color:var(--muted);font-size:10px">2026091500482</div></td><td><span class="pill frozen">冷链</span></td><td>顺丰冷运</td><td>上海 · 静安</td><td>明日 09–12</td><td><span class="pill ok">在途</span></td></tr>
+              <tr><td class="mono">YTO-556140<div style="color:var(--muted);font-size:10px">2026091500482</div></td><td><span class="pill ambient">标准</span></td><td>圆通</td><td>上海 · 静安</td><td>2–3 天</td><td><span class="pill ok">已揽收</span></td></tr>
+              <tr><td class="mono">SF-COLD-88190<div style="color:var(--muted);font-size:10px">2026091500461</div></td><td><span class="pill frozen">冷链</span></td><td>顺丰冷运</td><td>上海 · 东区</td><td>今日 14–18</td><td><span class="pill crit">超时预警</span></td></tr>
+              <tr><td class="mono">SF-COLD-88176<div style="color:var(--muted);font-size:10px">2026091400377</div></td><td><span class="pill chilled">冷链</span></td><td>顺丰冷运</td><td>杭州 · 余杭</td><td>已送达</td><td><span class="pill ok">已签收</span></td></tr>
             </tbody>
           </table></div>
           <div class="al warn" style="margin-top:14px"><span class="sev"></span><div class="txt"><b>冷链时效预警 · 上海东区</b><div class="m">3 单延误 > 30 分钟 —— 建议改派就近冷链网点</div></div><span class="go">改派 ›</span></div>
@@ -1169,10 +1233,10 @@
         <nav class="nav">
           <div class="brandmini"><img src="assets/logo.png" alt="Dolly Dolphin"></div>
           <div class="np">系统</div>
-          <div class="ni"><span class="ic">👤</span> 员工</div>
-          <div class="ni on"><span class="ic">🔐</span> 角色与权限</div>
-          <div class="ni"><span class="ic">📜</span> 审计日志</div>
-          <div class="ni"><span class="ic">⚙️</span> 配置</div>
+          <div class="ni"><svg class="ic"><use href="#i-user"/></svg> 员工</div>
+          <div class="ni on"><svg class="ic"><use href="#i-shield"/></svg> 角色与权限</div>
+          <div class="ni"><svg class="ic"><use href="#i-doc"/></svg> 审计日志</div>
+          <div class="ni"><svg class="ic"><use href="#i-gear"/></svg> 配置</div>
         </nav>
         <div class="main">
           <div class="crumbs">系统 / 角色与权限</div>
@@ -1255,9 +1319,9 @@
           <div class="card">
             <h4>各库区容量</h4><div class="csub">利用率 · 颜色代表储存温层</div>
             <div class="zones">
-              <div class="zone f"><div class="lab"><span>❄️ 冷冻</span><span class="cap">82% · 1,640 / 2,000 托</span></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
-              <div class="zone c"><div class="lab"><span>🧊 冷藏</span><span class="cap">61% · 305 / 500</span></div><div class="track"><div class="fill" style="width:61%"></div></div></div>
-              <div class="zone a"><div class="lab"><span>🌡️ 常温</span><span class="cap">47% · 1,410 / 3,000</span></div><div class="track"><div class="fill" style="width:47%"></div></div></div>
+              <div class="zone f"><div class="lab"><span>冷冻</span><span class="cap">82% · 1,640 / 2,000 托</span></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+              <div class="zone c"><div class="lab"><span>冷藏</span><span class="cap">61% · 305 / 500</span></div><div class="track"><div class="fill" style="width:61%"></div></div></div>
+              <div class="zone a"><div class="lab"><span>常温</span><span class="cap">47% · 1,410 / 3,000</span></div><div class="track"><div class="fill" style="width:47%"></div></div></div>
             </div>
             <div style="height:14px"></div>
             <h4>物流准时率</h4><div class="csub">承诺时段内送达</div>
@@ -1279,21 +1343,21 @@
 
         <h4 style="margin:26px 0 13px;font-size:15px">角色看板 · 最小信息原则</h4>
         <div class="roles">
-          <div class="role"><div class="rt"><span class="ic">⚙️</span>运营</div>
+          <div class="role"><div class="rt"><svg class="ic"><use href="#i-gear"/></svg>运营</div>
             <div class="metric"><span>日订单</span><b>612</b></div><div class="metric"><span>拆单率</span><b>34%</b></div><div class="metric"><span>异常</span><b class="r">7</b></div></div>
-          <div class="role"><div class="rt"><span class="ic">🚢</span>采购</div>
+          <div class="role"><div class="rt"><svg class="ic"><use href="#i-ship"/></svg>采购</div>
             <div class="metric"><span>在途采购</span><b>9</b></div><div class="metric"><span>到岸成本</span><b class="r">▲4%</b></div><div class="metric"><span>供应商准时</span><b class="g">94%</b></div></div>
-          <div class="role"><div class="rt"><span class="ic">🧊</span>仓储</div>
+          <div class="role"><div class="rt"><svg class="ic"><use href="#i-box"/></svg>仓储</div>
             <div class="metric"><span>冷冻利用率</span><b>82%</b></div><div class="metric"><span>临期 ≤30 天</span><b class="r">18</b></div><div class="metric"><span>报损率</span><b class="g">1.2%</b></div></div>
-          <div class="role"><div class="rt"><span class="ic">🚚</span>物流</div>
+          <div class="role"><div class="rt"><svg class="ic"><use href="#i-truck"/></svg>物流</div>
             <div class="metric"><span>冷链准时</span><b>96.8%</b></div><div class="metric"><span>单均成本</span><b>¥18.4</b></div><div class="metric"><span>异常</span><b class="r">3</b></div></div>
-          <div class="role"><div class="rt"><span class="ic">📣</span>营销</div>
+          <div class="role"><div class="rt"><svg class="ic"><use href="#i-mega"/></svg>营销</div>
             <div class="metric"><span>活动 ROI</span><b class="g">3.8×</b></div><div class="metric"><span>券核销</span><b>21%</b></div><div class="metric"><span>新 / 复购</span><b>38/62</b></div></div>
-          <div class="role"><div class="rt"><span class="ic">🎧</span>客服</div>
+          <div class="role"><div class="rt"><svg class="ic"><use href="#i-headset"/></svg>客服</div>
             <div class="metric"><span>满意度</span><b class="g">4.7</b></div><div class="metric"><span>首次响应</span><b>8 分</b></div><div class="metric"><span>退款率</span><b>2.1%</b></div></div>
-          <div class="role"><div class="rt"><span class="ic">💰</span>财务</div>
+          <div class="role"><div class="rt"><svg class="ic"><use href="#i-coins"/></svg>财务</div>
             <div class="metric"><span>毛利率</span><b>31.4%</b></div><div class="metric"><span>退款</span><b>¥41k</b></div><div class="metric"><span>折扣损耗</span><b class="r">3.2%</b></div></div>
-          <div class="role"><div class="rt"><span class="ic">🎯</span>高管</div>
+          <div class="role"><div class="rt"><svg class="ic"><use href="#i-target"/></svg>高管</div>
             <div class="metric"><span>成交额</span><b>¥3.22M</b></div><div class="metric"><span>海鲜占比</span><b class="g">38%↓</b></div><div class="metric"><span>活跃用户</span><b>48.1k</b></div></div>
         </div>
       </div>

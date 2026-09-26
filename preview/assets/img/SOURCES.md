@@ -1,27 +1,21 @@
-# Product imagery — sources & license
+# Product imagery — sources & status
 
-These are **placeholder** product visuals for the Step 1 interface preview, chosen because
-they are openly licensed and reachable from this environment. **They are swappable** — production
-should replace them with the brand's own licensed food photography (edit only the `.i1`–`.i8`
-rules in [`../tokens.css`](../tokens.css) is not needed; the image paths live in `preview/index.html`
-under the `/* Product imagery */` comment, or drop same-named files here).
+The Step 1 preview shows **one genuine product photo** plus **original placeholder motifs**;
+it uses **no third‑party / stock imagery**.
 
-| File | Product shown as | Fluent Emoji asset |
-|------|------------------|--------------------|
-| `salmon.png` | 挪威三文鱼 / Salmon (sashimi) | Sushi 🍣 |
-| `beef.png` | 澳洲眼肉 / Beef ribeye | Cut of meat 🥩 |
-| `tuna.png` | 金枪鱼 / Tuna | Fish 🐟 |
-| `shrimp.png` | 阿根廷红虾 / Shrimp | Shrimp 🦐 |
-| `lamb.png` | 新西兰羊排 / Lamb | Meat on bone 🍖 |
-| `scallop.png` | 北海道扇贝 / Scallop | Oyster 🦪 |
-| `crab.png` | 阿拉斯加帝王蟹 / King crab | Crab 🦀 |
-| `lobster.png` | 波士顿龙虾 / Lobster | Lobster 🦞 |
+| Asset | What it is | Source / license |
+|-------|-----------|------------------|
+| `sardines_pack.png` | The signature **Dolly Dolphin frozen‑sardines packaging** — a real product image | Extracted from the brand's **own Branding Kit** (`Dolly_dolphin.pdf`); the operator's own asset |
+| *(other product tiles)* | Refined **gradient tiles with an original line‑motif** (fish / cut / shell), drawn inline in the page | Original artwork created for this preview (no third‑party images) |
+| `logo.png`, `logo-icon.png` | The **Dolly Dolphin logo / dolphin‑D mark** | Extracted from the brand's own Branding Kit |
 
-## License
-**Microsoft Fluent Emoji** — MIT License. Copyright (c) Microsoft Corporation.
-Source: https://github.com/microsoft/fluentui-emoji (assets/&lt;Name&gt;/3D/&lt;name&gt;_3d.png).
+## Why placeholders for most products
+This environment's network policy blocks stock‑photo hosts, and reusing photos from
+third‑party repositories risks copyright. Rather than ship unlicensed images, every
+non‑signature product tile is an **original, brand‑coloured line motif** — clearly a
+placeholder for photography.
 
-The MIT license permits use, modification, and redistribution with attribution. This file
-provides that attribution. These 3D renders are used here as polished, license-clean
-placeholders; they are **not** photographs and should be replaced with real product
-photography before launch.
+## To finalise with real photography
+Drop brand‑owned or properly‑licensed photos (e.g. `salmon.jpg`, `crab.jpg`, …) into this
+folder and point the relevant tile at them — the tile classes in `preview/index.html`
+(`/* Product tiles */`) are the only place to edit. Nothing else changes.
