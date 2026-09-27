@@ -79,12 +79,12 @@
     background:radial-gradient(130% 120% at 88% 18%, color-mix(in srgb,var(--accent) 52%,transparent), transparent 56%),
       linear-gradient(150deg,var(--brand-strong),#123f63 62%,var(--brand-deep));color:#fff;padding:18px 20px}
   .hero .kick{font-size:11px;letter-spacing:.2em;font-weight:800;color:#fff;opacity:.82}
-  .hero h3{font-size:24px;margin:8px 0 7px;line-height:1.16;font-weight:900}
+  .hero h3{font-size:21px;margin:7px 0 6px;line-height:1.18;font-weight:900}
   .hero p{margin:0;font-size:12.5px;opacity:.9;max-width:22ch}
   .hero .cta{margin-top:15px;display:inline-block;background:#fff;color:var(--brand-strong);font-weight:800;font-size:12.5px;padding:9px 16px;border-radius:var(--r-pill)}
 
   .sectitle{display:flex;align-items:baseline;justify-content:space-between;padding:24px 18px 12px}
-  .sectitle h4{font-size:18px;font-weight:900;letter-spacing:-.01em}
+  .sectitle h4{font-size:16px;font-weight:900;letter-spacing:-.01em}
   .sectitle .more{font-size:12.5px;color:var(--muted);font-weight:700}
 
   .qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:4px 14px}
@@ -99,7 +99,7 @@
   /* premium product cards — imagery forward, roomy */
   .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:4px 18px}
   .pc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-1)}
-  .pc .img{aspect-ratio:1/1;position:relative}
+  .pc .img{aspect-ratio:5/4;position:relative}
   /* Product tiles — refined gradient panels awaiting real photography; the signature product uses a real photo (.i-sard) */
   .i1,.i2,.i3,.i4,.i5,.i6,.i7,.i8{background:linear-gradient(163deg,var(--surface-2),var(--surface-3))}
   .i-sard{background:#fff url(assets/img/sardines_pack.png) center/auto 94% no-repeat}
@@ -122,17 +122,19 @@
   .pc .img.i2,.pc .img.i5{--mo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b6fb0' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.5 12a6.5 5.2 0 1 0 13 0 6.5 5.2 0 0 0-13 0zM9.6 12a2.7 2.1 0 1 0 5.4 0 2.7 2.1 0 0 0-5.4 0z'/%3E%3C/svg%3E")}
   .pc .img.i6,.pc .img.i7,.pc .img.i8{--mo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b6fb0' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5.5c-4.4 0-7.5 3.4-7.5 7l7.5 5.5 7.5-5.5c0-3.6-3.1-7-7.5-7zM12 5.5v12M8.4 7 9.6 17M15.6 7 14.4 17'/%3E%3C/svg%3E")}
   .pc .img::after{content:"";position:absolute;inset:0;background:var(--mo,none) center/46% no-repeat;opacity:.4;pointer-events:none}
-  .pc .flag{position:absolute;top:9px;left:9px;background:rgba(255,255,255,.92);border-radius:var(--r-pill);font-size:10px;font-weight:800;padding:3px 9px;color:var(--ink)}
-  .pc .tc{position:absolute;top:9px;right:9px;font-size:10px;font-weight:800;padding:3px 9px;border-radius:var(--r-pill);color:#fff}
+  .pc .flag{position:absolute;top:8px;left:8px;background:rgba(255,255,255,.92);border-radius:var(--r-pill);font-size:9px;font-weight:800;padding:2px 7px;color:var(--ink)}
+  .pc .tc{position:absolute;top:8px;right:8px;font-size:9px;font-weight:800;padding:2px 7px;border-radius:var(--r-pill);color:#fff}
   .tc.frozen{background:var(--frozen)} .tc.chilled{background:var(--chilled)} .tc.ambient{background:var(--ambient)}
-  .pc .b{padding:12px 13px 13px}
-  .pc .nm{font-size:13.5px;font-weight:800;line-height:1.35;min-height:37px}
-  .pc .meta{font-size:11px;color:var(--muted);margin:4px 0 10px;font-weight:600}
-  .pc .foot{display:flex;align-items:center;gap:8px}
-  .pc .price{color:var(--price);font-weight:900;font-size:18px}
-  .pc .price .cur{font-size:12px}
-  .pc .mem{font-size:9.5px;font-weight:800;color:var(--accent-ink);background:var(--accent-soft);padding:2px 6px;border-radius:5px}
-  .pc .add{margin-left:auto;width:30px;height:30px;border-radius:11px;background:var(--brand-deep);color:#fff;display:grid;place-items:center;font-size:18px;font-weight:700}
+  .pc .b{padding:10px 11px 11px}
+  .pc .bk{font-size:8.5px;font-weight:800;letter-spacing:.06em;color:var(--muted-2);text-transform:uppercase;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--font-ui)}
+  .pc .nm{font-size:12.5px;font-weight:700;line-height:1.3;min-height:32px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .citem .bk{font-size:8px;font-weight:800;letter-spacing:.05em;color:var(--muted-2);text-transform:uppercase;margin-bottom:1px;font-family:var(--font-ui)}
+  .pc .meta{font-size:10px;color:var(--muted);margin:3px 0 8px;font-weight:600}
+  .pc .foot{display:flex;align-items:center;gap:7px}
+  .pc .price{color:var(--price);font-weight:900;font-size:15.5px}
+  .pc .price .cur{font-size:11px}
+  .pc .mem{font-size:9px;font-weight:800;color:var(--accent-ink);background:var(--accent-soft);padding:2px 6px;border-radius:5px}
+  .pc .add{margin-left:auto;width:27px;height:27px;border-radius:10px;background:var(--brand-deep);color:#fff;display:grid;place-items:center;font-size:16px;font-weight:700}
 
   .tabbar{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);background:var(--surface);padding:9px 0 11px;padding-bottom:calc(11px + env(safe-area-inset-bottom,0px))}
   .tb{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;color:var(--muted-2);font-weight:700}
@@ -142,7 +144,7 @@
   /* listing */
   .lsthead{padding:12px 18px 6px;display:flex;align-items:center;gap:10px}
   .lsthead .back{font-size:20px;color:var(--ink-2)}
-  .lsthead .title{font-weight:900;font-size:18px}
+  .lsthead .title{font-weight:900;font-size:16px}
   .lsthead .r{margin-left:auto;font-size:13px;color:var(--muted);font-weight:700}
   .filterbar{display:flex;gap:8px;padding:10px 18px 4px;overflow:hidden;flex-wrap:wrap}
   .chip{font-size:11.5px;font-weight:700;padding:7px 13px;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--surface);color:var(--ink-2);white-space:nowrap}
@@ -156,7 +158,7 @@
   .pdpimg .flag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);border-radius:var(--r-pill);font-size:11px;font-weight:800;padding:5px 12px}
   .pdpimg .tc{position:absolute;top:14px;right:14px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:var(--r-pill);color:#fff}
   .pdpbody{padding:18px 18px 0}
-  .pdpbody .nm{font-size:20px;font-weight:900;line-height:1.3;letter-spacing:-.01em}
+  .pdpbody .nm{font-size:18px;font-weight:900;line-height:1.3;letter-spacing:-.01em}
   .pdpbody .sub{font-size:12px;color:var(--muted);margin-top:5px;font-weight:600}
   .pdpprice{display:flex;align-items:baseline;gap:10px;margin:14px 0}
   .pdpprice .p{color:var(--price);font-weight:900;font-size:28px}
@@ -180,15 +182,15 @@
   .btn.buy{background:var(--brand-deep);color:#fff}
 
   /* cart */
-  .oh{padding:14px 18px 4px;font-weight:900;font-size:20px}
+  .oh{padding:14px 18px 4px;font-weight:900;font-size:18px}
   .cgroup{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);margin:14px 18px;overflow:hidden;box-shadow:var(--sh-1)}
   .cgroup .gh{display:flex;align-items:center;gap:9px;padding:13px 15px;border-bottom:1px solid var(--line);font-size:12.5px;font-weight:800}
   .cgroup .gh .tcp{font-size:10px;font-weight:800;padding:3px 9px;border-radius:var(--r-pill);color:#fff}
   .cgroup .gh .note{margin-left:auto;font-size:10.5px;color:var(--muted);font-weight:700}
   .citem{display:flex;gap:12px;padding:14px 15px}
   .citem .im{width:60px;height:60px;border-radius:13px;flex:none}
-  .citem .nm{font-size:13px;font-weight:800;line-height:1.35}
-  .citem .mt{font-size:11px;color:var(--muted);margin-top:3px;font-weight:600}
+  .citem .nm{font-size:12px;font-weight:800;line-height:1.32;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .citem .mt{font-size:10px;color:var(--muted);margin-top:3px;font-weight:600}
   .citem .pr{color:var(--price);font-weight:900;font-size:15px;margin-top:7px}
   .citem .qty{margin-left:auto;align-self:center;font-size:12px;font-weight:800;color:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-pill);padding:5px 12px}
   .summary{margin:14px 18px 0;background:var(--surface-3);border-radius:var(--r-lg);padding:16px}
@@ -577,10 +579,10 @@
             <div class="sectitle" style="padding-top:16px"><h4>本周精选 · 进口海鲜</h4><span class="more">查看全部 ›</span></div>
             <div class="pgrid">
               <div class="pc"><div class="img rp p-sockeye"><span class="flag">🇺🇸 阿拉斯加</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 阿拉斯加红鲑鱼 带皮去骨</div><div class="meta">907g · 野生捕捞</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">阿拉斯加红鲑鱼 带皮去骨</div><div class="meta">907g · 野生捕捞</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>168</span><span class="mem">会员 152</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img i-sard"><span class="flag">招牌 Signature</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Dolly Dolphin 冷冻沙丁鱼</div><div class="meta">1kg · 野生捕捞</div>
+                <div class="b"><div class="bk">DOLLY DOLPHIN</div><div class="nm">冷冻沙丁鱼</div><div class="meta">1kg · 野生捕捞</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>59</span><span class="mem">会员 52</span><span class="add">+</span></div></div></div>
             </div>
             <div class="trust">
@@ -592,19 +594,19 @@
             <div class="sectitle"><h4>蟹 · 虾 · 贝</h4><span class="more">查看全部 ›</span></div>
             <div class="pgrid">
               <div class="pc"><div class="img rp p-crab"><span class="flag">🇨🇦 加拿大</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 雪蟹腿与蟹钳 熟制</div><div class="meta">907g · 即食</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">雪蟹腿与蟹钳 熟制</div><div class="meta">907g · 即食</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>398</span><span class="mem">会员 359</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img rp p-rawshrimp"><span class="flag">🇻🇳 越南</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 特大生虾 去壳留尾</div><div class="meta">907g · 21–25/磅</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">特大生虾 去壳留尾</div><div class="meta">907g · 21–25/磅</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>139</span><span class="mem">会员 129</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img rp p-scampi"><span class="flag">🇺🇸 美国</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 蒜香黄油风味大虾</div><div class="meta">907g · 一煎即食</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">蒜香黄油风味大虾</div><div class="meta">907g · 一煎即食</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>119</span><span class="mem">会员 108</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img rp p-scallops"><span class="flag">🇺🇸 北大西洋</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 北大西洋海扇贝</div><div class="meta">454g · 15–25/磅</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">北大西洋海扇贝</div><div class="meta">454g · 15–25/磅</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>158</span><span class="mem">会员 145</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img rp p-cookedshrimp"><span class="flag">🇻🇳 越南</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 熟冻中虾 即食</div><div class="meta">680g · 41–50/磅</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">熟冻中虾 即食</div><div class="meta">680g · 41–50/磅</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>99</span><span class="mem">会员 89</span><span class="add">+</span></div></div></div>
             </div>
           </div></div>
@@ -632,16 +634,16 @@
           <div class="appscroll"><div class="inner">
             <div class="pgrid">
               <div class="pc"><div class="img rp p-atlantic"><span class="flag">🇨🇱 智利</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 大西洋三文鱼柳 独立包装</div><div class="meta">1.13kg · 分切装</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">大西洋三文鱼柳 独立包装</div><div class="meta">1.13kg · 分切装</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>128</span><span class="mem">会员 116</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img rp p-pesto"><span class="flag">🇺🇸 美国</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 香蒜青酱三文鱼排</div><div class="meta">680g · 调味即烤</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">香蒜青酱三文鱼排</div><div class="meta">680g · 调味即烤</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>98</span><span class="mem">会员 89</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img rp p-cod"><span class="flag">🇮🇸 冰岛</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 去皮鳕鱼柳</div><div class="meta">907g · 去皮去骨</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">去皮鳕鱼柳</div><div class="meta">907g · 去皮去骨</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>118</span><span class="mem">会员 108</span><span class="add">+</span></div></div></div>
               <div class="pc"><div class="img rp p-marinated"><span class="flag">🇺🇸 阿拉斯加</span><span class="tc frozen">冷冻</span></div>
-                <div class="b"><div class="nm">Member's Mark 香草腌制三文鱼</div><div class="meta">454g · 调味即烤</div>
+                <div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">香草腌制三文鱼</div><div class="meta">454g · 调味即烤</div>
                 <div class="foot"><span class="price"><span class="cur">¥</span>88</span><span class="mem">会员 79</span><span class="add">+</span></div></div></div>
             </div>
           </div></div>
@@ -697,8 +699,8 @@
           <div class="appscroll"><div class="inner">
             <div class="cgroup">
               <div class="gh"><span class="tcp" style="background:var(--frozen)">冷冻组</span> 冷链配送<span class="note">保温箱 + 冰袋 · 次日达</span></div>
-              <div class="citem"><span class="im rp p-atlantic"></span><div><div class="nm">Member's Mark 大西洋三文鱼柳</div><div class="mt">1.13kg · CL-2026-0417</div><div class="pr">¥120 <span style="font-size:10px;color:var(--muted);font-weight:700">会员价</span></div></div><span class="qty">1</span></div>
-              <div class="citem"><span class="im rp p-crab"></span><div><div class="nm">Member's Mark 雪蟹腿与蟹钳 熟制</div><div class="mt">907g · CA-2026-0418</div><div class="pr">¥152</div></div><span class="qty">1</span></div>
+              <div class="citem"><span class="im rp p-atlantic"></span><div><div class="bk">MEMBER'S MARK</div><div class="nm">大西洋三文鱼柳</div><div class="mt">1.13kg · CL-2026-0417</div><div class="pr">¥120 <span style="font-size:10px;color:var(--muted);font-weight:700">会员价</span></div></div><span class="qty">1</span></div>
+              <div class="citem"><span class="im rp p-crab"></span><div><div class="bk">MEMBER'S MARK</div><div class="nm">雪蟹腿与蟹钳 熟制</div><div class="mt">907g · CA-2026-0418</div><div class="pr">¥152</div></div><span class="qty">1</span></div>
             </div>
             <div class="cgroup">
               <div class="gh"><span class="tcp" style="background:var(--ambient)">常温组</span> 标准快递<span class="note">普通包装 · 全国配送</span></div>
@@ -878,8 +880,8 @@
             </div>
             <div class="sectitle"><h4>会员价精选</h4><span class="more">查看全部 ›</span></div>
             <div class="pgrid">
-              <div class="pc"><div class="img rp p-ptilapia"><span class="tc frozen">冷冻</span></div><div class="b"><div class="nm">Member's Mark 帕玛森芝士罗非鱼柳</div><div class="meta">680g · 焗烤即食</div><div class="foot"><span class="price"><span class="cur">¥</span>78</span><span class="mem">会员</span><span class="add">+</span></div></div></div>
-              <div class="pc"><div class="img rp p-tilapia"><span class="tc frozen">冷冻</span></div><div class="b"><div class="nm">Member's Mark 罗非鱼柳 独立包装</div><div class="meta">907g · 去皮去骨</div><div class="foot"><span class="price"><span class="cur">¥</span>58</span><span class="mem">会员</span><span class="add">+</span></div></div></div>
+              <div class="pc"><div class="img rp p-ptilapia"><span class="tc frozen">冷冻</span></div><div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">帕玛森芝士罗非鱼柳</div><div class="meta">680g · 焗烤即食</div><div class="foot"><span class="price"><span class="cur">¥</span>78</span><span class="mem">会员</span><span class="add">+</span></div></div></div>
+              <div class="pc"><div class="img rp p-tilapia"><span class="tc frozen">冷冻</span></div><div class="b"><div class="bk">MEMBER'S MARK</div><div class="nm">罗非鱼柳 独立包装</div><div class="meta">907g · 去皮去骨</div><div class="foot"><span class="price"><span class="cur">¥</span>58</span><span class="mem">会员</span><span class="add">+</span></div></div></div>
             </div>
           </div></div>
         </div></div>
