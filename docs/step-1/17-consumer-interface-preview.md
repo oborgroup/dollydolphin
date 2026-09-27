@@ -54,7 +54,14 @@ All 16 required consumer screens are now rendered interactively (Category and Li
 - **Adaptive PDP:** the Provenance block is generated from the Seafood attribute set; the on‑screen note explains how it becomes Cut/Grade (meat) or Net/Drain weight (canned) — same page, no code.
 - **Multiple shipments per order**, each tracked; batch codes shown (NO‑2026‑0417, etc.).
 
-## 4. Notes
-- Product imagery: the **signature frozen‑sardines packaging** (the brand's own asset, from the Branding Kit) is a **real product photo** on Home and the PDP; every other product tile is an **original brand‑coloured line motif** on a refined gradient panel — a clean placeholder, **no third‑party/stock images**. Real photography for the remaining SKUs is supplied at production (upload or allowlist a photo host); the tiles are ready to receive it. See [`preview/assets/img/SOURCES.md`](../../preview/assets/img/SOURCES.md).
+## 4. Launch scope — seafood subcategories now, category‑general architecture
+
+The storefront **launches with imported seafood only** — **salmon · fish · crab · shrimp · shellfish** — per owner direction ("focus on seafood subcategories now; meat and other products come later"). This is a **launch‑scope** choice, not an architectural one: the product/category/attribute model stays fully **category‑general**. The preview makes this explicit rather than hiding it:
+- **Consumer:** the Home quick‑nav, search, listing, cart and all product cards are seafood.
+- **Admin — categories:** 海鲜 (Seafood) is the live, selected category with real subcategories (三文鱼 · 虾 · 蟹 · 贝 · 鱼柳 · 罐头鱼); **肉类 / 罐头食品 / 加工食品 are shown as "即将上线 / coming soon"** future nodes. The adaptive **attribute set** and **product editor** run on the live Seafood set (品种 / 捕捞方式 / 捕捞海域 / 规格), with the on‑screen note showing the *same* editor already models meat (部位/等级/大理石纹) and canned (净含量/沥干重) for the future — **new category = new record + bound attribute set, no code change.**
+- **Manager:** the category‑mix chart reads as a **seafood‑subcategory** breakdown (三文鱼 34% → 鱼柳 10%).
+
+## 5. Notes
+- **Product imagery — now real photography.** Dolly Dolphin operates as an **authorized reseller** (a Sam's‑Club‑style membership model), so every product tile shows the **genuine retail packaging** of the actual catalog (salmon, crab, shrimp, scallops, cod, tilapia — 12 operator‑supplied square photos), alongside the brand's own **signature frozen‑sardines** asset from the Branding Kit. The **only** gradient tile left is the **ambient canned‑tuna** line, kept to demonstrate the mixed‑temperature flow (no supplied photo for it). No third‑party/stock imagery. See [`preview/assets/img/SOURCES.md`](../../preview/assets/img/SOURCES.md).
 - Prices are illustrative, ¥, VAT‑inclusive style; member price shown alongside.
 - The **◐ 主题** control demonstrates the light/dark theming from one token file.
