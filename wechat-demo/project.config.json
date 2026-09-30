@@ -1,0 +1,17 @@
+{
+  "description": "Dolly Dolphin 进口海鲜 · WeChat Mini Program demo (Step 1 prototype)",
+  "packOptions": { "ignore": [], "include": [] },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "bigPackageSizeSupport": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.5.5",
+  "appid": "touristappid",
+  "projectname": "dolly-dolphin-demo",
+  "condition": {}
+}

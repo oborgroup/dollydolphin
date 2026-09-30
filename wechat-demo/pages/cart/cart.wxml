@@ -1,0 +1,46 @@
+<view class="wrap">
+  <view class="oh">购物车 <text class="cnt">· {{count}} 件</text></view>
+
+  <block wx:if="{{count > 0}}">
+    <view class="cgroup" wx:for="{{groups}}" wx:for-item="g" wx:key="key">
+      <view class="gh">
+        <text class="tcp {{g.color}}">{{g.key}}组</text>
+        <text class="gt">{{g.title}}</text>
+        <text class="gnote">{{g.note}}</text>
+      </view>
+      <view class="citem" wx:for="{{g.items}}" wx:for-item="it" wx:key="id">
+        <image wx:if="{{it.img}}" class="thumb" src="{{it.img}}" mode="aspectFill"/>
+        <view wx:else class="thumb ph"></view>
+        <view class="mid">
+          <text class="bk" wx:if="{{it.brand}}">{{it.brand}}</text>
+          <view class="nm">{{it.name}}</view>
+          <text class="mt">{{it.spec}}</text>
+          <text class="pr">¥{{it.price}}</text>
+        </view>
+        <view class="stepper">
+          <text class="s" data-id="{{it.id}}" bindtap="dec">−</text>
+          <text class="q">{{it.qty}}</text>
+          <text class="s" data-id="{{it.id}}" bindtap="inc">＋</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="summary">
+      <view class="r"><text>商品小计</text><text>¥{{subtotal}}</text></view>
+      <view class="r save"><text>会员优惠</text><text>−¥{{save}}</text></view>
+      <view class="r"><text>冷链运费（冷冻组）</text><text>¥{{freight}}</text></view>
+      <view class="r"><text>标准运费（常温组）</text><text class="save">免运费</text></view>
+      <view class="r tot"><text>合计</text><text>¥{{total}}</text></view>
+    </view>
+    <view class="checkoutbar">
+      <text class="sel">已选 {{count}} 件</text>
+      <view class="cbtn" bindtap="checkout">去结算 · ¥{{total}}</view>
+    </view>
+    <view style="height:20rpx"></view>
+  </block>
+
+  <view wx:else class="empty">
+    <text class="e1">购物车是空的</text>
+    <view class="ego" bindtap="goHome">去逛逛 →</view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<import src="/templates/product-card.wxml"/>
+<view class="wrap">
+
+  <view class="apphead">
+    <image class="badge" src="/images/logo-icon.png" mode="aspectFit"/>
+    <view class="loc"><text class="l1">上海 · 静安区</text><text class="l2">送至 · 虹桥公寓</text></view>
+  </view>
+
+  <view class="searchbar">搜索 大西洋三文鱼 · 阿拉斯加雪蟹 · 北大西洋扇贝</view>
+
+  <view class="hero">
+    <text class="kick">GLOBAL SOURCING</text>
+    <text class="h">全球甄选 · 直采到家</text>
+    <text class="sub">正品进口 · 全程冷链保障</text>
+    <view class="cta" bindtap="goList">探索进口精选 →</view>
+  </view>
+
+  <view class="qnav">
+    <view class="q" bindtap="goList"><text class="qk">三文鱼</text></view>
+    <view class="q" bindtap="goList"><text class="qk">虾类</text></view>
+    <view class="q" bindtap="goList"><text class="qk">蟹类</text></view>
+    <view class="q" bindtap="goList"><text class="qk">贝类</text></view>
+  </view>
+
+  <view class="trust">
+    <view class="t">全球直采</view>
+    <view class="t">正品进口</view>
+    <view class="t">全程冷链</view>
+    <view class="t">批次可溯</view>
+  </view>
+
+  <view class="sectitle"><text class="st">本周精选 · 进口海鲜</text><text class="more">查看全部 ›</text></view>
+  <view class="grid">
+    <block wx:for="{{feat}}" wx:key="id"><template is="pcard" data="{{...item}}"/></block>
+  </view>
+
+  <view class="sectitle"><text class="st">蟹 · 虾 · 贝</text><text class="more">查看全部 ›</text></view>
+  <view class="grid">
+    <block wx:for="{{sea}}" wx:key="id"><template is="pcard" data="{{...item}}"/></block>
+  </view>
+
+  <view class="foot-note">Dolly Dolphin · 进口海鲜 · 演示原型（Step 1）</view>
+  <view style="height:30rpx"></view>
+</view>

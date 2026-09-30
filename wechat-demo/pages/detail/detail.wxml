@@ -1,0 +1,48 @@
+<view class="wrap" wx:if="{{p}}">
+  <view class="pdpimg">
+    <image class="pimg" src="{{p.img}}" mode="aspectFill"/>
+    <text class="flag">{{p.flag}}</text>
+    <text class="tc {{p.tempClass}}">{{p.temp}}</text>
+  </view>
+
+  <view class="body">
+    <text class="bk">{{p.brand}}</text>
+    <view class="nm">{{p.name}}</view>
+    <text class="sub">{{p.sub}} · {{p.net}}</text>
+
+    <view class="priceline">
+      <text class="p"><text class="cur">¥</text>{{p.member}}</text>
+      <text class="o">¥{{p.price}}</text>
+      <text class="memtag">会员价</text>
+    </view>
+
+    <view class="badges">
+      <text class="bdg">原产地直采</text><text class="bdg">正品进口</text>
+      <text class="bdg">全程冷链</text><text class="bdg">批次可溯</text>
+    </view>
+
+    <view class="kv">
+      <view class="cell"><text class="k">原产国</text><text class="v">{{p.originCountry}}</text></view>
+      <view class="cell"><text class="k">净含量</text><text class="v">{{p.net}}</text></view>
+      <view class="cell"><text class="k">储存</text><text class="v">冷冻 ≤ −18°C</text></view>
+      <view class="cell"><text class="k">保质期</text><text class="v">{{p.shelf}}</text></view>
+      <view class="cell"><text class="k">配送</text><text class="v">冷链 · 次日达</text></view>
+      <view class="cell"><text class="k">库存</text><text class="v">{{p.stock}}</text></view>
+    </view>
+
+    <view class="sec-t">溯源信息 · Provenance</view>
+    <view class="attr"><text class="k">品种</text><text class="v">{{p.species}}</text></view>
+    <view class="attr"><text class="k">捕捞方式</text><text class="v">{{p.method}}</text></view>
+    <view class="attr"><text class="k">海域</text><text class="v">{{p.sea}}</text></view>
+    <view class="attr"><text class="k">进口批次</text><text class="v">{{p.batch}}</text></view>
+
+    <view class="adaptnote">↳ 此区块由「海鲜」品类的属性集生成。未来上线的肉类会显示「部位 / 等级 / 大理石纹」，罐头显示「净含量 / 沥干重」——同一页面，配置驱动，无需改代码。</view>
+    <view style="height:160rpx"></view>
+  </view>
+
+  <view class="stickybar">
+    <view class="ic" bindtap="goCart">购物车</view>
+    <view class="btn cart" bindtap="add">加入购物车</view>
+    <view class="btn buy" bindtap="buy">立即购买</view>
+  </view>
+</view>

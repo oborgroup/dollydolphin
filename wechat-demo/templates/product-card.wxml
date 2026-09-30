@@ -1,0 +1,20 @@
+<!-- Reusable product card. Host page must define goDetail(e) and add(e). -->
+<template name="pcard">
+  <view class="card" data-id="{{id}}" bindtap="goDetail">
+    <view class="card-img">
+      <image class="pimg" src="{{img}}" mode="aspectFill" lazy-load="true"/>
+      <text class="flag">{{flag}}</text>
+      <text class="tc {{tempClass}}">{{temp}}</text>
+    </view>
+    <view class="card-b">
+      <text class="bk" wx:if="{{brand}}">{{brand}}</text>
+      <view class="nm">{{name}}</view>
+      <text class="meta">{{spec}}</text>
+      <view class="foot">
+        <text class="price"><text class="cur">¥</text>{{price}}</text>
+        <text class="mem" wx:if="{{member}}">会员 {{member}}</text>
+        <view class="add" catchtap="add" data-id="{{id}}">＋</view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,24 @@
+<import src="/templates/product-card.wxml"/>
+<view class="wrap">
+
+  <view class="lsthead">
+    <text class="title">海鲜 · 鱼类精选</text>
+    <text class="filter">筛选</text>
+  </view>
+
+  <scroll-view scroll-x class="chiprow" show-scrollbar="{{false}}">
+    <view wx:for="{{filters}}" wx:key="k"
+          class="chip {{tab === item.k ? 'on' : ''}}"
+          data-k="{{item.k}}" bindtap="pick">{{item.t}}</view>
+  </scroll-view>
+
+  <view class="sortbar">
+    <text class="on">推荐</text><text>销量</text><text>价格 ↑</text><text>上新</text>
+  </view>
+
+  <view class="grid">
+    <block wx:for="{{list}}" wx:key="id"><template is="pcard" data="{{...item}}"/></block>
+  </view>
+  <view wx:if="{{list.length === 0}}" class="empty">该分类即将上新</view>
+  <view style="height:30rpx"></view>
+</view>
