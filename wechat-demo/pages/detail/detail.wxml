@@ -1,6 +1,6 @@
 <view class="wrap" wx:if="{{p}}">
   <view class="pdpimg">
-    <image class="pimg" src="{{p.img}}" mode="aspectFill"/>
+    <image class="pimg" src="{{p.img}}" mode="aspectFit"/>
     <text class="flag">{{p.flag}}</text>
     <text class="tc {{p.tempClass}}">{{p.temp}}</text>
   </view>
