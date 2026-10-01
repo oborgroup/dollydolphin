@@ -14,14 +14,14 @@ view, text, image { box-sizing:border-box; }
 .grid { display:flex; flex-wrap:wrap; justify-content:space-between; padding:0 24rpx; }
 .card { width:340rpx; background:var(--surface); border:1rpx solid var(--line);
   border-radius:24rpx; overflow:hidden; margin-bottom:24rpx; box-shadow:0 6rpx 20rpx rgba(14,46,78,.05); }
-.card-img { position:relative; width:100%; height:272rpx; background:#fff; padding:38rpx 24rpx 10rpx; box-sizing:border-box; }
+.card-img { position:relative; width:100%; height:272rpx; background:#fff; padding:30rpx 24rpx 0; box-sizing:border-box; }
 .pimg { width:100%; height:100%; display:block; }
 .flag { position:absolute; top:14rpx; left:14rpx; background:rgba(255,255,255,.92);
   border-radius:999rpx; font-size:19rpx; font-weight:700; padding:4rpx 14rpx; color:var(--ink); }
 .tc { position:absolute; top:14rpx; right:14rpx; font-size:19rpx; font-weight:700;
   padding:4rpx 14rpx; border-radius:999rpx; color:#fff; }
 .tc.frozen { background:var(--frozen); } .tc.chilled { background:var(--chilled); } .tc.ambient { background:var(--ambient); }
-.card-b { padding:18rpx 20rpx 20rpx; }
+.card-b { padding:12rpx 20rpx 20rpx; }
 .bk { display:block; font-size:17rpx; font-weight:700; letter-spacing:1rpx; color:var(--muted-2); margin-bottom:4rpx; }
 .nm { font-size:25rpx; font-weight:700; line-height:1.3; color:var(--ink); min-height:64rpx;
   display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
