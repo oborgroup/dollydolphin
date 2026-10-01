@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>Dolly Dolphin</title>
+<meta name="description" content="Dolly Dolphin 进口海鲜 · 移动端 H5 演示（可在微信中打开）">
+<style>
+:root{
+  color-scheme:light;
+  --brand:#4AA6E0;--brand-deep:#1C74B8;--brand-strong:#0E2E4E;--brand-ink:#1B6FB0;
+  --accent:#FF8FAE;--accent-soft:#FFE9F0;--accent-ink:#C43E63;--price:#E5486B;
+  --frozen:#1E63A8;--chilled:#12938F;--ambient:#BE7C33;
+  --bg:#F1F6FB;--surface:#FFFFFF;--surface-2:#F5F9FD;--surface-3:#E9F0F7;--line:#E2EAF2;
+  --ink:#13232F;--ink-2:#2C3E4D;--muted:#6B7F92;--muted-2:#9DB0C0;
+  --r-md:12px;--r-lg:16px;--r-xl:22px;--sh-1:0 6px 20px rgba(14,46,78,.06);--sh-3:0 20px 50px rgba(14,46,78,.22);
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#dbe3ec;font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+img{max-width:100%;display:block}
+button{font-family:inherit;border:0;background:none;padding:0;margin:0;cursor:pointer;color:inherit}
+.app{position:relative;max-width:480px;min-height:100vh;margin:0 auto;background:var(--bg);overflow:hidden}
+.ic{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
+.sr{position:absolute;width:0;height:0;overflow:hidden}
+
+/* views */
+.view{padding-bottom:96px}
+.view[hidden]{display:none}
+
+/* app head */
+.apphead{display:flex;align-items:center;gap:12px;padding:14px 16px 2px}
+.apphead .badge{width:34px;height:34px;border-radius:10px;background:#fff;box-shadow:var(--sh-1);object-fit:contain;padding:3px}
+.apphead .loc{line-height:1.25}
+.apphead .l1{font-size:14px;font-weight:800}
+.apphead .l2{font-size:10px;color:var(--muted)}
+.apphead .bell{margin-left:auto;color:var(--muted)}
+.searchbar{margin:12px 16px 0;background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 16px;font-size:13px;color:var(--muted);box-shadow:var(--sh-1);display:flex;align-items:center;gap:8px}
+.searchbar .ic{width:16px;color:var(--brand-ink)}
+
+/* hero */
+.hero{margin:14px 16px 0;border-radius:var(--r-xl);padding:22px 22px 24px;color:#fff;overflow:hidden;position:relative;
+  background:radial-gradient(130% 120% at 88% 15%,rgba(255,143,174,.5),transparent 55%),linear-gradient(150deg,var(--brand-strong),#123f63 60%,var(--brand-deep))}
+.hero .kick{font-size:10px;letter-spacing:.24em;font-weight:800;opacity:.82}
+.hero h1{font-size:26px;line-height:1.15;margin:10px 0 8px;font-weight:800;letter-spacing:-.01em}
+.hero p{margin:0;font-size:12.5px;opacity:.9}
+.hero .cta{display:inline-block;margin-top:18px;background:#fff;color:var(--brand-strong);font-weight:800;font-size:12.5px;padding:10px 18px;border-radius:999px}
+
+/* quick nav */
+.qnav{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:18px 16px 2px}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 0;text-align:center;box-shadow:var(--sh-1)}
+.q .ic{width:24px;height:24px;color:var(--brand-ink)}
+.q span{display:block;margin-top:6px;font-size:12px;font-weight:700;color:var(--ink-2)}
+
+/* trust */
+.trust{display:flex;margin:14px 16px 0;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--sh-1)}
+.trust .t{flex:1;text-align:center;font-size:10.5px;font-weight:700;color:var(--ink-2);padding:12px 4px;border-right:1px solid var(--line)}
+.trust .t:last-child{border-right:0}
+
+/* section title */
+.sectitle{display:flex;align-items:baseline;justify-content:space-between;padding:22px 16px 12px}
+.sectitle h2{font-size:16px;font-weight:800;margin:0;letter-spacing:-.01em}
+.sectitle .more{font-size:12px;color:var(--muted)}
+
+/* product grid + card */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 16px}
+.pc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-1)}
+.pc .img{aspect-ratio:5/4;position:relative;background:#fff center/cover no-repeat}
+.pc .flag{position:absolute;top:8px;left:8px;background:rgba(255,255,255,.92);border-radius:999px;font-size:9px;font-weight:800;padding:2px 7px;color:var(--ink)}
+.pc .tc{position:absolute;top:8px;right:8px;font-size:9px;font-weight:800;padding:2px 7px;border-radius:999px;color:#fff}
+.tc.frozen{background:var(--frozen)}.tc.chilled{background:var(--chilled)}.tc.ambient{background:var(--ambient)}
+.pc .b{padding:10px 11px 11px}
+.pc .bk{font-size:8.5px;font-weight:800;letter-spacing:.06em;color:var(--muted-2);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc .nm{font-size:12.5px;font-weight:700;line-height:1.3;min-height:32px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pc .meta{font-size:10px;color:var(--muted);margin:3px 0 8px;font-weight:600}
+.pc .foot{display:flex;align-items:center;gap:7px}
+.pc .price{color:var(--price);font-weight:800;font-size:15.5px}
+.pc .price .cur{font-size:11px}
+.pc .mem{font-size:9px;font-weight:800;color:var(--accent-ink);background:var(--accent-soft);padding:2px 6px;border-radius:5px}
+.pc .add{margin-left:auto;width:27px;height:27px;border-radius:10px;background:var(--brand-deep);color:#fff;font-size:17px;display:flex;align-items:center;justify-content:center;line-height:1}
+
+/* listing */
+.lsthead{display:flex;align-items:center;justify-content:space-between;padding:16px 16px 4px}
+.lsthead h1{font-size:18px;font-weight:800;margin:0}
+.lsthead .fl{font-size:12px;color:var(--muted);font-weight:700;display:flex;gap:5px;align-items:center}
+.chiprow{display:flex;gap:8px;overflow-x:auto;padding:10px 16px 2px;-webkit-overflow-scrolling:touch}
+.chiprow::-webkit-scrollbar{display:none}
+.chip{white-space:nowrap;font-size:11.5px;font-weight:700;padding:7px 15px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-2)}
+.chip.on{background:var(--brand-deep);color:#fff;border-color:var(--brand-deep)}
+.sortbar{display:flex;gap:18px;padding:10px 16px 12px;font-size:12px;color:var(--muted);font-weight:700}
+.sortbar .on{color:var(--brand-ink)}
+
+/* cart */
+.oh{padding:16px 16px 4px;font-size:18px;font-weight:800}
+.oh .cnt{font-size:12px;color:var(--muted);font-weight:700}
+.cgroup{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);margin:14px 16px;overflow:hidden;box-shadow:var(--sh-1)}
+.gh{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line);font-size:12px;font-weight:800}
+.gh .tcp{font-size:9.5px;font-weight:800;padding:3px 9px;border-radius:999px;color:#fff}
+.gh .note{margin-left:auto;font-size:10px;color:var(--muted);font-weight:700}
+.citem{display:flex;gap:12px;padding:14px}
+.citem .thumb{width:60px;height:60px;border-radius:12px;flex:none;background:#fff center/cover no-repeat}
+.citem .thumb.ph{background:linear-gradient(150deg,var(--surface-2),var(--surface-3))}
+.citem .mid{flex:1;min-width:0}
+.citem .bk{font-size:8px;font-weight:800;letter-spacing:.05em;color:var(--muted-2)}
+.citem .nm{font-size:12.5px;font-weight:800;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.citem .mt{font-size:10px;color:var(--muted);margin-top:3px;font-weight:600}
+.citem .pr{color:var(--price);font-weight:800;font-size:15px;margin-top:6px}
+.stepper{display:flex;align-items:center;gap:2px;align-self:flex-end}
+.stepper button{width:26px;height:26px;border:1px solid var(--line);border-radius:8px;font-size:16px;color:var(--ink-2);display:flex;align-items:center;justify-content:center}
+.stepper .q{min-width:30px;text-align:center;font-size:13px;font-weight:800}
+.summary{margin:14px 16px 0;background:var(--surface-3);border-radius:var(--r-lg);padding:15px}
+.summary .r{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:var(--ink-2)}
+.summary .save{color:#2E9E6B;font-weight:800}
+.summary .tot{border-top:1px solid var(--line);margin-top:8px;padding-top:11px;font-size:16px;font-weight:800;color:var(--ink)}
+.checkoutbar{margin:16px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);display:flex;align-items:center;padding:14px 16px;box-shadow:var(--sh-1)}
+.checkoutbar .sel{flex:1;font-size:12px;color:var(--muted);font-weight:700}
+.checkoutbar .cbtn{flex:0 0 56%;text-align:center;background:var(--brand-deep);color:#fff;font-weight:800;font-size:14px;padding:13px 0;border-radius:12px}
+.empty{padding:100px 20px;text-align:center;color:var(--muted)}
+.empty .ego{display:inline-block;margin-top:18px;background:var(--brand-deep);color:#fff;font-weight:800;font-size:13px;padding:11px 26px;border-radius:999px}
+
+/* account */
+.memcard{margin:16px;border-radius:var(--r-lg);padding:20px;color:#fff;overflow:hidden;
+  background:radial-gradient(120% 120% at 85% 12%,rgba(255,143,174,.55),transparent 55%),linear-gradient(140deg,var(--brand-strong),var(--brand-deep))}
+.memcard .lv{font-size:10px;letter-spacing:.14em;font-weight:800;opacity:.85}
+.memcard h3{font-size:22px;margin:6px 0 2px}
+.memcard .pts{font-size:12px;opacity:.9}
+.memcard .bar{margin-top:14px;height:7px;border-radius:999px;background:rgba(255,255,255,.25);overflow:hidden}
+.memcard .bar>i{display:block;height:100%;width:72%;background:#fff;border-radius:999px}
+.memcard .nx{font-size:10.5px;opacity:.85;margin-top:8px}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:12px 12px 0}
+.svc a{display:flex;flex-direction:column;align-items:center;gap:7px;padding:16px 4px;font-size:11px;color:var(--ink-2);font-weight:700;text-decoration:none}
+.svc a .ic{color:var(--brand-ink)}
+
+/* detail overlay */
+.detail{position:fixed;inset:0;max-width:480px;margin:0 auto;background:var(--bg);z-index:60;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.detail[hidden]{display:none}
+.dback{position:absolute;top:12px;left:12px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:var(--sh-1);display:flex;align-items:center;justify-content:center;font-size:20px}
+.dimg{aspect-ratio:16/12;position:relative;background:#fff center/cover no-repeat}
+.dimg .flag{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.92);border-radius:999px;font-size:11px;font-weight:800;padding:5px 12px}
+.dimg .tc{position:absolute;bottom:14px;left:14px;font-size:11px;font-weight:800;padding:5px 12px;border-radius:999px;color:#fff}
+.dbody{padding:18px 18px 120px}
+.dbody .bk{font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--muted-2)}
+.dbody .nm{font-size:22px;font-weight:800;line-height:1.3;margin:5px 0 5px;letter-spacing:-.01em}
+.dbody .sub{font-size:12px;color:var(--muted)}
+.dprice{display:flex;align-items:baseline;gap:10px;margin:16px 0 6px}
+.dprice .p{color:var(--price);font-weight:800;font-size:30px}
+.dprice .p .cur{font-size:15px}
+.dprice .o{color:var(--muted-2);text-decoration:line-through;font-size:13px}
+.dprice .memtag{font-size:11px;font-weight:800;color:var(--accent-ink);background:var(--accent-soft);padding:3px 10px;border-radius:6px}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 6px}
+.bdg{font-size:10.5px;font-weight:800;color:var(--brand-ink);background:#EAF4FC;padding:6px 12px;border-radius:999px}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;margin:10px 0}
+.kv div{background:#fff;padding:11px 13px}
+.kv .k{display:block;font-size:10px;color:var(--muted);margin-bottom:3px;font-weight:700}
+.kv .v{font-size:13px;font-weight:800}
+.sec-t{font-size:13px;font-weight:800;margin:20px 0 10px;padding-left:10px;border-left:4px solid var(--accent)}
+.attr{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.attr .k{color:var(--muted)}.attr .v{font-weight:800}
+.adaptnote{font-size:11px;color:var(--accent-ink);background:var(--accent-soft);border-radius:var(--r-md);padding:11px 12px;margin-top:14px;line-height:1.6}
+.dbar{position:fixed;bottom:0;left:0;right:0;max-width:480px;margin:0 auto;background:#fff;border-top:1px solid var(--line);display:flex;gap:10px;align-items:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.dbar .fav{width:44px;height:44px;border-radius:13px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.dbar .btn{flex:1;text-align:center;font-weight:800;font-size:14px;padding:14px 0;border-radius:13px}
+.dbar .cart{background:var(--accent-soft);color:var(--accent-ink)}
+.dbar .buy{background:var(--brand-deep);color:#fff}
+
+/* tab bar */
+.tabbar{position:fixed;bottom:0;left:0;right:0;max-width:480px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-top:1px solid var(--line);padding:7px 0 calc(9px + env(safe-area-inset-bottom));z-index:50}
+.tb{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:var(--muted-2);font-weight:700}
+.tb .ic{width:22px;height:22px}
+.tb.on{color:var(--brand-ink)}
+.tb .badgeN{position:absolute;transform:translate(14px,-6px);background:var(--price);color:#fff;font-size:9px;font-weight:800;min-width:15px;height:15px;border-radius:999px;display:flex;align-items:center;justify-content:center;padding:0 3px}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:rgba(19,35,47,.92);color:#fff;font-size:13px;font-weight:700;padding:11px 20px;border-radius:999px;z-index:80;opacity:0;transition:opacity .2s;pointer-events:none;max-width:80%}
+.toast.show{opacity:1}
+
+.foot-note{text-align:center;color:var(--muted-2);font-size:10.5px;padding:18px 16px 4px}
+</style>
+</head>
+<body>
+<div class="app">
+
+<svg class="sr" aria-hidden="true"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5M6 10v9h4v-5h4v5h4v-9"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5zM9 8a3 3 0 0 1 6 0"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M12 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM5.5 20a6.5 6.5 0 0 1 13 0"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4.2-4.2"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6.5 9.5a5.5 5.5 0 0 1 11 0c0 4.5 2 5.5 2 5.5h-15s2-1 2-5.5zM10 19a2 2 0 0 0 4 0"/></symbol>
+<symbol id="i-fish" viewBox="0 0 24 24"><path d="M20.5 12c-2.5 3-6.5 4.5-11 4.5-2.8 0-4.8-1.2-4.8-4.5s2-4.5 4.8-4.5c4.5 0 8.5 1.5 11 4.5zM6 12 3 9.5v5zM15.8 10.8h.01"/></symbol>
+<symbol id="i-shrimp" viewBox="0 0 24 24"><path d="M8.5 5.8C13 5.8 17 9.4 17 13.9c0 2.6-1.8 4.4-4.2 4.4-2 0-3.4-1.4-3.4-3.2 0-1.5 1.1-2.6 2.6-2.6M8.5 5.8 5.4 4.3M8.5 5.8 6 7.6M9.6 16.4l-1 2.2M11.8 17.2l-.6 2.2"/></symbol>
+<symbol id="i-crab" viewBox="0 0 24 24"><path d="M9 13.4a3 2.4 0 0 0 6 0 3 2.4 0 0 0-6 0M9 12.8 5.5 11.3M5.5 11.3 3.8 10.2M5.5 11.3 4.1 12.7M15 12.8 18.5 11.3M18.5 11.3 20.2 10.2M18.5 11.3 19.9 12.7M9.4 14.9 6.6 16.5M10 15.7 7.8 17.7M14.6 14.9 17.4 16.5M14 15.7 16.2 17.7"/></symbol>
+<symbol id="i-shell" viewBox="0 0 24 24"><path d="M12 5.5c-4.4 0-7.5 3.4-7.5 7l7.5 5.5 7.5-5.5c0-3.6-3.1-7-7.5-7zM12 5.5v12M8.4 7 9.6 17M15.6 7 14.4 17"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3.5 12h17M12 3c2.8 2.6 2.8 15.4 0 18M12 3c-2.8 2.6-2.8 15.4 0 18"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 19 6v5.2c0 4.6-3 7.4-7 9.3-4-1.9-7-4.7-7-9.3V6zM8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+<symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5 19.8 16.5M19.8 7.5 4.2 16.5"/></symbol>
+<symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8.5v-3A1.5 1.5 0 0 1 5.5 4H8.5M15.5 4h3A1.5 1.5 0 0 1 20 5.5v3M20 15.5v3a1.5 1.5 0 0 1-1.5 1.5h-3M8.5 20h-3A1.5 1.5 0 0 1 4 18.5v-3M7 12h10"/></symbol>
+<symbol id="i-tag" viewBox="0 0 24 24"><path d="M4.5 4.5H11l8.5 8.5-6.5 6.5L4.5 11zM8 8h.01"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h3.5l2.5 2.5V15h-6zM7 18a1.6 1.6 0 1 0 0-.1M16.5 18a1.6 1.6 0 1 0 0-.1"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 4.5 14.3 10l5.7.4-4.4 3.7 1.4 5.6L12 17l-5 2.7 1.4-5.6L4 10.4 9.7 10z"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><path d="M4.5 10h15v9.5h-15zM4 7.5h16V10H4zM12 7.5v12M12 7.5C10 4 6.5 5 8 7.5M12 7.5C14 4 17.5 5 16 7.5"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M4 8 12 4l8 4-8 4zM4 8v8l8 4 8-4V8M12 12v8"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3.5h7l3.5 3.5V20.5h-11zM14 3.5V7h3.5M9.5 12h5M9.5 15h5"/></symbol>
+</defs></svg>
+
+<!-- HOME -->
+<section class="view" data-view="home">
+  <div class="apphead">
+    <img class="badge" src="images/logo-icon.png" alt="Dolly Dolphin">
+    <div class="loc"><div class="l1">上海 · 静安区</div><div class="l2">送至 · 虹桥公寓</div></div>
+    <span class="bell"><svg class="ic"><use href="#i-bell"/></svg></span>
+  </div>
+  <div class="searchbar"><svg class="ic"><use href="#i-search"/></svg>搜索 大西洋三文鱼 · 阿拉斯加雪蟹 · 北大西洋扇贝</div>
+  <div class="hero">
+    <div class="kick">GLOBAL SOURCING</div>
+    <h1>全球甄选<br>直采到家</h1>
+    <p>正品进口 · 全程冷链保障</p>
+    <span class="cta" data-tab="list">探索进口精选 →</span>
+  </div>
+  <div class="qnav">
+    <button class="q" data-tab="list"><svg class="ic"><use href="#i-fish"/></svg><span>三文鱼</span></button>
+    <button class="q" data-tab="list"><svg class="ic"><use href="#i-shrimp"/></svg><span>虾类</span></button>
+    <button class="q" data-tab="list"><svg class="ic"><use href="#i-crab"/></svg><span>蟹类</span></button>
+    <button class="q" data-tab="list"><svg class="ic"><use href="#i-shell"/></svg><span>贝类</span></button>
+  </div>
+  <div class="trust">
+    <div class="t"><svg class="ic" style="width:20px;color:var(--brand-ink)"><use href="#i-globe"/></svg><br>全球直采</div>
+    <div class="t"><svg class="ic" style="width:20px;color:var(--brand-ink)"><use href="#i-shield"/></svg><br>正品进口</div>
+    <div class="t"><svg class="ic" style="width:20px;color:var(--brand-ink)"><use href="#i-snow"/></svg><br>全程冷链</div>
+    <div class="t"><svg class="ic" style="width:20px;color:var(--brand-ink)"><use href="#i-scan"/></svg><br>批次可溯</div>
+  </div>
+  <div class="sectitle"><h2>本周精选 · 进口海鲜</h2><span class="more">查看全部 ›</span></div>
+  <div class="pgrid" id="homeGrid1"></div>
+  <div class="sectitle"><h2>蟹 · 虾 · 贝</h2><span class="more">查看全部 ›</span></div>
+  <div class="pgrid" id="homeGrid2"></div>
+  <div class="foot-note">Dolly Dolphin · 进口海鲜 · H5 演示原型（Step 1）</div>
+</section>
+
+<!-- LIST -->
+<section class="view" data-view="list" hidden>
+  <div class="lsthead"><h1>海鲜 · 鱼类精选</h1><span class="fl"><svg class="ic" style="width:15px"><use href="#i-grid"/></svg>筛选</span></div>
+  <div class="chiprow" id="chips"></div>
+  <div class="sortbar"><span class="on">推荐</span><span>销量</span><span>价格 ↑</span><span>上新</span></div>
+  <div class="pgrid" id="listGrid"></div>
+</section>
+
+<!-- CART -->
+<section class="view" data-view="cart" hidden>
+  <div class="oh">购物车 <span class="cnt" id="cartCount">· 0 件</span></div>
+  <div id="cartBody"></div>
+</section>
+
+<!-- ACCOUNT -->
+<section class="view" data-view="me" hidden>
+  <div class="memcard">
+    <div class="lv">DOLLY CLUB · 黑金会员</div>
+    <h3>Lv.3 · 深海之友</h3>
+    <div class="pts">1,240 积分 · 本年累计消费 ¥8,600</div>
+    <div class="bar"><i></i></div>
+    <div class="nx">再消费 ¥1,400 升级 Lv.4，享 9 折专属价</div>
+  </div>
+  <div class="svc">
+    <a><svg class="ic"><use href="#i-star"/></svg>会员中心</a>
+    <a><svg class="ic"><use href="#i-tag"/></svg>优惠券</a>
+    <a><svg class="ic"><use href="#i-truck"/></svg>收货地址</a>
+    <a><svg class="ic"><use href="#i-box"/></svg>我的订单</a>
+    <a><svg class="ic"><use href="#i-gift"/></svg>生日礼遇</a>
+    <a><svg class="ic"><use href="#i-doc"/></svg>发票管理</a>
+    <a><svg class="ic"><use href="#i-scan"/></svg>批次溯源</a>
+    <a><svg class="ic"><use href="#i-shield"/></svg>售后服务</a>
+  </div>
+  <div class="foot-note">演示账户 · 数据为示意</div>
+</section>
+
+<!-- DETAIL overlay -->
+<div class="detail" id="detail" hidden>
+  <button class="dback" id="dback">‹</button>
+  <div id="detailBody"></div>
+</div>
+
+<!-- TAB BAR -->
+<nav class="tabbar">
+  <button class="tb on" data-tab="home"><svg class="ic"><use href="#i-home"/></svg>首页</button>
+  <button class="tb" data-tab="list"><svg class="ic"><use href="#i-grid"/></svg>分类</button>
+  <button class="tb" data-tab="cart"><svg class="ic"><use href="#i-bag"/></svg><span id="tabCartWrap">购物车</span></button>
+  <button class="tb" data-tab="me"><svg class="ic"><use href="#i-user"/></svg>我的</button>
+</nav>
+
+<div class="toast" id="toast"></div>
+</div>
+
+<script>
+const P = [
+  {id:'sockeye',cat:'salmon',brand:"MEMBER'S MARK",name:'阿拉斯加红鲑鱼 带皮去骨',sub:'Alaskan Sockeye Salmon · Skin-on, Boneless',img:'salmon-sockeye.jpg',flag:'🇺🇸 阿拉斯加',temp:'冷冻',tc:'frozen',spec:'907g · 野生捕捞',price:168,member:152,originCountry:'美国 · 阿拉斯加',net:'907 g',shelf:'18 个月',stock:'现货 126',species:'红鲑 Sockeye',method:'可持续野生捕捞',sea:'FAO 67 白令海',batch:'US-2026-0417'},
+  {id:'atlantic',cat:'salmon',brand:"MEMBER'S MARK",name:'大西洋三文鱼柳 独立包装',sub:'Atlantic Salmon Fillet Portions',img:'salmon-atlantic.jpg',flag:'🇨🇱 智利',temp:'冷冻',tc:'frozen',spec:'1.13kg · 分切装',price:128,member:116,originCountry:'智利',net:'1.13 kg',shelf:'18 个月',stock:'现货 210',species:'大西洋鲑 Salmo salar',method:'海水养殖',sea:'FAO 87 东南太平洋',batch:'CL-2026-0417'},
+  {id:'pesto',cat:'salmon',brand:"MEMBER'S MARK",name:'香蒜青酱三文鱼排',sub:'Garlic Pesto Salmon Side',img:'salmon-pesto.jpg',flag:'🇺🇸 美国',temp:'冷冻',tc:'frozen',spec:'680g · 调味即烤',price:98,member:89,originCountry:'美国',net:'680 g',shelf:'12 个月',stock:'现货 88',species:'大西洋鲑 Salmo salar',method:'海水养殖 · 调味',sea:'FAO 21 西北大西洋',batch:'US-2026-0512'},
+  {id:'marinated',cat:'salmon',brand:"MEMBER'S MARK",name:'香草腌制三文鱼',sub:'Marinated Alaskan Salmon',img:'salmon-marinated.jpg',flag:'🇺🇸 阿拉斯加',temp:'冷冻',tc:'frozen',spec:'454g · 调味即烤',price:88,member:79,originCountry:'美国 · 阿拉斯加',net:'454 g',shelf:'12 个月',stock:'现货 64',species:'红鲑 Sockeye',method:'野生捕捞 · 腌制',sea:'FAO 67 白令海',batch:'US-2026-0530'},
+  {id:'crab',cat:'crab',brand:"MEMBER'S MARK",name:'雪蟹腿与蟹钳 熟制',sub:'Snow Crab Legs & Claws · Cooked',img:'crab-snow.jpg',flag:'🇨🇦 加拿大',temp:'冷冻',tc:'frozen',spec:'907g · 即食',price:398,member:359,originCountry:'加拿大',net:'907 g',shelf:'12 个月',stock:'现货 42',species:'雪蟹 Snow Crab',method:'野生捕捞 · 熟冻',sea:'FAO 21 西北大西洋',batch:'CA-2026-0418'},
+  {id:'rawshrimp',cat:'shrimp',brand:"MEMBER'S MARK",name:'特大生虾 去壳留尾',sub:'Jumbo Raw Shrimp · Peeled, Tail-on',img:'shrimp-raw.jpg',flag:'🇻🇳 越南',temp:'冷冻',tc:'frozen',spec:'907g · 21–25/磅',price:139,member:129,originCountry:'越南',net:'907 g',shelf:'18 个月',stock:'现货 156',species:'白对虾 Vannamei',method:'养殖 · 生冻',sea:'FAO 71 西太平洋',batch:'VN-2026-0788'},
+  {id:'scampi',cat:'shrimp',brand:"MEMBER'S MARK",name:'蒜香黄油风味大虾',sub:'Shrimp Scampi',img:'shrimp-scampi.jpg',flag:'🇺🇸 美国',temp:'冷冻',tc:'frozen',spec:'907g · 一煎即食',price:119,member:108,originCountry:'美国',net:'907 g',shelf:'12 个月',stock:'现货 96',species:'白对虾 Vannamei',method:'养殖 · 调味',sea:'FAO 71 西太平洋',batch:'US-2026-0640'},
+  {id:'scallops',cat:'shell',brand:"MEMBER'S MARK",name:'北大西洋海扇贝',sub:'North Atlantic Sea Scallops',img:'scallops.jpg',flag:'🇺🇸 北大西洋',temp:'冷冻',tc:'frozen',spec:'454g · 15–25/磅',price:158,member:145,originCountry:'美国 · 北大西洋',net:'454 g',shelf:'12 个月',stock:'现货 73',species:'海扇贝 Sea Scallop',method:'野生捕捞',sea:'FAO 21 西北大西洋',batch:'US-2026-0311'},
+  {id:'cod',cat:'fish',brand:"MEMBER'S MARK",name:'去皮鳕鱼柳',sub:'Cod Skinless Fillet',img:'cod.jpg',flag:'🇮🇸 冰岛',temp:'冷冻',tc:'frozen',spec:'907g · 去皮去骨',price:118,member:108,originCountry:'冰岛',net:'907 g',shelf:'18 个月',stock:'现货 118',species:'大西洋鳕 Gadus morhua',method:'野生捕捞',sea:'FAO 27 东北大西洋',batch:'IS-2026-0205'},
+  {id:'ptilapia',cat:'fish',brand:"MEMBER'S MARK",name:'帕玛森芝士罗非鱼柳',sub:'Parmesan Encrusted Tilapia',img:'tilapia-parmesan.jpg',flag:'🇺🇸 美国',temp:'冷冻',tc:'frozen',spec:'680g · 焗烤即食',price:78,member:70,originCountry:'美国',net:'680 g',shelf:'12 个月',stock:'现货 140',species:'罗非鱼 Tilapia',method:'养殖 · 调味',sea:'FAO 77 东太平洋',batch:'US-2026-0705'}
+];
+const byId = id => P.find(p => p.id === id);
+
+// cart: pre-filled to show mixed-temperature grouping
+let cart = [
+  {id:'atlantic',brand:"MEMBER'S MARK",name:'大西洋三文鱼柳',img:'salmon-atlantic.jpg',spec:'1.13kg · CL-2026-0417',price:120,temp:'冷冻',qty:1},
+  {id:'crab',brand:"MEMBER'S MARK",name:'雪蟹腿与蟹钳 熟制',img:'crab-snow.jpg',spec:'907g · CA-2026-0418',price:152,temp:'冷冻',qty:1},
+  {id:'tuna',brand:'',name:'西班牙橄榄油浸金枪鱼罐头',img:'',spec:'185g × 6 · ES-2026-1120',price:80,temp:'常温',qty:1}
+];
+
+const cardHTML = p => `
+  <article class="pc" data-open="${p.id}">
+    <div class="img" style="background-image:url(images/${p.img})">
+      <span class="flag">${p.flag}</span><span class="tc ${p.tc}">${p.temp}</span>
+    </div>
+    <div class="b">
+      <div class="bk">${p.brand}</div>
+      <div class="nm">${p.name}</div>
+      <div class="meta">${p.spec}</div>
+      <div class="foot">
+        <span class="price"><span class="cur">¥</span>${p.member}</span>
+        <span class="mem">会员</span>
+        <button class="add" data-add="${p.id}" aria-label="加入购物车">＋</button>
+      </div>
+    </div>
+  </article>`;
+
+function renderHome(){
+  document.getElementById('homeGrid1').innerHTML = P.slice(0,4).map(cardHTML).join('');
+  document.getElementById('homeGrid2').innerHTML = P.slice(4,8).map(cardHTML).join('');
+}
+
+const FILTERS=[['all','全部'],['salmon','三文鱼'],['shrimp','虾类'],['crab','蟹类'],['shell','贝类'],['fish','鱼柳']];
+let curFilter='all';
+function renderList(){
+  document.getElementById('chips').innerHTML = FILTERS.map(([k,t])=>`<button class="chip ${k===curFilter?'on':''}" data-filter="${k}">${t}</button>`).join('');
+  const list = curFilter==='all'? P : P.filter(p=>p.cat===curFilter);
+  document.getElementById('listGrid').innerHTML = list.map(cardHTML).join('');
+}
+
+function renderCart(){
+  const body = document.getElementById('cartBody');
+  const count = cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cartCount').textContent = '· '+count+' 件';
+  updateTabBadge();
+  if(count===0){
+    body.innerHTML = `<div class="empty">购物车是空的<br><button class="ego" data-tab="home">去逛逛 →</button></div>`;
+    return;
+  }
+  const frozen = cart.filter(i=>i.temp==='冷冻'||i.temp==='冷藏');
+  const ambient = cart.filter(i=>i.temp==='常温');
+  const groups=[];
+  if(frozen.length) groups.push({key:'冷冻',title:'冷链配送',note:'保温箱 + 冰袋 · 次日达',color:'frozen',items:frozen});
+  if(ambient.length) groups.push({key:'常温',title:'标准快递',note:'普通包装 · 全国配送',color:'ambient',items:ambient});
+  const itemHTML = it => `
+    <div class="citem">
+      ${it.img?`<div class="thumb" style="background-image:url(images/${it.img})"></div>`:`<div class="thumb ph"></div>`}
+      <div class="mid">
+        ${it.brand?`<div class="bk">${it.brand}</div>`:''}
+        <div class="nm">${it.name}</div>
+        <div class="mt">${it.spec}</div>
+        <div class="pr">¥${it.price}</div>
+      </div>
+      <div class="stepper">
+        <button data-dec="${it.id}">−</button><span class="q">${it.qty}</span><button data-inc="${it.id}">＋</button>
+      </div>
+    </div>`;
+  const groupHTML = g => `
+    <div class="cgroup">
+      <div class="gh"><span class="tcp" style="background:var(--${g.color})">${g.key}组</span> ${g.title}<span class="note">${g.note}</span></div>
+      ${g.items.map(itemHTML).join('')}
+    </div>`;
+  const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const save = 24, freight = frozen.length?15:0, total = subtotal-save+freight;
+  body.innerHTML = groups.map(groupHTML).join('') + `
+    <div class="summary">
+      <div class="r"><span>商品小计</span><span>¥${subtotal}</span></div>
+      <div class="r save"><span>会员优惠</span><span>−¥${save}</span></div>
+      <div class="r"><span>冷链运费（冷冻组）</span><span>¥${freight}</span></div>
+      <div class="r"><span>标准运费（常温组）</span><span class="save">免运费</span></div>
+      <div class="r tot"><span>合计</span><span>¥${total}</span></div>
+    </div>
+    <div class="checkoutbar"><span class="sel">已选 ${count} 件</span><button class="cbtn" data-checkout>去结算 · ¥${total}</button></div>`;
+}
+
+function openDetail(id){
+  const p = byId(id); if(!p) return;
+  document.getElementById('detailBody').innerHTML = `
+    <div class="dimg" style="background-image:url(images/${p.img})">
+      <span class="flag">${p.flag}</span><span class="tc ${p.tc}">${p.temp}</span>
+    </div>
+    <div class="dbody">
+      <div class="bk">${p.brand}</div>
+      <div class="nm">${p.name}</div>
+      <div class="sub">${p.sub} · ${p.net}</div>
+      <div class="dprice"><span class="p"><span class="cur">¥</span>${p.member}</span><span class="o">¥${p.price}</span><span class="memtag">会员价</span></div>
+      <div class="badges"><span class="bdg">原产地直采</span><span class="bdg">正品进口</span><span class="bdg">全程冷链</span><span class="bdg">批次可溯</span></div>
+      <div class="kv">
+        <div><span class="k">原产国</span><span class="v">${p.originCountry}</span></div>
+        <div><span class="k">净含量</span><span class="v">${p.net}</span></div>
+        <div><span class="k">储存</span><span class="v">冷冻 ≤ −18°C</span></div>
+        <div><span class="k">保质期</span><span class="v">${p.shelf}</span></div>
+        <div><span class="k">配送</span><span class="v">冷链 · 次日达</span></div>
+        <div><span class="k">库存</span><span class="v">${p.stock}</span></div>
+      </div>
+      <div class="sec-t">溯源信息 · Provenance</div>
+      <div class="attr"><span class="k">品种</span><span class="v">${p.species}</span></div>
+      <div class="attr"><span class="k">捕捞方式</span><span class="v">${p.method}</span></div>
+      <div class="attr"><span class="k">海域</span><span class="v">${p.sea}</span></div>
+      <div class="attr"><span class="k">进口批次</span><span class="v">${p.batch}</span></div>
+      <div class="adaptnote">↳ 此区块由「海鲜」品类的属性集生成。未来上线的肉类会显示「部位 / 等级 / 大理石纹」，罐头显示「净含量 / 沥干重」——同一页面，配置驱动，无需改代码。</div>
+    </div>
+    <div class="dbar">
+      <div class="fav"><svg class="ic"><use href="#i-star"/></svg></div>
+      <button class="btn cart" data-add="${p.id}">加入购物车</button>
+      <button class="btn buy" data-buy="${p.id}">立即购买</button>
+    </div>`;
+  const d = document.getElementById('detail');
+  d.hidden = false; d.scrollTop = 0;
+}
+function closeDetail(){ document.getElementById('detail').hidden = true; }
+
+function addToCart(id){
+  const p = byId(id); if(!p) return;
+  const ex = cart.find(x=>x.id===id);
+  if(ex){ ex.qty++; }
+  else cart.push({id:p.id,brand:p.brand,name:p.name,img:p.img,spec:p.spec.split(' · ')[0]+' · '+p.batch,price:p.member,temp:p.temp,qty:1});
+  renderCart(); toast('已加入购物车');
+}
+
+function updateTabBadge(){
+  const n = cart.reduce((s,i)=>s+i.qty,0);
+  const wrap = document.getElementById('tabCartWrap');
+  wrap.innerHTML = '购物车' + (n>0?`<span class="badgeN">${n}</span>`:'');
+}
+
+let toastT;
+function toast(msg){
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(()=>t.classList.remove('show'), 1400);
+}
+
+function switchTab(name){
+  document.querySelectorAll('.view').forEach(v=>{ v.hidden = v.dataset.view!==name; });
+  document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on', b.dataset.tab===name));
+  closeDetail();
+  window.scrollTo(0,0);
+  if(name==='cart') renderCart();
+}
+
+// event delegation
+document.addEventListener('click', e=>{
+  const add = e.target.closest('[data-add]'); if(add){ e.stopPropagation(); addToCart(add.dataset.add); return; }
+  const buy = e.target.closest('[data-buy]'); if(buy){ addToCart(buy.dataset.buy); switchTab('cart'); return; }
+  const dec = e.target.closest('[data-dec]'); if(dec){ const i=cart.findIndex(x=>x.id===dec.dataset.dec); if(i>-1){ cart[i].qty>1?cart[i].qty--:cart.splice(i,1); renderCart(); } return; }
+  const inc = e.target.closest('[data-inc]'); if(inc){ const it=cart.find(x=>x.id===inc.dataset.inc); if(it){it.qty++; renderCart();} return; }
+  const flt = e.target.closest('[data-filter]'); if(flt){ curFilter=flt.dataset.filter; renderList(); return; }
+  const chk = e.target.closest('[data-checkout]'); if(chk){ toast('演示：进入结算流程'); return; }
+  const tab = e.target.closest('[data-tab]'); if(tab){ switchTab(tab.dataset.tab); return; }
+  const open = e.target.closest('[data-open]'); if(open){ openDetail(open.dataset.open); return; }
+});
+document.getElementById('dback').addEventListener('click', closeDetail);
+
+renderHome(); renderList(); renderCart(); updateTabBadge();
+</script>
+</body>
+</html>
